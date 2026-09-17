@@ -35,7 +35,7 @@
 | :--- | :--- | :--- | :--- |
 | **⚡ AutoFlow RPA**<br>*(오토플로우 RPA)* | **노코드 화면 RPA**<br>(No-Code Screen Automation) | &bull; **선만 연결하는 비주얼 순서도 편집기**<br>&bull; 4K 다중모니터 초정밀 픽셀 서치<br>&bull; 전용 단축키 & 간편 시작(QuickStart)<br>&bull; 조건부 팝업 대기 & 예외 자동 처리 | [![MS Store](https://img.shields.io/badge/MS_Store-ImageFlow-0078D4?style=flat-square&logo=windows)](https://apps.microsoft.com/detail/9N4P7GW72J4X)<br>[![Setup](https://img.shields.io/badge/Setup.exe-Download-333?style=flat-square&logo=github)](https://github.com/yjc-web/FlowSuite/releases) |
 | **📁 FileFlow**<br>*(파일플로우)* | **AI 파일 관리 허브**<br>(AI File Organizer) | &bull; **0.1초 실시간 폴더 감시 (Spooler)**<br>&bull; Explainable AI(나이브 베이즈) 자동 분류<br>&bull; PDF, Excel, PPT, Zip 멀티포맷 즉시 미리보기<br>&bull; 독립 플로팅 듀얼 탐색기 & 실행 취소(Undo) | [![MS Store](https://img.shields.io/badge/MS_Store-Publisher-0078D4?style=flat-square&logo=windows)](https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR)<br>[![Explore](https://img.shields.io/badge/Explore-FileFlow-indigo?style=flat-square)](https://yjc-web.github.io/#fileflow) |
-| **🖱️ GestureGo**<br>*(제스처고)* | **마우스 제스처 유틸리티**<br>(Mouse Gesture Control) | &bull; **마우스 우클릭 드래그로 창 광속 제어**<br>&bull; 창 닫기, 최소화, 가상 데스크톱 전환<br>&bull; 초경량 마우스 궤적 인식 엔진<br>&bull; 사용자 정의 커스텀 단축키 매핑 | [![MS Store](https://img.shields.io/badge/MS_Store-Publisher-0078D4?style=flat-square&logo=windows)](https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR)<br>[![Explore](https://img.shields.io/badge/Explore-GestureGo-emerald?style=flat-square)](https://yjc-web.github.io/#gesturego) |
+| **🖱️ MouseFlow AI**<br>*(마우스플로우 AI)* | **AI 마우스 제스처**<br>(AI Mouse Gesture Control) | &bull; **마우스 우클릭 드래그로 창 광속 제어**<br>&bull; 창 닫기, 최소화, 가상 데스크톱 전환<br>&bull; 초경량 마우스 궤적 인식 & AI 제스처 엔진<br>&bull; 사용자 정의 커스텀 단축키 매핑 | [![MS Store](https://img.shields.io/badge/MS_Store-Publisher-0078D4?style=flat-square&logo=windows)](https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR)<br>[![Explore](https://img.shields.io/badge/Explore-MouseFlow_AI-violet?style=flat-square)](https://yjc-web.github.io/#mouseflow) |
 | **📌 OverlayPic**<br>*(오버레이픽)* | **항상 위 이미지 핀 도구**<br>(Floating Reference Pin) | &bull; **작업 화면 최상단(Always-on-Top) 고정**<br>&bull; 마우스 휠 투명도(Opacity 0~100%) 실시간 조절<br>&bull; 클릭 투과(Click-through)로 밑 화면 바로 작업<br>&bull; **Windows & macOS (Apple Silicon / Intel) 지원** | [![MS Store](https://img.shields.io/badge/MS_Store-Publisher-0078D4?style=flat-square&logo=windows)](https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR)<br>[![Explore](https://img.shields.io/badge/Explore-OverlayPic-amber?style=flat-square)](https://yjc-web.github.io/#overlaypic) |
 
 ---
@@ -45,10 +45,10 @@
 FlowSuite의 도구들은 개별적으로도 강력하지만, 함께 사용할 때 완벽한 생산성 워크스테이션을 만듭니다:
 
 ```
-[01. Control]   GestureGo  ─▶ 마우스 제스처로 작업 창들을 순식간에 정렬
-[02. Reference] OverlayPic ─▶ 필요한 가이드 시안이나 데이터를 화면 위에 투명 핀 고정
-[03. Automate]  AutoFlow RPA  ─▶ 손이 많이 가는 반복 클릭과 입력을 노코드 순서도로 자동화
-[04. Organize]  FileFlow   ─▶ 생성된 결과물 파일들을 AI가 폴더별로 0.1초 만에 자동 정리
+[01. Control]   MouseFlow AI  ─▶ 마우스 제스처로 작업 창들을 순식간에 정렬
+[02. Reference] OverlayPic    ─▶ 필요한 가이드 시안이나 데이터를 화면 위에 투명 핀 고정
+[03. Automate]  AutoFlow RPA ─▶ 손이 많이 가는 반복 클릭과 입력을 노코드 순서도로 자동화
+[04. Organize]  FileFlow      ─▶ 생성된 결과물 파일들을 AI가 폴더별로 0.1초 만에 자동 정리
 ```
 
 ---
