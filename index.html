@@ -172,13 +172,13 @@
   <!-- ================= TOP ANNOUNCEMENT ================= -->
   <aside class="relative z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl py-2 px-4 text-center">
     <div class="max-w-7xl mx-auto flex items-center justify-center gap-3 text-xs font-medium text-slate-700">
-      <span class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200 font-mono text-[11px] font-bold">
-        <span class="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse"></span>
-        FLOWSUITE UTILITIES
+      <span class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span data-i18n="top_bar_badge">100% FREE</span>
       </span>
-      <span class="hidden sm:inline text-slate-600" data-i18n="top_bar_text">윈도우 PC 작업 속도를 극대화하는 5대 필수 유틸리티 스위트</span>
+      <span class="hidden sm:inline text-slate-600" data-i18n="top_bar_text">회원가입/결제 없음 · 업무 시간을 90% 줄여주는 윈도우 5대 필수 유틸리티 스위트 (평생 무료)</span>
       <a href="#suite" class="text-sky-600 hover:text-sky-700 flex items-center gap-1 font-bold transition-colors">
-        <span data-i18n="top_bar_link">전체 라인업 둘러보기</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        <span data-i18n="top_bar_link">전체 무료 라인업 둘러보기</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
       </a>
     </div>
   </aside>
@@ -257,42 +257,97 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       
       <!-- Pill Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-sky-200 text-xs font-semibold text-slate-700 mb-8 shadow-sm hover:border-sky-400 transition-colors">
-        <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
-        <span class="text-slate-900 font-bold" data-i18n="hero_pill_badge">윈도우 필수 유틸리티 스위트</span>
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-emerald-200 text-xs font-semibold text-slate-700 mb-8 shadow-sm hover:border-emerald-400 transition-colors">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-emerald-700 font-extrabold" data-i18n="hero_pill_badge">100% 완전 무료 &bull; 평생 무료</span>
         <span class="text-slate-300">&bull;</span>
-        <span class="text-sky-600 font-bold" data-i18n="hero_pill">매일 반복되는 데스크톱 작업 피로 90% 단축</span>
+        <span class="text-slate-700 font-bold" data-i18n="hero_pill">개인/기업 모두 무료 &bull; 회원가입 &bull; 광고 없음</span>
       </div>
 
       <!-- Main Headline -->
       <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.12] max-w-4xl mx-auto mb-6">
         <span class="hero-title-gradient" data-i18n="hero_title_1">매일 반복되는 윈도우 업무의 피로를 끝내다</span><br />
-        <span class="accent-gradient" data-i18n="hero_title_2">FlowSuite 올인원 유틸리티 스위트</span>
+        <span class="accent-gradient" data-i18n="hero_title_2">FlowSuite 100% 무료 유틸리티 스위트</span>
       </h1>
 
       <!-- Subtitle -->
       <p class="text-base sm:text-lg lg:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl mx-auto mb-10" data-i18n="hero_desc">
         코딩 없이 선만 잇는 <strong>화면 자동화(AutoFlow RPA)</strong>, 0.1초 실시간 <strong>AI 파일 분류(FileFlow)</strong>, 10만 행 대용량 <strong>초고속 엑셀 비교(ExcelCompare)</strong>, 마우스 제스처 창 제어와 화면 오버레이 핀까지.<br class="hidden sm:inline" />
-        따로 찾아 헤맬 필요 없이, <strong>데스크톱 작업 시간을 90% 줄여주는 검증된 윈도우 필수 유틸리티 5종</strong>을 하나의 스위트로 만나보세요.
+        비싼 유료 소프트웨어 없이, <strong>데스크톱 작업 시간을 90% 줄여주는 검증된 윈도우 필수 유틸리티 5종</strong>을 <strong>누구나 평생 무료</strong>로 사용하세요.
       </p>
 
       <!-- Hero Main Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
-        <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm sm:text-base shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all flex items-center justify-center gap-3.5 group">
-          <i class="fa-brands fa-microsoft text-2xl text-sky-400 group-hover:scale-110 transition-transform"></i>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+        <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-700 hover:from-sky-500 hover:to-indigo-600 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-sky-500/25 hover:shadow-2xl hover:scale-[1.02] transition-all flex items-center justify-center gap-3.5 group border border-sky-400/30">
+          <i class="fa-brands fa-microsoft text-2xl text-white group-hover:scale-110 transition-transform"></i>
           <div class="text-left leading-tight">
-            <div class="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-mono" data-i18n="hero_store_cert">Microsoft Store 공식 인증</div>
-            <div class="text-base font-black text-white" data-i18n="hero_cta_store">FlowSuite 공식 스토어에서 무료 다운로드</div>
+            <div class="text-[10px] uppercase font-bold tracking-wider text-sky-200 font-mono flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span data-i18n="hero_store_cert">100% 무료 · 보안 경고 없이 1클릭 설치 (권장)</span>
+            </div>
+            <div class="text-base font-black text-white" data-i18n="hero_cta_store">Microsoft Store에서 무료 다운로드</div>
           </div>
         </a>
 
-        <a href="https://github.com/yjc-web/FlowSuite/releases" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-8 py-4 rounded-2xl bg-white hover:bg-slate-50 border border-slate-300 hover:border-sky-400 text-slate-800 font-bold text-sm sm:text-base shadow-md hover:shadow-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-3.5">
+        <a href="https://github.com/yjc-web/FlowSuite/releases" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-8 py-4 rounded-2xl bg-white hover:bg-slate-50 border border-slate-300 hover:border-slate-400 text-slate-800 font-bold text-sm sm:text-base shadow-md hover:shadow-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-3.5">
           <i class="fa-brands fa-github text-2xl text-slate-900"></i>
           <div class="text-left leading-tight">
-            <div class="text-[10px] font-mono text-slate-500">Official GitHub Releases</div>
-            <div class="text-base font-bold text-slate-900" data-i18n="hero_cta_github">전체 패키지 릴리즈 다운로드 (무설치/Setup)</div>
+            <div class="text-[10px] font-mono text-slate-500" data-i18n="hero_portable_tag">포터블 무설치 (Portable .zip / .exe)</div>
+            <div class="text-base font-bold text-slate-900" data-i18n="hero_cta_github">GitHub 릴리즈 다운로드</div>
           </div>
         </a>
+      </div>
+
+      <!-- SmartScreen & Trust Reassurance Guide -->
+      <div class="max-w-3xl mx-auto mb-12 p-3.5 sm:p-4 rounded-2xl bg-amber-50/80 border border-amber-200 text-amber-900 text-xs text-left flex items-start gap-3 shadow-sm">
+        <i class="fa-solid fa-shield-halved text-amber-600 text-base mt-0.5 flex-shrink-0"></i>
+        <div class="leading-relaxed">
+          <span class="font-bold text-amber-950" data-i18n="smartscreen_guide_title">💡 [안내] 안전한 설치 및 보안 경고 안내:</span><br />
+          <span data-i18n="smartscreen_guide_desc">
+            <strong>Microsoft Store</strong> 버전은 MS의 공식 디지털 서명 및 보안 검증을 통과하여 <strong>경고창 없이 1클릭으로 가장 안전하게 자동 설치</strong>됩니다.<br class="hidden sm:inline" />
+            GitHub 무설치(포터블) 파일 실행 시 Windows SmartScreen(PC 보호) 알림창이 표시되면, 신규 배포 파일에 나타나는 일반적인 현상이므로 <strong>[추가 정보] &rarr; [실행]</strong>을 누르시면 정상 동작합니다.
+          </span>
+        </div>
+      </div>
+
+      <!-- 4 Free & Trust Badges -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-5xl mx-auto mb-10 text-left">
+        <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 shadow-sm flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 font-bold text-sm">
+            <i class="fa-solid fa-gift"></i>
+          </div>
+          <div>
+            <div class="font-bold text-xs text-slate-900" data-i18n="trust_1_title">100% 평생 무료</div>
+            <div class="text-[11px] text-slate-500" data-i18n="trust_1_desc">기능 제한·유료 결제 없음</div>
+          </div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 shadow-sm flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center flex-shrink-0 font-bold text-sm">
+            <i class="fa-solid fa-user-slash"></i>
+          </div>
+          <div>
+            <div class="font-bold text-xs text-slate-900" data-i18n="trust_2_title">회원가입·로그인 제로</div>
+            <div class="text-[11px] text-slate-500" data-i18n="trust_2_desc">다운로드 즉시 바로 사용</div>
+          </div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 shadow-sm flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 font-bold text-sm">
+            <i class="fa-solid fa-shield-cat"></i>
+          </div>
+          <div>
+            <div class="font-bold text-xs text-slate-900" data-i18n="trust_3_title">광고 & 악성코드 없음</div>
+            <div class="text-[11px] text-slate-500" data-i18n="trust_3_desc">번들·애드웨어 없는 클린 앱</div>
+          </div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 shadow-sm flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center flex-shrink-0 font-bold text-sm">
+            <i class="fa-solid fa-building-circle-check"></i>
+          </div>
+          <div>
+            <div class="font-bold text-xs text-slate-900" data-i18n="trust_4_title">개인·기업 모두 무료</div>
+            <div class="text-[11px] text-slate-500" data-i18n="trust_4_desc">상업적 업무 환경도 자유 이용</div>
+          </div>
+        </div>
       </div>
 
       <!-- 5 Product Quick Cards Strip -->
@@ -303,7 +358,9 @@
             <div class="w-9 h-9 rounded-xl overflow-hidden bg-sky-50 flex items-center justify-center p-1 border border-sky-200">
               <img src="assets/StoreLogo_150x150.png" alt="AutoFlow RPA" class="w-full h-full object-contain rounded-lg" />
             </div>
-            <span class="text-[10px] font-mono font-bold text-sky-700 bg-sky-100 px-2 py-0.5 rounded border border-sky-200" data-i18n="strip_tag_autoflow">RPA 자동화</span>
+            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span data-i18n="strip_tag_autoflow">RPA 자동화 · FREE</span>
+            </span>
           </div>
           <h3 class="font-extrabold text-slate-900 text-base group-hover:text-sky-600 transition-colors">AutoFlow RPA</h3>
           <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_imageflow">선만 연결하는 노코드 화면 매크로 & 반복 업무 자동화</p>
@@ -315,7 +372,9 @@
             <span class="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-200 flex items-center justify-center font-bold text-sm">
               <i class="fa-solid fa-folder-tree"></i>
             </span>
-            <span class="text-[10px] font-mono font-bold text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded border border-indigo-200" data-i18n="strip_tag_fileflow">AI 파일정리</span>
+            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span data-i18n="strip_tag_fileflow">AI 파일정리 · FREE</span>
+            </span>
           </div>
           <h3 class="font-extrabold text-slate-900 text-base group-hover:text-indigo-600 transition-colors">FileFlow</h3>
           <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_fileflow">다운로드 폴더 지옥 탈출! 0.1초 감시 & AI 자동 분류</p>
@@ -327,7 +386,9 @@
             <div class="w-9 h-9 rounded-xl overflow-hidden bg-emerald-50 flex items-center justify-center p-1 border border-emerald-200">
               <img src="assets/ExcelCompare_150x150.png" alt="ExcelCompare" class="w-full h-full object-contain rounded-lg" />
             </div>
-            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200" data-i18n="strip_tag_excel">엑셀 비교</span>
+            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span data-i18n="strip_tag_excel">엑셀 비교 · FREE</span>
+            </span>
           </div>
           <h3 class="font-extrabold text-slate-900 text-base group-hover:text-emerald-600 transition-colors">ExcelCompare</h3>
           <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_excelcompare">10만 행도 0.1초 만에! 실시간 양면 비교 & 원본 셀 이동</p>
@@ -339,7 +400,9 @@
             <span class="w-9 h-9 rounded-xl bg-violet-50 text-violet-600 border border-violet-200 flex items-center justify-center font-bold text-sm">
               <i class="fa-solid fa-hand-pointer"></i>
             </span>
-            <span class="text-[10px] font-mono font-bold text-violet-700 bg-violet-100 px-2 py-0.5 rounded border border-violet-200" data-i18n="strip_tag_mouse">제스처 제어</span>
+            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span data-i18n="strip_tag_mouse">제스처 제어 · FREE</span>
+            </span>
           </div>
           <h3 class="font-extrabold text-slate-900 text-base group-hover:text-violet-600 transition-colors">MouseFlow AI</h3>
           <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_mouseflow">마우스 우클릭 제스처로 윈도우 창 닫기·최소화 광속 제어</p>
@@ -351,7 +414,9 @@
             <span class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 border border-amber-200 flex items-center justify-center font-bold text-sm">
               <i class="fa-solid fa-thumbtack"></i>
             </span>
-            <span class="text-[10px] font-mono font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded border border-amber-200" data-i18n="strip_tag_overlay">투명 핀</span>
+            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span data-i18n="strip_tag_overlay">투명 핀 · FREE</span>
+            </span>
           </div>
           <h3 class="font-extrabold text-slate-900 text-base group-hover:text-amber-600 transition-colors">OverlayPic</h3>
           <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_overlaypic">시안·참고문서를 화면 최상단에 투명하게 띄워두고 작업</p>
@@ -378,7 +443,8 @@
           <div class="lg:col-span-7">
             <div class="flex items-center gap-2 mb-4">
               <span class="px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 font-mono text-xs font-bold">RPA AUTOMATION</span>
-              <span class="text-xs text-slate-500 font-mono">v1.0.10 &bull; Windows 10/11</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">100% FREE</span>
+              <span class="text-xs text-slate-500 font-mono" data-i18n="if_version_tag">v1.0.14 최신 버전 &bull; Windows 10/11</span>
             </div>
             <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
               <img src="assets/StoreLogo_150x150.png" alt="AutoFlow RPA Logo" class="w-11 h-11 rounded-xl border border-cyan-200 shadow-md shadow-cyan-500/10 object-contain" />
@@ -390,21 +456,25 @@
               복잡한 코딩(Script) 없이 화면 이미지를 마우스로 지정하고 선만 연결하면 알아서 동작하는 비주얼 순서도 기반 업무 자동화 도구입니다. ERP 자동 로그인, 엑셀/웹 반복 클릭, 화면 감지 클릭을 손쉽게 구현합니다.
             </p>
             <div class="grid grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-slate-700">
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_1">노코드 비주얼 순서도 편집기</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_2">4K 다중모니터 초정밀 픽셀 서치</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_3">간편 시작(QuickStart) & 단축키</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_4">MS 스토어 공식 심사 통과 (Durable IAP)</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_1">노코드 비주얼 순서도 & 12px 드래그 판별</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_2">스마트 자동 레코더 (F8 즉시 캡처 & 4K 서치)</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_3">무인 작업 스케줄러 & 엑셀/CSV 데이터 반복</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_4">한/영/일 다국어 & 100% 무료 (광고/결제 없음)</span></div>
             </div>
             <div class="flex flex-wrap gap-3">
               <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-cyan-600/20">
-                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 받기</span>
+                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
               <a href="https://github.com/yjc-web/FlowSuite/releases/tag/ImageFlow" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
-                <i class="fa-brands fa-github"></i> <span data-i18n="btn_gh_setup">독립 설치기 (Setup.exe)</span>
+                <i class="fa-brands fa-github"></i> <span data-i18n="btn_gh_setup">포터블 무설치 (GitHub)</span>
               </a>
               <a href="https://youtu.be/eJsirzljZug" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 hover:text-rose-700 font-bold text-sm flex items-center gap-2 transition-all">
                 <i class="fa-brands fa-youtube text-rose-500 text-base"></i> <span data-i18n="btn_yt_autoflow">유튜브 시연 영상</span>
               </a>
+            </div>
+            <div class="mt-3 text-xs text-slate-500 flex items-center gap-1.5 font-medium">
+              <i class="fa-solid fa-circle-check text-emerald-600"></i>
+              <span data-i18n="if_store_safe_tip">Microsoft Store 공식 인증 버전은 SmartScreen 경고 없이 1클릭으로 안전하게 자동 설치됩니다.</span>
             </div>
           </div>
           <div class="lg:col-span-5 flex flex-col gap-3">
@@ -437,6 +507,7 @@
           <div class="lg:col-span-7">
             <div class="flex items-center gap-2 mb-4">
               <span class="px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-mono text-xs font-bold">SMART DISPATCHER</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">100% FREE</span>
               <span class="text-xs text-slate-500 font-mono">Real-time Spooler & AI</span>
             </div>
             <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
@@ -455,10 +526,10 @@
             </div>
             <div class="flex flex-wrap gap-3">
               <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-indigo-600/20">
-                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 받기</span>
+                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
               <a href="https://github.com/yjc-web/FlowSuite/releases/tag/FileFlow" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
-                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_ff">독립 설치기 (Setup.exe)</span>
+                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_ff">포터블 무설치 (GitHub)</span>
               </a>
             </div>
           </div>
@@ -490,6 +561,7 @@
           <div class="lg:col-span-7">
             <div class="flex items-center gap-2 mb-4">
               <span class="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-bold">EXCEL DIFF & AUDIT</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">100% FREE</span>
               <span class="text-xs text-slate-500 font-mono">v1.0.1 &bull; Windows 10/11</span>
             </div>
             <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
@@ -509,10 +581,10 @@
             </div>
             <div class="flex flex-wrap gap-3">
               <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-emerald-600/20">
-                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 받기</span>
+                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
               <a href="https://github.com/yjc-web/FlowSuite/releases/tag/ExcelCompare" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
-                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_ec">독립 설치기 (Setup.exe)</span>
+                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_ec">포터블 무설치 (GitHub)</span>
               </a>
             </div>
           </div>
@@ -532,6 +604,7 @@
           <div class="lg:col-span-7">
             <div class="flex items-center gap-2 mb-4">
               <span class="px-3 py-1 rounded-full bg-violet-50 border border-violet-200 text-violet-700 font-mono text-xs font-bold">AI GESTURE UTILITY</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">100% FREE</span>
               <span class="text-xs text-slate-500 font-mono">Fast & Lightweight</span>
             </div>
             <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
@@ -550,10 +623,10 @@
             </div>
             <div class="flex flex-wrap gap-3">
               <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-violet-600/20">
-                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 받기</span>
+                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
               <a href="https://github.com/yjc-web/FlowSuite/releases" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
-                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_mf">독립 실행기 (.exe)</span>
+                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_mf">포터블 무설치 (GitHub)</span>
               </a>
             </div>
           </div>
@@ -586,6 +659,7 @@
           <div class="lg:col-span-7">
             <div class="flex items-center gap-2 mb-4">
               <span class="px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold">PIN & REFERENCE</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">100% FREE</span>
               <span class="text-xs text-slate-500 font-mono">Cross-Platform</span>
             </div>
             <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
@@ -604,10 +678,10 @@
             </div>
             <div class="flex flex-wrap gap-3">
               <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-amber-500/20">
-                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 받기</span>
+                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
               <a href="https://github.com/yjc-web/FlowSuite/releases" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
-                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_op">독립 설치기 (Setup.exe)</span>
+                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_op">포터블 무설치 (GitHub)</span>
               </a>
               <a href="https://youtu.be/VfMIh2AVmZo" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 hover:text-rose-700 font-bold text-sm flex items-center gap-2 transition-all">
                 <i class="fa-brands fa-youtube text-rose-500 text-base"></i> <span data-i18n="btn_yt_overlaypic">유튜브 시연 영상</span>
@@ -896,24 +970,36 @@
   <script>
     const translations = {
       ko: {
-        meta_title: "FlowSuite — 윈도우 필수 5대 생산성 유틸리티 스위트 (무료 다운로드)",
-        top_bar_text: "업무 시간을 90% 줄여주는 윈도우 5대 필수 유틸리티 스위트",
-        top_bar_link: "전체 유틸리티 라인업 보기",
+        meta_title: "FlowSuite — 윈도우 필수 5대 생산성 유틸리티 스위트 (100% 무료 다운로드)",
+        top_bar_badge: "100% FREE",
+        top_bar_text: "회원가입/결제 없음 · 업무 시간을 90% 줄여주는 윈도우 5대 필수 유틸리티 스위트 (평생 무료)",
+        top_bar_link: "전체 무료 라인업 둘러보기",
         nav_blog: "공식 블로그",
         nav_suite_btn: "유틸리티 스위트 탐색",
-        hero_pill_badge: "윈도우 필수 유틸리티 스위트",
-        hero_pill: "매일 반복되는 데스크톱 작업 피로 90% 단축",
+        hero_pill_badge: "100% 완전 무료 • 평생 무료",
+        hero_pill: "개인/기업 모두 무료 • 회원가입 • 광고 없음",
         hero_title_1: "매일 반복되는 윈도우 업무의 피로를 끝내다",
-        hero_title_2: "FlowSuite 올인원 유틸리티 스위트",
-        hero_store_cert: "Microsoft Store 공식 인증",
-        hero_cta_store: "FlowSuite 공식 스토어에서 무료 다운로드",
-        hero_cta_github: "전체 패키지 릴리즈 다운로드 (무설치/Setup)",
-        hero_desc: "코딩 없이 선만 잇는 <strong>화면 자동화(AutoFlow RPA)</strong>, 0.1초 실시간 <strong>AI 파일 분류(FileFlow)</strong>, 10만 행 대용량 <strong>초고속 엑셀 비교(ExcelCompare)</strong>, 마우스 제스처 창 제어와 화면 오버레이 핀까지.<br class=\"hidden sm:inline\" />따로 찾아 헤맬 필요 없이, <strong>데스크톱 작업 시간을 90% 줄여주는 검증된 윈도우 필수 유틸리티 5종</strong>을 하나의 스위트로 만나보세요.",
-        strip_tag_autoflow: "RPA 자동화",
-        strip_tag_fileflow: "AI 파일정리",
-        strip_tag_excel: "엑셀 비교",
-        strip_tag_mouse: "제스처 제어",
-        strip_tag_overlay: "투명 핀",
+        hero_title_2: "FlowSuite 100% 무료 유틸리티 스위트",
+        hero_desc: "코딩 없이 선만 잇는 <strong>화면 자동화(AutoFlow RPA)</strong>, 0.1초 실시간 <strong>AI 파일 분류(FileFlow)</strong>, 10만 행 대용량 <strong>초고속 엑셀 비교(ExcelCompare)</strong>, 마우스 제스처 창 제어와 화면 오버레이 핀까지.<br class=\"hidden sm:inline\" />비싼 유료 소프트웨어 없이, <strong>데스크톱 작업 시간을 90% 줄여주는 검증된 윈도우 필수 유틸리티 5종</strong>을 <strong>누구나 평생 무료</strong>로 사용하세요.",
+        hero_store_cert: "100% 무료 · 보안 경고 없이 1클릭 설치 (권장)",
+        hero_cta_store: "Microsoft Store에서 무료 다운로드",
+        hero_portable_tag: "포터블 무설치 (Portable .zip / .exe)",
+        hero_cta_github: "GitHub 릴리즈 다운로드",
+        smartscreen_guide_title: "💡 [안내] 안전한 설치 및 보안 경고 안내:",
+        smartscreen_guide_desc: "<strong>Microsoft Store</strong> 버전은 MS의 공식 디지털 서명 및 보안 검증을 통과하여 <strong>경고창 없이 1클릭으로 가장 안전하게 자동 설치</strong>됩니다.<br class=\"hidden sm:inline\" />GitHub 무설치(포터블) 파일 실행 시 Windows SmartScreen(PC 보호) 알림창이 표시되면, 신규 배포 파일에 나타나는 일반적인 현상이므로 <strong>[추가 정보] &rarr; [실행]</strong>을 누르시면 정상 동작합니다.",
+        trust_1_title: "100% 평생 무료",
+        trust_1_desc: "기능 제한·유료 결제 없음",
+        trust_2_title: "회원가입·로그인 제로",
+        trust_2_desc: "다운로드 즉시 바로 사용",
+        trust_3_title: "광고 & 악성코드 없음",
+        trust_3_desc: "번들·애드웨어 없는 클린 앱",
+        trust_4_title: "개인·기업 모두 무료",
+        trust_4_desc: "상업적 업무 환경도 자유 이용",
+        strip_tag_autoflow: "RPA 자동화 · FREE",
+        strip_tag_fileflow: "AI 파일정리 · FREE",
+        strip_tag_excel: "엑셀 비교 · FREE",
+        strip_tag_mouse: "제스처 제어 · FREE",
+        strip_tag_overlay: "투명 핀 · FREE",
         strip_imageflow: "선만 연결하는 노코드 화면 매크로 & 반복 업무 자동화",
         strip_fileflow: "다운로드 폴더 지옥 탈출! 0.1초 감시 & AI 자동 분류",
         strip_excelcompare: "10만 행도 0.1초 만에! 실시간 양면 비교 & 원본 셀 이동",
@@ -922,15 +1008,17 @@
         strip_overlaypic: "시안·참고문서를 화면 최상단에 투명하게 띄워두고 작업",
         suite_badge: "Product Lineup",
         suite_title: "FlowSuite 5대 핵심 유틸리티 라인업",
-        suite_desc: "각 도구는 단독으로도 강력하며, 함께 사용할 때 상상 이상의 업무 생산성 시너지를 발휘합니다.",
+        suite_desc: "모든 유틸리티는 기간 제한이나 유료 결제 유도 없이 100% 무료로 제공됩니다.",
         imageflow_sub: "(오토플로우 RPA)",
         imageflow_desc: "<strong>\"선만 연결하면 완성되는 노코드 화면 자동화\"</strong><br />복잡한 코딩(Script) 없이 화면 이미지를 마우스로 지정하고 선만 연결하면 알아서 동작하는 비주얼 순서도 기반 업무 자동화 도구입니다. ERP 자동 로그인, 엑셀/웹 반복 클릭, 화면 감지 클릭을 손쉽게 구현합니다.",
-        if_point_1: "노코드 비주얼 순서도 편집기",
-        if_point_2: "4K 다중모니터 초정밀 픽셀 서치",
-        if_point_3: "간편 시작(QuickStart) & 단축키",
-        if_point_4: "MS 스토어 공식 심사 통과 (Durable IAP)",
-        btn_ms_store: "스토어에서 받기",
-        btn_gh_setup: "독립 설치기 (Setup.exe)",
+        if_version_tag: "v1.0.14 최신 버전 • Windows 10/11",
+        if_point_1: "노코드 비주얼 순서도 & 12px 드래그 판별",
+        if_point_2: "스마트 자동 레코더 (F8 즉시 캡처 & 4K 서치)",
+        if_point_3: "무인 작업 스케줄러 & 엑셀/CSV 데이터 반복",
+        if_point_4: "한/영/일 다국어 & 100% 무료 (광고/결제 없음)",
+        if_store_safe_tip: "Microsoft Store 공식 인증 버전은 SmartScreen 경고 없이 1클릭으로 안전하게 자동 설치됩니다.",
+        btn_ms_store: "스토어에서 무료 받기 (권장)",
+        btn_gh_setup: "포터블 무설치 (GitHub)",
         btn_yt_autoflow: "유튜브 시연 영상",
         fileflow_sub: "(파일플로우)",
         fileflow_desc: "<strong>\"0.1초 실시간 감시 & Explainable AI 기반 스마트 파일 정리\"</strong><br />다운로드 폴더나 업무 드라이브에 신규 파일이 들어오는 즉시 0.1초 만에 감지하여, 나이브 베이즈 머신러닝 및 키워드 규칙으로 최적의 프로젝트 하위 폴더에 자동 분류해 주는 차세대 파일 허브 시스템입니다.",
@@ -938,21 +1026,21 @@
         ff_point_2: "PDF, Excel, PPT, Zip 멀티포맷 즉시 미리보기",
         ff_point_3: "설명 가능한 AI (가중치 통계 대시보드)",
         ff_point_4: "독립 플로팅 듀얼 탐색기 & 실행 취소(Undo)",
-        btn_explore_ff: "독립 설치기 (Setup.exe)",
+        btn_explore_ff: "포터블 무설치 (GitHub)",
         excelcompare_sub: "(엑셀컴페어)",
         excelcompare_desc: "<strong>\"10만 행 대용량 시트 실시간 양면 비교 & 분석 솔루션\"</strong><br />두 엑셀 파일의 시트별 데이터 차이점(추가/삭제/수정)을 0.1초 만에 색상별로 정확하게 분석합니다. 듀얼 그리드 동기화 스크롤, 차이점만 모아보기 필터, 클릭 즉시 실제 엑셀 원본 셀로 이동하는 연동 기능을 제공합니다.",
         ec_point_1: "10만 행 무제한 대용량 가상화 & 초고속 비교",
         ec_point_2: "동기화 양면 스크롤 & 차이점 룰러 미니맵",
         ec_point_3: "차이점만 보기(Diff Only) 필터 & F7/F8 순차 탐색",
         ec_point_4: "클릭 즉시 원본 Excel 셀 실시간 연동 & 서식 리포트",
-        btn_explore_ec: "독립 설치기 (Setup.exe)",
+        btn_explore_ec: "포터블 무설치 (GitHub)",
         mouseflow_sub: "(마우스플로우 AI)",
         mouseflow_desc: "<strong>\"마우스 우클릭 드래그 하나로 윈도우 창과 단축키를 광속 제어\"</strong><br />마우스를 살짝 긋는 동작만으로 창 닫기, 최소화, 최대화, 가상 데스크톱 전환, 웹 브라우저 탭 이동 등 자주 쓰는 동작을 키보드에 손 올릴 필요 없이 즉각 실행합니다.",
         mf_point_1: "초경량 마우스 궤적 인식 엔진",
         mf_point_2: "자유로운 커스텀 제스처 매핑",
         mf_point_3: "화면 가장자리 엣지 액션 지원",
         mf_point_4: "MSIX & InnoSetup 단독 패키징",
-        btn_explore_mf: "독립 실행기 (.exe)",
+        btn_explore_mf: "포터블 무설치 (GitHub)",
         mf_act_min: "최소화",
         mf_act_max: "최대화",
         mf_act_close: "창 닫기",
@@ -962,14 +1050,14 @@
         gg_point_2: "자유로운 커스텀 제스처 & 단축키 매핑",
         gg_point_3: "화면 가장자리 엣지 액션 지원",
         gg_point_4: "MSIX & InnoSetup 단독 패키징",
-        btn_explore_gg: "독립 실행기 (.exe)",
+        btn_explore_gg: "포터블 무설치 (GitHub)",
         overlaypic_sub: "(오버레이픽)",
         overlaypic_desc: "<strong>\"작업 화면 위에 항상 떠 있는 투명 이미지 핀 & 참조 도구\"</strong><br />디자인 시안, 참고 문서, 코드 스니펫, 수식 이미지를 화면 최상단(Always-on-Top)에 고정해두고 투명도를 조절하며 작업할 수 있는 디자이너/개발자/사무직 필수 유틸리티입니다. (Windows 및 macOS 동시 지원)",
         op_point_1: "항상 위(Always-on-Top) 고정 핀",
         op_point_2: "마우스 휠 투명도 0~100% 조절",
         op_point_3: "클릭 투과(Click-through) 지원",
         op_point_4: "Windows & macOS 크로스플랫폼",
-        btn_explore_op: "독립 설치기 (Setup.exe)",
+        btn_explore_op: "포터블 무설치 (GitHub)",
         btn_yt_overlaypic: "유튜브 시연 영상",
         yt_link_text: "YouTube 바로가기",
         yt_demo_text: "공식 데모 영상",
@@ -1015,24 +1103,36 @@
         footer_blog: "공식 블로그"
       },
       en: {
-        meta_title: "FlowSuite — Essential 5 Desktop Productivity Utilities for Windows",
-        top_bar_text: "Five Essential Windows Desktop Utilities to Cut Repetitive Tasks by 90%",
-        top_bar_link: "Explore Utilities",
+        meta_title: "FlowSuite — Essential 5 Windows Productivity Utilities (100% Free Download)",
+        top_bar_badge: "100% FREE",
+        top_bar_text: "No sign-up or credit card · 5 Essential Windows Utilities to Cut Repetitive Tasks by 90% (Free Forever)",
+        top_bar_link: "Explore Free Utilities",
         nav_blog: "Official Blog",
         nav_suite_btn: "Explore Suite",
-        hero_pill_badge: "Essential Windows Utility Suite",
-        hero_pill: "Cut Repetitive Desktop Fatigue by 90%",
+        hero_pill_badge: "100% Free Forever",
+        hero_pill: "Free for Personal & Commercial • No Sign-up • Zero Ads",
         hero_title_1: "Supercharge Your Windows Workflow with",
-        hero_title_2: "The Essential Utility Suite",
-        hero_store_cert: "Certified on Microsoft Store",
-        hero_cta_store: "Download Free from Microsoft Store",
-        hero_cta_github: "Download All Releases (Portable/Setup)",
-        hero_desc: "From no-code screen automation and AI file sorting to high-performance Excel diffing, mouse gesture window controls, and floating overlay reference.<br class=\"hidden sm:inline\" /><strong>FlowSuite</strong> cuts daily desktop fatigue by up to 90%.",
-        strip_tag_autoflow: "RPA Macro",
-        strip_tag_fileflow: "AI File Hub",
-        strip_tag_excel: "Excel Diff",
-        strip_tag_mouse: "Gestures",
-        strip_tag_overlay: "Overlay Pin",
+        hero_title_2: "The 100% Free Essential Utility Suite",
+        hero_desc: "From zero-code screen automation (AutoFlow RPA) and AI file sorting (FileFlow) to 100K-row high-speed Excel diffing (ExcelCompare), mouse gestures, and pinned overlays.<br class=\"hidden sm:inline\" />No expensive subscriptions — <strong>5 proven Windows desktop utilities</strong> 100% free forever.",
+        hero_store_cert: "100% Free · 1-Click Install with Zero Warnings (Recommended)",
+        hero_cta_store: "Free Download from Microsoft Store",
+        hero_portable_tag: "Portable Edition (.zip / .exe)",
+        hero_cta_github: "Download from GitHub Releases",
+        smartscreen_guide_title: "💡 [Notice] Safe Installation & Security Warning Guide:",
+        smartscreen_guide_desc: "The <strong>Microsoft Store</strong> version is digitally certified by Microsoft and installs with <strong>zero security warnings</strong>.<br class=\"hidden sm:inline\" />If Windows SmartScreen appears when opening GitHub portable files, simply click <strong>[More info] &rarr; [Run anyway]</strong>.",
+        trust_1_title: "100% Free Forever",
+        trust_1_desc: "No paywalls or hidden fees",
+        trust_2_title: "No Sign-up Required",
+        trust_2_desc: "Instant 1-second launch",
+        trust_3_title: "Zero Ads & Bloatware",
+        trust_3_desc: "Clean, ultra-light binaries",
+        trust_4_title: "Personal & Commercial",
+        trust_4_desc: "Free for commercial workplace",
+        strip_tag_autoflow: "RPA Macro · FREE",
+        strip_tag_fileflow: "AI File Hub · FREE",
+        strip_tag_excel: "Excel Diff · FREE",
+        strip_tag_mouse: "Gestures · FREE",
+        strip_tag_overlay: "Overlay Pin · FREE",
         strip_imageflow: "Zero-code visual screen RPA & repetitive task automation",
         strip_fileflow: "Clean download folders! 0.1s monitor & AI auto-sorting",
         strip_excelcompare: "100K+ rows in 0.1s! Real-time diff & direct Excel jump",
@@ -1041,15 +1141,17 @@
         strip_overlaypic: "Keep mockups & reference docs pinned transparently on top",
         suite_badge: "Product Lineup",
         suite_title: "FlowSuite 5 Core Utilities Lineup",
-        suite_desc: "Powerful as standalone tools, unstoppable when used together in your daily workflow.",
+        suite_desc: "All utilities are provided 100% free forever without time limits or paywalls.",
         imageflow_sub: "(AutoFlow RPA)",
         imageflow_desc: "<strong>\"Zero-Code Screen Automation by Connecting Lines\"</strong><br />A flowchart-based automation tool that captures screen images and connects nodes without writing a single line of script. Easily automate ERP logins, Excel/web clicking, and visual triggers.",
-        if_point_1: "Visual flowchart scenario editor",
-        if_point_2: "Sub-pixel search across 4K & multi-monitors",
-        if_point_3: "QuickStart launch & dedicated global hotkeys",
-        if_point_4: "Certified on Microsoft Store (Durable IAP)",
-        btn_ms_store: "Get from MS Store",
-        btn_gh_setup: "Standalone Setup.exe",
+        if_version_tag: "v1.0.14 Latest • Windows 10/11",
+        if_point_1: "Visual flowchart editor & 12px drag-click precision",
+        if_point_2: "Smart Auto Recorder (F8 instant clip & 4K search)",
+        if_point_3: "Unattended scheduler & Excel/CSV dataset batch loops",
+        if_point_4: "Trilingual (KO/EN/JA) & 100% Free (No Ads/IAP)",
+        if_store_safe_tip: "Microsoft Store edition is digitally certified and installs in 1 click without SmartScreen warnings.",
+        btn_ms_store: "Get Free from Store (Recommended)",
+        btn_gh_setup: "Portable / Standalone (GitHub)",
         btn_yt_autoflow: "Watch Demo (YouTube)",
         fileflow_sub: "(AI File Manager)",
         fileflow_desc: "<strong>\"0.1s Real-Time Spooler & Explainable AI File Organization\"</strong><br />Instantly detects new files in your download or working folders within 0.1 seconds, automatically sorting them into structured project subdirectories using Naive Bayes ML and keyword rules.",
@@ -1057,21 +1159,21 @@
         ff_point_2: "Instant previews for PDF, Excel, PPT, Zip",
         ff_point_3: "Explainable AI statistics & ranking dashboard",
         ff_point_4: "Detachable dual-panel explorer & instant Undo",
-        btn_explore_ff: "Standalone Setup.exe",
+        btn_explore_ff: "Portable / Standalone (GitHub)",
         excelcompare_sub: "(Excel Diff)",
         excelcompare_desc: "<strong>\"High-Performance Real-Time Side-by-Side Excel Comparison & Audit\"</strong><br />Instantly detects every difference (added, deleted, modified) across massive sheets in milliseconds. Features synchronized dual-grid scrolling, diff-only filter mode, and real-time jump directly to matching cells in Microsoft Excel.",
         ec_point_1: "100K+ Rows Virtualized Diff Engine",
         ec_point_2: "Synchronized Dual-Grid Scroll & Minimap Ruler",
         ec_point_3: "Diff-Only Filter & Instant F7/F8 Navigation",
         ec_point_4: "Real-time Jump to Excel Cell & HTML/Excel Report Export",
-        btn_explore_ec: "Standalone Setup.exe",
+        btn_explore_ec: "Portable / Standalone (GitHub)",
         mouseflow_sub: "(MouseFlow AI)",
         mouseflow_desc: "<strong>\"Lightning-Fast Window Control with Right-Click Mouse Gestures\"</strong><br />Close, minimize, maximize windows, switch virtual desktops, and trigger shortcuts with simple, fluid mouse swipes without lifting your hands to the keyboard.",
         mf_point_1: "Ultra-lightweight trajectory & gesture engine",
         mf_point_2: "Fully customizable gesture & action mapping",
         mf_point_3: "Screen edge trigger zones supported",
         mf_point_4: "Packaged cleanly via MSIX & InnoSetup",
-        btn_explore_mf: "Standalone (.exe)",
+        btn_explore_mf: "Portable / Standalone (GitHub)",
         mf_act_min: "Minimize",
         mf_act_max: "Maximize",
         mf_act_close: "Close Window",
@@ -1081,14 +1183,14 @@
         gg_point_2: "Fully customizable gesture & action mapping",
         gg_point_3: "Screen edge trigger zones supported",
         gg_point_4: "Packaged cleanly via MSIX & InnoSetup",
-        btn_explore_gg: "Standalone (.exe)",
+        btn_explore_gg: "Portable / Standalone (GitHub)",
         overlaypic_sub: "(Floating Pin)",
         overlaypic_desc: "<strong>\"Always-on-Top Floating Reference Image Pin Tool\"</strong><br />Keep design mockups, reference docs, code snippets, or formulas pinned on top with adjustable opacity while working underneath. An indispensable companion for designers and developers.",
         op_point_1: "Always-on-Top sticky reference pin",
         op_point_2: "Mouse wheel opacity adjustment (0% to 100%)",
         op_point_3: "Click-through mode allows interacting with underlying apps",
         op_point_4: "Cross-platform for Windows 64-bit & macOS ARM64/x64",
-        btn_explore_op: "Standalone Setup.exe",
+        btn_explore_op: "Portable / Standalone (GitHub)",
         btn_yt_overlaypic: "Watch Demo (YouTube)",
         yt_link_text: "Watch on YouTube",
         yt_demo_text: "Official Demo Video",
