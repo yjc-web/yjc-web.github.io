@@ -204,20 +204,20 @@
 
       <!-- Desktop Nav (Products) -->
       <nav class="hidden md:flex items-center gap-1 px-4 py-1.5 rounded-full bg-slate-100/80 border border-slate-200 text-sm text-slate-600 font-medium">
+        <a href="#overlaypic" class="px-3.5 py-1.5 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
+          <span class="w-2 h-2 rounded-full bg-amber-500"></span> OverlayPic
+        </a>
         <a href="#autoflow" class="px-3.5 py-1.5 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
           <span class="w-2 h-2 rounded-full bg-sky-500"></span> AutoFlow RPA
-        </a>
-        <a href="#fileflow" class="px-3.5 py-1.5 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
-          <span class="w-2 h-2 rounded-full bg-indigo-500"></span> FileFlow
-        </a>
-        <a href="#excelcompare" class="px-3.5 py-1.5 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span> ExcelCompare
         </a>
         <a href="#mouseflow" class="px-3.5 py-1.5 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
           <span class="w-2 h-2 rounded-full bg-violet-500"></span> MouseFlow AI
         </a>
-        <a href="#overlaypic" class="px-3.5 py-1.5 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
-          <span class="w-2 h-2 rounded-full bg-amber-500"></span> OverlayPic
+        <a href="#excelcompare" class="px-3.5 py-1.5 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span> ExcelCompare
+        </a>
+        <a href="#fileflow" class="px-3.5 py-1.5 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
+          <span class="w-2 h-2 rounded-full bg-indigo-500"></span> FileFlow
         </a>
         <a href="#feedback" class="px-3.5 py-1.5 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap text-sky-700 font-semibold bg-sky-50/50">
           <i class="fa-regular fa-comment-dots text-sky-600 text-xs"></i> <span data-i18n="nav_feedback">사용자 피드백</span>
@@ -272,7 +272,7 @@
 
       <!-- Subtitle -->
       <p class="text-base sm:text-lg lg:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl mx-auto mb-10" data-i18n="hero_desc">
-        코딩 없이 선만 잇는 <strong>화면 자동화(AutoFlow RPA)</strong>, 0.1초 실시간 <strong>AI 파일 분류(FileFlow)</strong>, 10만 행 대용량 <strong>초고속 엑셀 비교(ExcelCompare)</strong>, 마우스 제스처 창 제어와 화면 오버레이 핀까지.<br class="hidden sm:inline" />
+        화면 위에 항상 떠 있는 투명 참조 핀(<strong>OverlayPic</strong>), 코딩 없이 선만 잇는 <strong>화면 자동화(AutoFlow RPA)</strong>, 마우스 우클릭 제스처 창 제어(<strong>MouseFlow AI</strong>), 10만 행 대용량 <strong>초고속 엑셀 비교(ExcelCompare)</strong>부터 파일 정리(<strong>FileFlow</strong>)까지.<br class="hidden sm:inline" />
         비싼 월 구독료 없이, <strong>데스크톱 작업 시간을 90% 줄여주는 검증된 윈도우 필수 유틸리티 5종</strong>을 <strong>부담 없이 무료로 시작</strong>하세요.
       </p>
 
@@ -352,7 +352,21 @@
 
       <!-- 5 Product Quick Cards Strip -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto mb-8 text-left">
-        <!-- AutoFlow RPA Card -->
+        <!-- 1. OverlayPic Card -->
+        <a href="#overlaypic" class="bento-card rounded-2xl p-5 group transition-all">
+          <div class="flex items-center justify-between mb-3">
+            <span class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 border border-amber-200 flex items-center justify-center font-bold text-sm">
+              <i class="fa-solid fa-thumbtack"></i>
+            </span>
+            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span data-i18n="strip_tag_overlay">투명 핀 · FREE</span>
+            </span>
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-base group-hover:text-amber-600 transition-colors">OverlayPic</h3>
+          <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_overlaypic">시안·참고문서를 화면 최상단에 투명하게 띄워두고 작업</p>
+        </a>
+
+        <!-- 2. AutoFlow RPA Card -->
         <a href="#autoflow" class="bento-card rounded-2xl p-5 group transition-all">
           <div class="flex items-center justify-between mb-3">
             <div class="w-9 h-9 rounded-xl overflow-hidden bg-sky-50 flex items-center justify-center p-1 border border-sky-200">
@@ -366,35 +380,7 @@
           <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_imageflow">선만 연결하는 노코드 화면 매크로 & 반복 업무 자동화</p>
         </a>
 
-        <!-- FileFlow Card -->
-        <a href="#fileflow" class="bento-card rounded-2xl p-5 group transition-all">
-          <div class="flex items-center justify-between mb-3">
-            <span class="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-200 flex items-center justify-center font-bold text-sm">
-              <i class="fa-solid fa-folder-tree"></i>
-            </span>
-            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span data-i18n="strip_tag_fileflow">AI 파일정리 · FREE</span>
-            </span>
-          </div>
-          <h3 class="font-extrabold text-slate-900 text-base group-hover:text-indigo-600 transition-colors">FileFlow</h3>
-          <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_fileflow">다운로드 폴더 지옥 탈출! 0.1초 감시 & AI 자동 분류</p>
-        </a>
-
-        <!-- ExcelCompare Card -->
-        <a href="#excelcompare" class="bento-card rounded-2xl p-5 group transition-all">
-          <div class="flex items-center justify-between mb-3">
-            <div class="w-9 h-9 rounded-xl overflow-hidden bg-emerald-50 flex items-center justify-center p-1 border border-emerald-200">
-              <img src="assets/ExcelCompare_150x150.png" alt="ExcelCompare" class="w-full h-full object-contain rounded-lg" />
-            </div>
-            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span data-i18n="strip_tag_excel">엑셀 비교 · FREE</span>
-            </span>
-          </div>
-          <h3 class="font-extrabold text-slate-900 text-base group-hover:text-emerald-600 transition-colors">ExcelCompare</h3>
-          <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_excelcompare">10만 행도 0.1초 만에! 실시간 양면 비교 & 원본 셀 이동</p>
-        </a>
-
-        <!-- MouseFlow AI Card -->
+        <!-- 3. MouseFlow AI Card -->
         <a href="#mouseflow" class="bento-card rounded-2xl p-5 group transition-all">
           <div class="flex items-center justify-between mb-3">
             <span class="w-9 h-9 rounded-xl bg-violet-50 text-violet-600 border border-violet-200 flex items-center justify-center font-bold text-sm">
@@ -408,18 +394,32 @@
           <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_mouseflow">마우스 우클릭 제스처로 윈도우 창 닫기·최소화 광속 제어</p>
         </a>
 
-        <!-- OverlayPic Card -->
-        <a href="#overlaypic" class="bento-card rounded-2xl p-5 group transition-all">
+        <!-- 4. ExcelCompare Card -->
+        <a href="#excelcompare" class="bento-card rounded-2xl p-5 group transition-all">
           <div class="flex items-center justify-between mb-3">
-            <span class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 border border-amber-200 flex items-center justify-center font-bold text-sm">
-              <i class="fa-solid fa-thumbtack"></i>
-            </span>
+            <div class="w-9 h-9 rounded-xl overflow-hidden bg-emerald-50 flex items-center justify-center p-1 border border-emerald-200">
+              <img src="assets/ExcelCompare_150x150.png" alt="ExcelCompare" class="w-full h-full object-contain rounded-lg" />
+            </div>
             <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span data-i18n="strip_tag_overlay">투명 핀 · FREE</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span data-i18n="strip_tag_excel">엑셀 비교 · FREE</span>
             </span>
           </div>
-          <h3 class="font-extrabold text-slate-900 text-base group-hover:text-amber-600 transition-colors">OverlayPic</h3>
-          <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_overlaypic">시안·참고문서를 화면 최상단에 투명하게 띄워두고 작업</p>
+          <h3 class="font-extrabold text-slate-900 text-base group-hover:text-emerald-600 transition-colors">ExcelCompare</h3>
+          <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_excelcompare">10만 행도 0.1초 만에! 실시간 양면 비교 & 원본 셀 이동</p>
+        </a>
+
+        <!-- 5. FileFlow Card -->
+        <a href="#fileflow" class="bento-card rounded-2xl p-5 group transition-all">
+          <div class="flex items-center justify-between mb-3">
+            <span class="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-200 flex items-center justify-center font-bold text-sm">
+              <i class="fa-solid fa-folder-tree"></i>
+            </span>
+            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span data-i18n="strip_tag_fileflow">AI 파일정리 · FREE</span>
+            </span>
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-base group-hover:text-indigo-600 transition-colors">FileFlow</h3>
+          <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_fileflow">다운로드 폴더 지옥 탈출! 0.1초 감시 & AI 자동 분류</p>
         </a>
       </div>
 
@@ -436,224 +436,8 @@
         <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed" data-i18n="suite_desc">각각의 도구는 독립적으로도 강력하며, 함께 사용할 때 상상 이상의 업무 시너지를 발휘합니다.</p>
       </div>
 
-      <!-- ================= 1. AutoFlow RPA Section ================= -->
-      <div id="autoflow" class="bento-card rounded-3xl p-8 sm:p-12 mb-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden"><a id="imageflow"></a>
-        <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-cyan-100/50 blur-3xl pointer-events-none"></div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          <div class="lg:col-span-7">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 font-mono text-xs font-bold">RPA AUTOMATION</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">FREE STARTER</span>
-              <span class="text-xs text-slate-500 font-mono" data-i18n="if_version_tag">v1.0.15 최신 버전 &bull; Windows 10/11</span>
-            </div>
-            <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
-              <img src="assets/StoreLogo_150x150.png" alt="AutoFlow RPA Logo" class="w-11 h-11 rounded-xl border border-cyan-200 shadow-md shadow-cyan-500/10 object-contain" />
-              AutoFlow RPA
-              <span class="text-sm font-normal text-slate-500" data-i18n="imageflow_sub">(오토플로우 RPA)</span>
-            </h3>
-            <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6" data-i18n="imageflow_desc">
-              <strong>"선만 연결하면 완성되는 노코드 화면 자동화"</strong><br />
-              복잡한 코딩(Script) 없이 화면 이미지를 마우스로 지정하고 선만 연결하면 알아서 동작하는 비주얼 순서도 기반 업무 자동화 도구입니다. ERP 자동 로그인, 엑셀/웹 반복 클릭, 화면 감지 클릭을 손쉽게 구현합니다.
-            </p>
-            <div class="grid grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-slate-700">
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_1">노코드 비주얼 순서도 & 12px 드래그 판별</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_2">스마트 자동 레코더 (F8 즉시 캡처 & 4K 서치)</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_3">무인 작업 스케줄러 & 엑셀/CSV 데이터 반복</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_4">한/영/일 다국어 & 무료 에디션 제공 (선택적 무제한 프로)</span></div>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-cyan-600/20">
-                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
-              </a>
-              <a href="https://github.com/yjc-web/FlowSuite/releases/tag/ImageFlow" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
-                <i class="fa-brands fa-github"></i> <span data-i18n="btn_gh_setup">포터블 무설치 (GitHub)</span>
-              </a>
-              <a href="https://youtu.be/eJsirzljZug" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 hover:text-rose-700 font-bold text-sm flex items-center gap-2 transition-all">
-                <i class="fa-brands fa-youtube text-rose-500 text-base"></i> <span data-i18n="btn_yt_autoflow">유튜브 시연 영상</span>
-              </a>
-            </div>
-            <div class="mt-3 text-xs text-slate-500 flex items-center gap-1.5 font-medium">
-              <i class="fa-solid fa-circle-check text-emerald-600"></i>
-              <span data-i18n="if_store_safe_tip">Microsoft Store 공식 인증 버전은 SmartScreen 경고 없이 1클릭으로 안전하게 자동 설치됩니다.</span>
-            </div>
-          </div>
-          <div class="lg:col-span-5 flex flex-col gap-3">
-            <!-- YouTube Video Embed -->
-            <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-black aspect-video group">
-              <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/eJsirzljZug" title="AutoFlow RPA 유튜브 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <!-- Video Direct Link & Info -->
-            <div class="flex items-center justify-between px-1 text-xs">
-              <a href="https://youtu.be/eJsirzljZug" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 hover:text-rose-600 transition-colors">
-                <i class="fa-brands fa-youtube text-rose-500 text-sm"></i>
-                <span class="font-medium" data-i18n="yt_link_text">YouTube 바로가기</span>
-                <span class="text-slate-400 text-[11px] font-mono">(youtu.be/eJsirzljZug)</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
-              </a>
-              <span class="text-[11px] text-cyan-700 font-mono font-medium flex items-center gap-1"><i class="fa-solid fa-play text-[9px]"></i> <span data-i18n="yt_demo_text">공식 데모 영상</span></span>
-            </div>
-            <!-- Poster Art -->
-            <div class="rounded-xl overflow-hidden border border-slate-200 shadow-md mt-1">
-              <img id="imageflowPosterImg" src="assets/AutoFlowRPA_PosterArt_KO.png" alt="AutoFlow RPA Poster Art" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ================= 2. FileFlow Section ================= -->
-      <div id="fileflow" class="bento-card rounded-3xl p-8 sm:p-12 mb-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden">
-        <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-indigo-100/50 blur-3xl pointer-events-none"></div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          <div class="lg:col-span-7">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-mono text-xs font-bold">SMART DISPATCHER</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">FREE EDITION</span>
-              <span class="text-xs text-slate-500 font-mono">Real-time Spooler &amp; AI</span>
-            </div>
-            <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
-              FileFlow
-              <span class="text-sm font-normal text-slate-500" data-i18n="fileflow_sub">(파일플로우)</span>
-            </h3>
-            <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6" data-i18n="fileflow_desc">
-              <strong>"0.1초 실시간 감시 & Explainable AI 기반 스마트 파일 정리"</strong><br />
-              다운로드 폴더나 업무 드라이브에 신규 파일이 들어오는 즉시 0.1초 만에 감지하여, 나이브 베이즈 머신러닝 및 키워드 규칙으로 최적의 프로젝트 하위 폴더에 자동 분류해 주는 차세대 파일 허브 시스템입니다.
-            </p>
-            <div class="grid grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-slate-700">
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-600 font-bold"></i> <span data-i18n="ff_point_1">0.1초 폴더 감시 & 잠금 해제 안전 이동</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-600 font-bold"></i> <span data-i18n="ff_point_2">PDF, Excel, PPT, Zip 멀티포맷 즉시 미리보기</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-600 font-bold"></i> <span data-i18n="ff_point_3">설명 가능한 AI (가중치 통계 대시보드)</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-600 font-bold"></i> <span data-i18n="ff_point_4">독립 플로팅 듀얼 탐색기 & 실행 취소(Undo)</span></div>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-indigo-600/20">
-                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
-              </a>
-              <a href="https://github.com/yjc-web/FlowSuite/releases/tag/FileFlow" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
-                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_ff">포터블 무설치 (GitHub)</span>
-              </a>
-            </div>
-          </div>
-          <div class="lg:col-span-5">
-            <div class="rounded-2xl p-6 bg-slate-900 border border-slate-800 font-mono text-xs text-slate-200 shadow-2xl">
-              <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-800 text-slate-400">
-                <span class="flex items-center gap-2"><i class="fa-solid fa-terminal text-indigo-400"></i> FileFlow Spooler Engine</span>
-                <span class="text-emerald-400 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Realtime Monitoring</span>
-              </div>
-              <div class="space-y-3">
-                <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700/60">
-                  <div class="text-indigo-300 font-bold mb-1">📥 Incoming: 2026_Q3_Financial_Report.xlsx</div>
-                  <div class="text-slate-400 text-[11px]">&rarr; AI Score: 98.4% Confidence &rarr; [Projects/2026/Reports]</div>
-                </div>
-                <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700/60">
-                  <div class="text-indigo-300 font-bold mb-1">📥 Incoming: Product_Design_Final_v2.pdf</div>
-                  <div class="text-slate-400 text-[11px]">&rarr; Rule Matched: `{yyyy}/Design` &rarr; [Auto Moved]</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ================= 3. ExcelCompare Section ================= -->
-      <div id="excelcompare" class="bento-card rounded-3xl p-8 sm:p-12 mb-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden">
-        <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-emerald-100/50 blur-3xl pointer-events-none"></div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          <div class="lg:col-span-7">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-bold">EXCEL DIFF &amp; AUDIT</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">FREE EDITION</span>
-              <span class="text-xs text-slate-500 font-mono">v1.0.1 &bull; Windows 10/11</span>
-            </div>
-            <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
-              <img src="assets/ExcelCompare_150x150.png" alt="ExcelCompare Logo" class="w-11 h-11 rounded-xl border border-emerald-200 shadow-md shadow-emerald-500/10 object-contain" />
-              ExcelCompare
-              <span class="text-sm font-normal text-slate-500" data-i18n="excelcompare_sub">(엑셀컴페어)</span>
-            </h3>
-            <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6" data-i18n="excelcompare_desc">
-              <strong>"10만 행 대용량 시트 실시간 양면 비교 & 분석 솔루션"</strong><br />
-              두 엑셀 파일의 시트별 데이터 차이점(추가/삭제/수정)을 0.1초 만에 색상별로 정확하게 분석합니다. 듀얼 그리드 동기화 스크롤, 차이점만 모아보기 필터, 클릭 즉시 실제 엑셀 원본 셀로 이동하는 연동 기능을 제공합니다.
-            </p>
-            <div class="grid grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-slate-700">
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> <span data-i18n="ec_point_1">10만 행 무제한 대용량 가상화 & 초고속 비교</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> <span data-i18n="ec_point_2">동기화 양면 스크롤 & 차이점 룰러 미니맵</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> <span data-i18n="ec_point_3">차이점만 보기(Diff Only) 필터 & F7/F8 순차 탐색</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> <span data-i18n="ec_point_4">클릭 즉시 원본 Excel 셀 실시간 연동 & 서식 리포트</span></div>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-emerald-600/20">
-                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
-              </a>
-              <a href="https://github.com/yjc-web/FlowSuite/releases/tag/ExcelCompare" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
-                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_ec">포터블 무설치 (GitHub)</span>
-              </a>
-            </div>
-          </div>
-          <div class="lg:col-span-5">
-            <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-slate-50">
-              <img src="assets/ExcelCompare_BoxArt.png" alt="ExcelCompare Artwork" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ================= 4. MouseFlow AI Section ================= -->
-      <div id="mouseflow" class="bento-card rounded-3xl p-8 sm:p-12 mb-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden">
-        <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-violet-100/50 blur-3xl pointer-events-none"></div>
-        <span id="gesturego" class="absolute -top-24"></span>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          <div class="lg:col-span-7">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="px-3 py-1 rounded-full bg-violet-50 border border-violet-200 text-violet-700 font-mono text-xs font-bold">AI GESTURE UTILITY</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">FREE EDITION</span>
-              <span class="text-xs text-slate-500 font-mono">Fast & Lightweight</span>
-            </div>
-            <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
-              MouseFlow AI
-              <span class="text-sm font-normal text-slate-500" data-i18n="mouseflow_sub">(마우스플로우 AI)</span>
-            </h3>
-            <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6" data-i18n="mouseflow_desc">
-              <strong>"마우스 우클릭 드래그 하나로 윈도우 창과 단축키를 광속 제어"</strong><br />
-              마우스를 살짝 긋는 동작만으로 창 닫기, 최소화, 최대화, 가상 데스크톱 전환, 웹 브라우저 탭 이동 등 자주 쓰는 동작을 키보드에 손 올릴 필요 없이 즉각 실행합니다.
-            </p>
-            <div class="grid grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-slate-700">
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-violet-600 font-bold"></i> <span data-i18n="mf_point_1">초경량 마우스 궤적 인식 엔진</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-violet-600 font-bold"></i> <span data-i18n="mf_point_2">자유로운 커스텀 제스처 매핑</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-violet-600 font-bold"></i> <span data-i18n="mf_point_3">화면 가장자리 엣지 액션 지원</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-violet-600 font-bold"></i> <span data-i18n="mf_point_4">MSIX & InnoSetup 단독 패키징</span></div>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-violet-600/20">
-                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
-              </a>
-              <a href="https://github.com/yjc-web/FlowSuite/releases" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
-                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_mf">포터블 무설치 (GitHub)</span>
-              </a>
-            </div>
-          </div>
-          <div class="lg:col-span-5">
-            <div class="rounded-2xl p-6 bg-slate-50 border border-slate-200 text-center shadow-md">
-              <div class="text-slate-500 text-xs font-mono font-bold mb-4">Quick Gesture Triggers</div>
-              <div class="grid grid-cols-3 gap-3">
-                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <div class="text-2xl text-violet-600 font-black mb-1">&darr;</div>
-                  <div class="text-xs font-bold text-slate-800" data-i18n="mf_act_min">최소화</div>
-                </div>
-                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <div class="text-2xl text-violet-600 font-black mb-1">&uarr;</div>
-                  <div class="text-xs font-bold text-slate-800" data-i18n="mf_act_max">최대화</div>
-                </div>
-                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <div class="text-2xl text-violet-600 font-black mb-1">&darr;&rarr;</div>
-                  <div class="text-xs font-bold text-slate-800" data-i18n="mf_act_close">창 닫기</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ================= 5. OverlayPic Section ================= -->
-      <div id="overlaypic" class="bento-card rounded-3xl p-8 sm:p-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden">
+      <!-- ================= 1. OverlayPic Section ================= -->
+      <div id="overlaypic" class="bento-card rounded-3xl p-8 sm:p-12 mb-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden">
         <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-amber-100/50 blur-3xl pointer-events-none"></div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
           <div class="lg:col-span-7">
@@ -725,6 +509,222 @@
         </div>
       </div>
 
+      <!-- ================= 2. AutoFlow RPA Section ================= -->
+      <div id="autoflow" class="bento-card rounded-3xl p-8 sm:p-12 mb-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden"><a id="imageflow"></a>
+        <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-cyan-100/50 blur-3xl pointer-events-none"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-7">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 font-mono text-xs font-bold">RPA AUTOMATION</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">FREE STARTER</span>
+              <span class="text-xs text-slate-500 font-mono" data-i18n="if_version_tag">v1.0.15 최신 버전 &bull; Windows 10/11</span>
+            </div>
+            <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
+              <img src="assets/StoreLogo_150x150.png" alt="AutoFlow RPA Logo" class="w-11 h-11 rounded-xl border border-cyan-200 shadow-md shadow-cyan-500/10 object-contain" />
+              AutoFlow RPA
+              <span class="text-sm font-normal text-slate-500" data-i18n="imageflow_sub">(오토플로우 RPA)</span>
+            </h3>
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6" data-i18n="imageflow_desc">
+              <strong>"선만 연결하면 완성되는 노코드 화면 자동화"</strong><br />
+              복잡한 코딩(Script) 없이 화면 이미지를 마우스로 지정하고 선만 연결하면 알아서 동작하는 비주얼 순서도 기반 업무 자동화 도구입니다. ERP 자동 로그인, 엑셀/웹 반복 클릭, 화면 감지 클릭을 손쉽게 구현합니다.
+            </p>
+            <div class="grid grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-slate-700">
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_1">노코드 비주얼 순서도 & 12px 드래그 판별</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_2">스마트 자동 레코더 (F8 즉시 캡처 & 4K 서치)</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_3">무인 작업 스케줄러 & 엑셀/CSV 데이터 반복</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600 font-bold"></i> <span data-i18n="if_point_4">한/영/일 다국어 & 무료 에디션 제공 (선택적 무제한 프로)</span></div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-cyan-600/20">
+                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
+              </a>
+              <a href="https://github.com/yjc-web/FlowSuite/releases/tag/ImageFlow" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
+                <i class="fa-brands fa-github"></i> <span data-i18n="btn_gh_setup">포터블 무설치 (GitHub)</span>
+              </a>
+              <a href="https://youtu.be/eJsirzljZug" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 hover:text-rose-700 font-bold text-sm flex items-center gap-2 transition-all">
+                <i class="fa-brands fa-youtube text-rose-500 text-base"></i> <span data-i18n="btn_yt_autoflow">유튜브 시연 영상</span>
+              </a>
+            </div>
+            <div class="mt-3 text-xs text-slate-500 flex items-center gap-1.5 font-medium">
+              <i class="fa-solid fa-circle-check text-emerald-600"></i>
+              <span data-i18n="if_store_safe_tip">Microsoft Store 공식 인증 버전은 SmartScreen 경고 없이 1클릭으로 안전하게 자동 설치됩니다.</span>
+            </div>
+          </div>
+          <div class="lg:col-span-5 flex flex-col gap-3">
+            <!-- YouTube Video Embed -->
+            <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-black aspect-video group">
+              <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/eJsirzljZug" title="AutoFlow RPA 유튜브 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <!-- Video Direct Link & Info -->
+            <div class="flex items-center justify-between px-1 text-xs">
+              <a href="https://youtu.be/eJsirzljZug" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 hover:text-rose-600 transition-colors">
+                <i class="fa-brands fa-youtube text-rose-500 text-sm"></i>
+                <span class="font-medium" data-i18n="yt_link_text">YouTube 바로가기</span>
+                <span class="text-slate-400 text-[11px] font-mono">(youtu.be/eJsirzljZug)</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+              </a>
+              <span class="text-[11px] text-cyan-700 font-mono font-medium flex items-center gap-1"><i class="fa-solid fa-play text-[9px]"></i> <span data-i18n="yt_demo_text">공식 데모 영상</span></span>
+            </div>
+            <!-- Poster Art -->
+            <div class="rounded-xl overflow-hidden border border-slate-200 shadow-md mt-1">
+              <img id="imageflowPosterImg" src="assets/AutoFlowRPA_PosterArt_KO.png" alt="AutoFlow RPA Poster Art" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 3. MouseFlow AI Section ================= -->
+      <div id="mouseflow" class="bento-card rounded-3xl p-8 sm:p-12 mb-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden">
+        <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-violet-100/50 blur-3xl pointer-events-none"></div>
+        <span id="gesturego" class="absolute -top-24"></span>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-7">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full bg-violet-50 border border-violet-200 text-violet-700 font-mono text-xs font-bold">AI GESTURE UTILITY</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">FREE EDITION</span>
+              <span class="text-xs text-slate-500 font-mono">Fast & Lightweight</span>
+            </div>
+            <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
+              MouseFlow AI
+              <span class="text-sm font-normal text-slate-500" data-i18n="mouseflow_sub">(마우스플로우 AI)</span>
+            </h3>
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6" data-i18n="mouseflow_desc">
+              <strong>"마우스 우클릭 드래그 하나로 윈도우 창과 단축키를 광속 제어"</strong><br />
+              마우스를 살짝 긋는 동작만으로 창 닫기, 최소화, 최대화, 가상 데스크톱 전환, 웹 브라우저 탭 이동 등 자주 쓰는 동작을 키보드에 손 올릴 필요 없이 즉각 실행합니다.
+            </p>
+            <div class="grid grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-slate-700">
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-violet-600 font-bold"></i> <span data-i18n="mf_point_1">초경량 마우스 궤적 인식 엔진</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-violet-600 font-bold"></i> <span data-i18n="mf_point_2">자유로운 커스텀 제스처 매핑</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-violet-600 font-bold"></i> <span data-i18n="mf_point_3">화면 가장자리 엣지 액션 지원</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-violet-600 font-bold"></i> <span data-i18n="mf_point_4">MSIX & InnoSetup 단독 패키징</span></div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-violet-600/20">
+                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
+              </a>
+              <a href="https://github.com/yjc-web/FlowSuite/releases" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
+                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_mf">포터블 무설치 (GitHub)</span>
+              </a>
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl p-6 bg-slate-50 border border-slate-200 text-center shadow-md">
+              <div class="text-slate-500 text-xs font-mono font-bold mb-4">Quick Gesture Triggers</div>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div class="text-2xl text-violet-600 font-black mb-1">&darr;</div>
+                  <div class="text-xs font-bold text-slate-800" data-i18n="mf_act_min">최소화</div>
+                </div>
+                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div class="text-2xl text-violet-600 font-black mb-1">&uarr;</div>
+                  <div class="text-xs font-bold text-slate-800" data-i18n="mf_act_max">최대화</div>
+                </div>
+                <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div class="text-2xl text-violet-600 font-black mb-1">&darr;&rarr;</div>
+                  <div class="text-xs font-bold text-slate-800" data-i18n="mf_act_close">창 닫기</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 4. ExcelCompare Section ================= -->
+      <div id="excelcompare" class="bento-card rounded-3xl p-8 sm:p-12 mb-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden">
+        <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-emerald-100/50 blur-3xl pointer-events-none"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-7">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-bold">EXCEL DIFF &amp; AUDIT</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">FREE EDITION</span>
+              <span class="text-xs text-slate-500 font-mono">v1.0.1 &bull; Windows 10/11</span>
+            </div>
+            <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
+              <img src="assets/ExcelCompare_150x150.png" alt="ExcelCompare Logo" class="w-11 h-11 rounded-xl border border-emerald-200 shadow-md shadow-emerald-500/10 object-contain" />
+              ExcelCompare
+              <span class="text-sm font-normal text-slate-500" data-i18n="excelcompare_sub">(엑셀컴페어)</span>
+            </h3>
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6" data-i18n="excelcompare_desc">
+              <strong>"10만 행 대용량 시트 실시간 양면 비교 & 분석 솔루션"</strong><br />
+              두 엑셀 파일의 시트별 데이터 차이점(추가/삭제/수정)을 0.1초 만에 색상별로 정확하게 분석합니다. 듀얼 그리드 동기화 스크롤, 차이점만 모아보기 필터, 클릭 즉시 실제 엑셀 원본 셀로 이동하는 연동 기능을 제공합니다.
+            </p>
+            <div class="grid grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-slate-700">
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> <span data-i18n="ec_point_1">10만 행 무제한 대용량 가상화 & 초고속 비교</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> <span data-i18n="ec_point_2">동기화 양면 스크롤 & 차이점 룰러 미니맵</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> <span data-i18n="ec_point_3">차이점만 보기(Diff Only) 필터 & F7/F8 순차 탐색</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 font-bold"></i> <span data-i18n="ec_point_4">클릭 즉시 원본 Excel 셀 실시간 연동 & 서식 리포트</span></div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-emerald-600/20">
+                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
+              </a>
+              <a href="https://github.com/yjc-web/FlowSuite/releases/tag/ExcelCompare" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
+                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_ec">포터블 무설치 (GitHub)</span>
+              </a>
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-slate-50">
+              <img src="assets/ExcelCompare_BoxArt.png" alt="ExcelCompare Artwork" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 5. FileFlow Section ================= -->
+      <div id="fileflow" class="bento-card rounded-3xl p-8 sm:p-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden">
+        <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-indigo-100/50 blur-3xl pointer-events-none"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-7">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-mono text-xs font-bold">SMART DISPATCHER</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">FREE EDITION</span>
+              <span class="text-xs text-slate-500 font-mono">Real-time Spooler &amp; AI</span>
+            </div>
+            <h3 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
+              FileFlow
+              <span class="text-sm font-normal text-slate-500" data-i18n="fileflow_sub">(파일플로우)</span>
+            </h3>
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6" data-i18n="fileflow_desc">
+              <strong>"0.1초 실시간 감시 & Explainable AI 기반 스마트 파일 정리"</strong><br />
+              다운로드 폴더나 업무 드라이브에 신규 파일이 들어오는 즉시 0.1초 만에 감지하여, 나이브 베이즈 머신러닝 및 키워드 규칙으로 최적의 프로젝트 하위 폴더에 자동 분류해 주는 차세대 파일 허브 시스템입니다.
+            </p>
+            <div class="grid grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-slate-700">
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-600 font-bold"></i> <span data-i18n="ff_point_1">0.1초 폴더 감시 & 잠금 해제 안전 이동</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-600 font-bold"></i> <span data-i18n="ff_point_2">PDF, Excel, PPT, Zip 멀티포맷 즉시 미리보기</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-600 font-bold"></i> <span data-i18n="ff_point_3">설명 가능한 AI (가중치 통계 대시보드)</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-600 font-bold"></i> <span data-i18n="ff_point_4">독립 플로팅 듀얼 탐색기 & 실행 취소(Undo)</span></div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://apps.microsoft.com/search/publisher?name=FlowSuiteYJC&hl=ko-KR&gl=KR" target="_blank" rel="noopener noreferrer" class="btn-shine px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-indigo-600/20">
+                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
+              </a>
+              <a href="https://github.com/yjc-web/FlowSuite/releases/tag/FileFlow" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-sm flex items-center gap-2 transition-colors">
+                <i class="fa-brands fa-github"></i> <span data-i18n="btn_explore_ff">포터블 무설치 (GitHub)</span>
+              </a>
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl p-6 bg-slate-900 border border-slate-800 font-mono text-xs text-slate-200 shadow-2xl">
+              <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-800 text-slate-400">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-terminal text-indigo-400"></i> FileFlow Spooler Engine</span>
+                <span class="text-emerald-400 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Realtime Monitoring</span>
+              </div>
+              <div class="space-y-3">
+                <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                  <div class="text-indigo-300 font-bold mb-1">📥 Incoming: 2026_Q3_Financial_Report.xlsx</div>
+                  <div class="text-slate-400 text-[11px]">&rarr; AI Score: 98.4% Confidence &rarr; [Projects/2026/Reports]</div>
+                </div>
+                <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                  <div class="text-indigo-300 font-bold mb-1">📥 Incoming: Product_Design_Final_v2.pdf</div>
+                  <div class="text-slate-400 text-[11px]">&rarr; Rule Matched: `{yyyy}/Design` &rarr; [Auto Moved]</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -741,29 +741,29 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-left">
         <div class="bento-card rounded-2xl p-6 bg-white border border-slate-200 shadow-md">
-          <div class="text-violet-600 font-mono font-black text-lg mb-2">01. Control</div>
-          <h4 class="font-bold text-slate-900 mb-2">MouseFlow AI</h4>
-          <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_1">마우스 제스처로 작업 창들을 순식간에 정렬하고 필요한 툴을 바로 띄웁니다.</p>
-        </div>
-        <div class="bento-card rounded-2xl p-6 bg-white border border-slate-200 shadow-md">
-          <div class="text-amber-600 font-mono font-black text-lg mb-2">02. Reference</div>
+          <div class="text-amber-600 font-mono font-black text-lg mb-2">01. Reference</div>
           <h4 class="font-bold text-slate-900 mb-2">OverlayPic</h4>
-          <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_2">필요한 가이드 시안이나 데이터를 화면 위에 투명하게 띄워두고 작업합니다.</p>
+          <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_1">필요한 가이드 시안이나 데이터를 화면 위에 투명하게 띄워두고 작업합니다.</p>
         </div>
         <div class="bento-card rounded-2xl p-6 bg-white border border-slate-200 shadow-md">
-          <div class="text-cyan-600 font-mono font-black text-lg mb-2">03. Automate</div>
+          <div class="text-cyan-600 font-mono font-black text-lg mb-2">02. Automate</div>
           <h4 class="font-bold text-slate-900 mb-2">AutoFlow RPA</h4>
-          <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_3">손이 많이 가는 반복 클릭과 시스템 입력을 노코드 순서도로 대신 처리합니다.</p>
+          <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_2">손이 많이 가는 반복 클릭과 시스템 입력을 노코드 순서도로 대신 처리합니다.</p>
         </div>
         <div class="bento-card rounded-2xl p-6 bg-white border border-slate-200 shadow-md">
-          <div class="text-indigo-600 font-mono font-black text-lg mb-2">04. Organize</div>
-          <h4 class="font-bold text-slate-900 mb-2">FileFlow</h4>
-          <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_4">완성된 결과물과 다운로드 파일들을 AI가 알아서 폴더별로 0.1초 만에 정리합니다.</p>
+          <div class="text-violet-600 font-mono font-black text-lg mb-2">03. Control</div>
+          <h4 class="font-bold text-slate-900 mb-2">MouseFlow AI</h4>
+          <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_3">마우스 제스처로 작업 창들을 순식간에 정렬하고 필요한 툴을 바로 띄웁니다.</p>
         </div>
         <div class="bento-card rounded-2xl p-6 bg-white border border-slate-200 shadow-md">
-          <div class="text-emerald-600 font-mono font-black text-lg mb-2">05. Compare</div>
+          <div class="text-emerald-600 font-mono font-black text-lg mb-2">04. Compare</div>
           <h4 class="font-bold text-slate-900 mb-2">ExcelCompare</h4>
-          <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_5">대용량 엑셀 시트의 변경점을 0.1초 만에 추적하고 원본 셀과 실시간 검증합니다.</p>
+          <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_4">대용량 엑셀 시트의 변경점을 0.1초 만에 추적하고 원본 셀과 실시간 검증합니다.</p>
+        </div>
+        <div class="bento-card rounded-2xl p-6 bg-white border border-slate-200 shadow-md">
+          <div class="text-indigo-600 font-mono font-black text-lg mb-2">05. Organize</div>
+          <h4 class="font-bold text-slate-900 mb-2">FileFlow</h4>
+          <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_5">완성된 결과물과 다운로드 파일들을 AI가 알아서 폴더별로 0.1초 만에 정리합니다.</p>
         </div>
       </div>
     </div>
@@ -980,7 +980,7 @@
         hero_pill: "신용카드 불필요 • 월 구독료 없음 • 회원가입 제로",
         hero_title_1: "매일 반복되는 윈도우 업무의 피로를 끝내다",
         hero_title_2: "FlowSuite 윈도우 필수 유틸리티 스위트",
-        hero_desc: "코딩 없이 선만 잇는 <strong>화면 자동화(AutoFlow RPA)</strong>, 0.1초 실시간 <strong>AI 파일 분류(FileFlow)</strong>, 10만 행 대용량 <strong>초고속 엑셀 비교(ExcelCompare)</strong>, 마우스 제스처 창 제어와 화면 오버레이 핀까지.<br class=\"hidden sm:inline\" />비싼 월 구독료 없이, <strong>데스크톱 작업 시간을 90% 줄여주는 검증된 윈도우 필수 유틸리티 5종</strong>을 <strong>부담 없이 무료로 시작</strong>하세요.",
+        hero_desc: "화면 위에 항상 떠 있는 투명 참조 핀(<strong>OverlayPic</strong>), 코딩 없이 선만 잇는 <strong>화면 자동화(AutoFlow RPA)</strong>, 마우스 우클릭 제스처 창 제어(<strong>MouseFlow AI</strong>), 10만 행 대용량 <strong>초고속 엑셀 비교(ExcelCompare)</strong>부터 파일 정리(<strong>FileFlow</strong>)까지.<br class=\"hidden sm:inline\" />비싼 월 구독료 없이, <strong>데스크톱 작업 시간을 90% 줄여주는 검증된 윈도우 필수 유틸리티 5종</strong>을 <strong>부담 없이 무료로 시작</strong>하세요.",
         hero_store_cert: "무료 다운로드 · 보안 경고 없이 1클릭 설치 (권장)",
         hero_cta_store: "Microsoft Store에서 무료 다운로드",
         hero_portable_tag: "포터블 무설치 (Portable .zip / .exe)",
@@ -1067,11 +1067,11 @@
         synergy_badge: "All-in-One Synergy",
         synergy_title: "따로 써도 강력하고, 함께 쓰면 완전해집니다",
         synergy_desc: "FlowSuite의 유틸리티들은 당신의 데스크톱을 가장 완벽한 스마트 생산성 워크스테이션으로 탈바꿈시킵니다.",
-        syn_1: "마우스 제스처로 작업 창들을 순식간에 정렬하고 필요한 툴을 바로 띄웁니다.",
-        syn_2: "필요한 가이드 시안이나 데이터를 화면 위에 투명하게 띄워두고 작업합니다.",
-        syn_3: "손이 많이 가는 반복 클릭과 시스템 입력을 노코드 순서도로 대신 처리합니다.",
-        syn_4: "완성된 결과물과 다운로드 파일들을 AI가 알아서 폴더별로 0.1초 만에 정리합니다.",
-        syn_5: "대용량 엑셀 시트의 변경점을 0.1초 만에 추적하고 원본 셀과 실시간 검증합니다.",
+        syn_1: "필요한 가이드 시안이나 데이터를 화면 위에 투명하게 띄워두고 작업합니다.",
+        syn_2: "손이 많이 가는 반복 클릭과 시스템 입력을 노코드 순서도로 대신 처리합니다.",
+        syn_3: "마우스 제스처로 작업 창들을 순식간에 정렬하고 필요한 툴을 바로 띄웁니다.",
+        syn_4: "대용량 엑셀 시트의 변경점을 0.1초 만에 추적하고 원본 셀과 실시간 검증합니다.",
+        syn_5: "완성된 결과물과 다운로드 파일들을 AI가 알아서 폴더별로 0.1초 만에 정리합니다.",
         nav_feedback: "사용자 피드백",
         fb_badge: "COMMUNITY & FEEDBACK",
         fb_title: "로그인 없이 남기는 실시간 피드백 & 댓글",
@@ -1113,7 +1113,7 @@
         hero_pill: "No Credit Card Required • No Monthly Subscriptions • Zero Ads",
         hero_title_1: "Supercharge Your Windows Workflow with",
         hero_title_2: "The Essential Windows Utility Suite",
-        hero_desc: "From zero-code screen automation (AutoFlow RPA) and AI file sorting (FileFlow) to 100K-row high-speed Excel diffing (ExcelCompare), mouse gestures, and pinned overlays.<br class=\"hidden sm:inline\" />No expensive subscriptions — <strong>5 proven Windows desktop utilities free to start</strong>.",
+        hero_desc: "From always-on-top transparent reference pins (<strong>OverlayPic</strong>) and zero-code screen automation (<strong>AutoFlow RPA</strong>) to high-speed mouse gestures (<strong>MouseFlow AI</strong>), 100K-row Excel diffing (<strong>ExcelCompare</strong>), and smart file sorting (<strong>FileFlow</strong>).<br class=\"hidden sm:inline\" />No expensive subscriptions — <strong>5 proven Windows desktop utilities free to start</strong>.",
         hero_store_cert: "Free Download · 1-Click Install with Zero Warnings (Recommended)",
         hero_cta_store: "Free Download from Microsoft Store",
         hero_portable_tag: "Portable Edition (.zip / .exe)",
@@ -1200,11 +1200,11 @@
         synergy_badge: "All-in-One Synergy",
         synergy_title: "Powerful Alone. Unstoppable Together.",
         synergy_desc: "FlowSuite turns your desktop into the ultimate productivity workstation.",
-        syn_1: "Instantly arrange windows and launch utilities with swift mouse gestures.",
-        syn_2: "Keep reference mockups and checklists pinned transparently on top.",
-        syn_3: "Let no-code visual flowcharts handle repetitive clicks and inputs.",
-        syn_4: "Let AI organize generated files and downloads into tidy folders instantly.",
-        syn_5: "Track and audit massive Excel data changes in milliseconds with real-time cell jump.",
+        syn_1: "Keep reference mockups and checklists pinned transparently on top.",
+        syn_2: "Let no-code visual flowcharts handle repetitive clicks and inputs.",
+        syn_3: "Instantly arrange windows and launch utilities with swift mouse gestures.",
+        syn_4: "Track and audit massive Excel data changes in milliseconds with real-time cell jump.",
+        syn_5: "Let AI organize generated files and downloads into tidy folders instantly.",
         nav_feedback: "Feedback",
         fb_badge: "COMMUNITY & FEEDBACK",
         fb_title: "Instant Community Feedback & Comments",
