@@ -698,7 +698,7 @@
             <div class="flex items-center gap-2 mb-4">
               <span class="px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-mono text-xs font-bold">CLIPBOARD MANAGER</span>
               <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">FREE EDITION</span>
-              <span class="text-xs text-slate-500 font-mono">v1.0.1 &bull; Windows 10/11</span>
+              <span class="text-xs text-slate-500 font-mono">v1.0.5 &bull; Windows 10/11</span>
             </div>
             <h3 class="text-2xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center flex-wrap gap-2.5 sm:gap-3">
               <img src="assets/QueueClip_150x150.png" alt="QueueClip Logo" class="w-11 h-11 rounded-xl border border-blue-200 shadow-md shadow-blue-500/10 object-contain" />
@@ -706,18 +706,21 @@
               <span class="text-sm font-normal text-slate-500" data-i18n="queueclip_sub">(큐클립)</span>
             </h3>
             <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6" data-i18n="queueclip_desc">
-              <strong>"복사한 순서대로 착착! 큐(FIFO) &amp; 스택(LIFO) 스마트 클립보드 매니저"</strong><br />
-              단순 히스토리 조회를 넘어, 여러 데이터를 복사해 둔 뒤 엑셀이나 입력 폼에 순서대로 연달아 붙여넣는 생산성 도구입니다. 초고속 터보 입력(Turbo Paste), 줄/문단 단위 즉시 분할, 자동 Tab/Enter 이동으로 반복 입력 시간을 90% 줄여줍니다.
+              <strong>"복사한 순서대로 착착! 큐(FIFO) · 루프(Loop) · 스택(LIFO) 스마트 클립보드 매니저"</strong><br />
+              여러 데이터를 순서대로 복사해 둔 뒤 엑셀·웹·ERP 입력 폼에 차례대로 자동 붙여넣는 생산성 도구입니다. 초고속 터보 입력(Turbo Paste), 숫자·날짜·요일 스마트 패턴 증감 생성기, 엑셀 셀/줄 분할, 최근 사용 기록 복원(Undo)으로 반복 입력 시간을 90% 줄여줍니다.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 mb-8 text-xs sm:text-sm text-slate-700">
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="qc_point_1">큐(FIFO) &amp; 스택(LIFO) 듀얼 모드 (순차 및 역순)</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="qc_point_2">초고속 터보 입력 (대기열 연속 자동 붙여넣기)</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="qc_point_3">붙여넣기 후 자동 Tab / Enter 다음 칸 이동</span></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="qc_point_4">장문 텍스트 줄(Line)/문단(Paragraph) 즉시 분할</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="qc_point_1">큐(FIFO) · 루프(무한 순환) · 스택(LIFO) &amp; 기록 복원</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="qc_point_2">초고속 터보 입력 &amp; 자동 Tab / Enter 다음 칸 전진</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="qc_point_3">스마트 패턴 생성기 (숫자·날짜·요일 자동 증감)</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="qc_point_4">엑셀 표(셀)/줄 즉시 분할 &amp; 이미지 파일 드래그 투척</span></div>
             </div>
             <div class="flex flex-col sm:flex-row flex-wrap gap-3">
               <a href="https://apps.microsoft.com/detail/9PM5WS6W4VPS" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20">
                 <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
+              </a>
+              <a href="privacy-queueclip.html" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-colors">
+                <i class="fa-solid fa-shield-halved text-slate-500"></i> <span data-i18n="footer_privacy">개인정보처리방침</span>
               </a>
             </div>
           </div>
@@ -1175,11 +1178,11 @@
         ff_point_4: "독립 플로팅 듀얼 탐색기 & 실행 취소(Undo)",
         btn_explore_ff: "포터블 무설치 (GitHub)",
         queueclip_sub: "(큐클립)",
-        queueclip_desc: "<strong>\"복사한 순서대로 착착! 큐(FIFO) &amp; 스택(LIFO) 스마트 클립보드 매니저\"</strong><br />웹, 문서, 엑셀에서 데이터를 순서대로 복사(Ctrl+C)해두고 단축키(Ctrl+V) 한 번으로 첫 번째 항목부터 차례대로 자동 입력(Paste &amp; Pop)해 줍니다. 번거로운 창 전환(Alt+Tab) 반복 작업을 완벽하게 없애줍니다.",
-        qc_point_1: "큐(FIFO) &amp; 스택(LIFO) 스마트 듀얼 대기열",
-        qc_point_2: "터보 자동 붙여넣기 (Ctrl+V 연타 시 차례대로 pop)",
-        qc_point_3: "자동 Tab/Enter 다음 입력 칸 자동 전진",
-        qc_point_4: "대용량 텍스트 줄(Line)/문단 단위 원클릭 분할 복사",
+        queueclip_desc: "<strong>\"복사한 순서대로 착착! 큐(FIFO) · 루프(Loop) · 스택(LIFO) 스마트 클립보드 매니저\"</strong><br />여러 데이터를 순서대로 복사해 둔 뒤 엑셀·웹·ERP 입력 폼에 차례대로 자동 붙여넣는 생산성 도구입니다. 초고속 터보 입력(Turbo Paste), 숫자·날짜·요일 스마트 패턴 증감 생성기, 엑셀 셀/줄 분할, 최근 사용 기록 복원(Undo)으로 반복 입력 시간을 90% 줄여줍니다.",
+        qc_point_1: "큐(FIFO) · 루프(무한 순환) · 스택(LIFO) &amp; 기록 복원",
+        qc_point_2: "초고속 터보 입력 &amp; 자동 Tab / Enter 다음 칸 전진",
+        qc_point_3: "스마트 패턴 생성기 (숫자·날짜·요일 자동 증감)",
+        qc_point_4: "엑셀 표(셀)/줄 즉시 분할 &amp; 이미지 파일 드래그 투척",
         btn_explore_qc: "포터블 무설치 (GitHub)",
         filehub_sub: "(파일허브 AI)",
         filehub_desc: "<strong>\"0.1초 실시간 감시 &amp; 10대 표준 확장자/규칙/AI 스마트 파일 정리\"</strong><br />다운로드 폴더나 업무 드라이브에 신규 파일이 들어오는 즉시 0.1초 만에 감지하여, 10대 표준 카테고리/날짜/키워드 규칙으로 최적의 프로젝트 하위 폴더에 자동 분류해 주는 차세대 파일 허브 시스템입니다.",
@@ -1350,11 +1353,11 @@
         ff_point_4: "Detachable dual-panel explorer & instant Undo",
         btn_explore_ff: "Portable / Standalone (GitHub)",
         queueclip_sub: "(QueueClip)",
-        queueclip_desc: "<strong>\"Sequential FIFO &amp; LIFO Turbo Clipboard Manager\"</strong><br />Copy multiple items across the web, documents, and spreadsheets, then sequentially paste them item-by-item with consecutive Ctrl+V presses without switching windows back and forth.",
-        qc_point_1: "Dual Queue (FIFO) &amp; Stack (LIFO) Modes",
-        qc_point_2: "Turbo Auto-Paste (Sequential paste-and-pop on Ctrl+V)",
-        qc_point_3: "Auto Tab/Enter forward keystroke automation",
-        qc_point_4: "One-click split text by line or paragraph into queue",
+        queueclip_desc: "<strong>\"Sequential Queue (FIFO), Loop &amp; Stack (LIFO) Turbo Clipboard Manager\"</strong><br />Copy multiple items across the web, documents, and spreadsheets, then sequentially paste them item-by-item into forms or Excel. Features Turbo Paste, smart pattern generator (numbers/dates/weekdays), cell/line splitting, and history undo.",
+        qc_point_1: "Queue (FIFO) · Loop (Cycle) · Stack (LIFO) &amp; Undo",
+        qc_point_2: "Turbo Auto-Paste &amp; Auto Tab/Enter keystrokes",
+        qc_point_3: "Smart Pattern Generator (Auto-increment numbers &amp; dates)",
+        qc_point_4: "One-click Excel cell/line split &amp; drag-and-drop images",
         btn_explore_qc: "Portable / Standalone (GitHub)",
         filehub_sub: "(FileHub AI)",
         filehub_desc: "<strong>\"0.1s Real-Time Spooler &amp; 10 Standard File Types/Rules AI Classifier\"</strong><br />Instantly detects new files in your download or working folders within 0.1 seconds, automatically sorting them into structured project subdirectories using 10 standard file categories, date stamps, and keyword rules.",
