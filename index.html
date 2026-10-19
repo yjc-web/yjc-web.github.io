@@ -541,8 +541,8 @@
       <div id="autoflow" class="bento-card rounded-3xl p-5 sm:p-8 lg:p-12 mb-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden"><a id="imageflow"></a>
         <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-cyan-100/50 blur-3xl pointer-events-none"></div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          <div class="lg:col-span-7">
-            <div class="flex items-center gap-2 mb-4">
+          <div class="lg:col-span-6">
+            <div class="flex items-center flex-wrap gap-2 mb-4">
               <span class="px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 font-mono text-xs font-bold">RPA AUTOMATION</span>
               <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">FREE STARTER</span>
               <span class="text-xs text-slate-500 font-mono" data-i18n="if_version_tag">v1.0.15 최신 버전 &bull; Windows 10/11</span>
@@ -564,16 +564,37 @@
             </div>
             <div class="flex flex-col sm:flex-row flex-wrap gap-3">
               <a href="https://apps.microsoft.com/detail/9NPC24FV5230" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-600/20">
-                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
+                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 다운로드</span>
               </a>
               <a href="https://youtu.be/eJsirzljZug" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 hover:text-rose-700 font-bold text-sm flex items-center justify-center gap-2 transition-all">
                 <i class="fa-brands fa-youtube text-rose-500 text-base"></i> <span data-i18n="btn_yt_autoflow">유튜브 시연 영상</span>
               </a>
             </div>
           </div>
-          <div class="lg:col-span-5 flex flex-col gap-3">
+          <div class="lg:col-span-6 flex flex-col gap-3">
+            <!-- Interactive 2-Tab Motion GIF Showcase -->
+            <div class="rounded-2xl overflow-hidden border border-cyan-200/80 shadow-xl bg-slate-900">
+              <div class="flex flex-wrap items-center gap-1.5 p-2 bg-slate-800/95 border-b border-slate-700">
+                <button type="button" id="afTabRec" onclick="switchAutoflowDemoTab('recorder')" class="flex-1 min-w-[140px] px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20">
+                  <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+                  <span data-i18n="if_tab_rec">스마트 녹화 (클릭 한 번으로 완성)</span>
+                </button>
+                <button type="button" id="afTabPrompt" onclick="switchAutoflowDemoTab('prompt')" class="flex-1 min-w-[140px] px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 bg-slate-700/70 text-slate-300 hover:bg-slate-700 hover:text-white">
+                  <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                  <span data-i18n="if_tab_prompt">프롬프트 &amp; 엑셀 루프 자동 조립</span>
+                </button>
+              </div>
+              <div class="relative bg-slate-950">
+                <img id="autoflowDemoGif" src="assets/AutoFlow_Demo_Recorder.gif" alt="AutoFlow RPA Live Workflow Demo" class="w-full h-auto block" />
+              </div>
+              <div class="px-3.5 py-2.5 bg-slate-900 border-t border-slate-800 flex items-center gap-2 text-[11px] sm:text-xs text-cyan-200 font-medium leading-snug">
+                <i class="fa-solid fa-bolt text-amber-400 shrink-0"></i>
+                <span id="autoflowDemoCaption" data-i18n="if_gif_cap_rec">평소처럼 화면을 클릭·타이핑하면 버튼 이미지를 자동 크롭하고 한글 메모가 달린 순서도를 즉시 완성합니다.</span>
+              </div>
+            </div>
+
             <!-- YouTube Video Embed -->
-            <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-black aspect-video group">
+            <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-black aspect-video group mt-1">
               <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/eJsirzljZug" title="AutoFlow RPA 유튜브 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
             </div>
             <!-- Video Direct Link & Info -->
@@ -585,10 +606,6 @@
                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
               </a>
               <span class="text-[11px] text-cyan-700 font-mono font-medium flex items-center gap-1"><i class="fa-solid fa-play text-[9px]"></i> <span data-i18n="yt_demo_text">공식 데모 영상</span></span>
-            </div>
-            <!-- Poster Art -->
-            <div class="rounded-xl overflow-hidden border border-slate-200 shadow-md mt-1">
-              <img id="imageflowPosterImg" src="assets/AutoFlowRPA_PosterArt_KO.png" alt="AutoFlow RPA Poster Art" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
           </div>
         </div>
@@ -1170,6 +1187,10 @@
         strip_tag_free: "FREE",
         btn_gh_setup: "포터블 무설치 (GitHub)",
         btn_yt_autoflow: "유튜브 시연 영상",
+        if_tab_rec: "스마트 녹화 (클릭 한 번으로 완성)",
+        if_tab_prompt: "프롬프트 &amp; 엑셀 루프 자동 조립",
+        if_gif_cap_rec: "평소처럼 화면을 클릭·타이핑하면 버튼 이미지를 자동 크롭하고 한글 메모가 달린 순서도를 즉시 완성합니다.",
+        if_gif_cap_prompt: "원하는 작업을 입력하거나 엑셀(customers.xlsx)을 연결하면 {ROW:고객명} 변수 치환부터 100행 반복 루프까지 자동 조립됩니다.",
         fileflow_sub: "(파일플로우)",
         fileflow_desc: "<strong>\"0.1초 실시간 감시 & Explainable AI 기반 스마트 파일 정리\"</strong><br />다운로드 폴더나 업무 드라이브에 신규 파일이 들어오는 즉시 0.1초 만에 감지하여, 나이브 베이즈 머신러닝 및 키워드 규칙으로 최적의 프로젝트 하위 폴더에 자동 분류해 주는 차세대 파일 허브 시스템입니다.",
         ff_point_1: "0.1초 폴더 감시 & 잠금 해제 안전 이동",
@@ -1345,6 +1366,10 @@
         strip_tag_free: "FREE",
         btn_gh_setup: "Portable / Standalone (GitHub)",
         btn_yt_autoflow: "Watch Demo (YouTube)",
+        if_tab_rec: "Smart Recorder (1-Click Capture)",
+        if_tab_prompt: "AI Prompt &amp; Excel Loop Builder",
+        if_gif_cap_rec: "Simply click and type as usual — AutoFlow auto-crops button images and builds a labeled flowchart in real time.",
+        if_gif_cap_prompt: "Describe your task or link an Excel file (customers.xlsx) — AutoFlow auto-assembles {ROW} variables and 100-row loops.",
         fileflow_sub: "(AI File Manager)",
         fileflow_desc: "<strong>\"0.1s Real-Time Spooler & Explainable AI File Organization\"</strong><br />Instantly detects new files in your download or working folders within 0.1 seconds, automatically sorting them into structured project subdirectories using Naive Bayes ML and keyword rules.",
         ff_point_1: "0.1s folder monitoring & lock-free safe moving",
@@ -1503,6 +1528,39 @@
     function toggleLanguage() {
       const nextLang = currentLang === 'ko' ? 'en' : 'ko';
       setLanguage(nextLang);
+    }
+
+    function switchAutoflowDemoTab(mode) {
+      const gifEl = document.getElementById('autoflowDemoGif');
+      const capEl = document.getElementById('autoflowDemoCaption');
+      const tabRec = document.getElementById('afTabRec');
+      const tabPrompt = document.getElementById('afTabPrompt');
+      if (!gifEl || !capEl || !tabRec || !tabPrompt) return;
+
+      const activeClasses = ['bg-cyan-500', 'text-slate-950', 'shadow-md', 'shadow-cyan-500/20'];
+      const inactiveClasses = ['bg-slate-700/70', 'text-slate-300', 'hover:bg-slate-700', 'hover:text-white'];
+
+      if (mode === 'prompt') {
+        gifEl.src = 'assets/AutoFlow_Demo_Prompt.gif';
+        capEl.setAttribute('data-i18n', 'if_gif_cap_prompt');
+        if (translations[currentLang] && translations[currentLang].if_gif_cap_prompt) {
+          capEl.innerHTML = translations[currentLang].if_gif_cap_prompt;
+        }
+        tabPrompt.classList.remove(...inactiveClasses);
+        tabPrompt.classList.add(...activeClasses);
+        tabRec.classList.remove(...activeClasses);
+        tabRec.classList.add(...inactiveClasses);
+      } else {
+        gifEl.src = 'assets/AutoFlow_Demo_Recorder.gif';
+        capEl.setAttribute('data-i18n', 'if_gif_cap_rec');
+        if (translations[currentLang] && translations[currentLang].if_gif_cap_rec) {
+          capEl.innerHTML = translations[currentLang].if_gif_cap_rec;
+        }
+        tabRec.classList.remove(...inactiveClasses);
+        tabRec.classList.add(...activeClasses);
+        tabPrompt.classList.remove(...activeClasses);
+        tabPrompt.classList.add(...inactiveClasses);
+      }
     }
 
     // Category selection logic
