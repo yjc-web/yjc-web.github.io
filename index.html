@@ -572,24 +572,14 @@
             </div>
           </div>
           <div class="lg:col-span-6 flex flex-col gap-3">
-            <!-- Interactive 2-Tab Motion GIF Showcase -->
-            <div class="rounded-2xl overflow-hidden border border-cyan-200/80 shadow-xl bg-slate-900">
-              <div class="flex flex-wrap items-center gap-1.5 p-2 bg-slate-800/95 border-b border-slate-700">
-                <button type="button" id="afTabRec" onclick="switchAutoflowDemoTab('recorder')" class="flex-1 min-w-[140px] px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20">
-                  <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-                  <span data-i18n="if_tab_rec">스마트 녹화 (클릭 한 번으로 완성)</span>
-                </button>
-                <button type="button" id="afTabPrompt" onclick="switchAutoflowDemoTab('prompt')" class="flex-1 min-w-[140px] px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 bg-slate-700/70 text-slate-300 hover:bg-slate-700 hover:text-white">
-                  <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
-                  <span data-i18n="if_tab_prompt">프롬프트 &amp; 엑셀 루프 자동 조립</span>
-                </button>
-              </div>
+            <!-- AutoFlow AI Copilot Live Captioned GIF Showcase -->
+            <div class="rounded-2xl overflow-hidden border border-cyan-200/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('autoflowDemoGif').src, 'AutoFlow RPA — AI Copilot Live Demo')">
               <div class="relative bg-slate-950">
-                <img id="autoflowDemoGif" src="assets/AutoFlow_Demo_Recorder.gif" alt="AutoFlow RPA Live Workflow Demo" class="w-full h-auto block" />
+                <img id="autoflowDemoGif" src="assets/261022_AutoFlow_AI_SCRIPT_Captioned.gif" alt="AutoFlow RPA AI Copilot Live Workflow Demo" class="w-full h-auto block" />
               </div>
-              <div class="px-3.5 py-2.5 bg-slate-900 border-t border-slate-800 flex items-center gap-2 text-[11px] sm:text-xs text-cyan-200 font-medium leading-snug">
-                <i class="fa-solid fa-bolt text-amber-400 shrink-0"></i>
-                <span id="autoflowDemoCaption" data-i18n="if_gif_cap_rec">평소처럼 화면을 클릭·타이핑하면 버튼 이미지를 자동 크롭하고 한글 메모가 달린 순서도를 즉시 완성합니다.</span>
+              <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between gap-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1.5 font-medium text-cyan-200"><i class="fa-solid fa-wand-magic-sparkles text-amber-400 shrink-0"></i> <span data-i18n="if_gif_cap_ai">AI 코파일럿에 원하는 작업을 입력하면 시나리오 순서도가 자동으로 생성·실행됩니다.</span></span>
+                <span class="text-cyan-400 font-semibold flex items-center gap-1 shrink-0"><i class="fa-solid fa-magnifying-glass-plus"></i> <span data-i18n="click_to_zoom">클릭하여 크게 보기</span></span>
               </div>
             </div>
 
@@ -1226,7 +1216,7 @@
         btn_yt_autoflow: "유튜브 시연 영상",
         if_tab_rec: "스마트 녹화 (클릭 한 번으로 완성)",
         if_tab_prompt: "프롬프트 &amp; 엑셀 루프 자동 조립",
-        if_gif_cap_rec: "평소처럼 화면을 클릭·타이핑하면 버튼 이미지를 자동 크롭하고 한글 메모가 달린 순서도를 즉시 완성합니다.",
+        if_gif_cap_ai: "AI 코파일럿에 원하는 작업을 입력하면 시나리오 순서도가 자동으로 생성·실행됩니다.",
         if_gif_cap_prompt: "원하는 작업을 입력하거나 엑셀(customers.xlsx)을 연결하면 {ROW:고객명} 변수 치환부터 100행 반복 루프까지 자동 조립됩니다.",
         fileflow_sub: "(파일플로우)",
         fileflow_desc: "<strong>\"0.1초 실시간 감시 & Explainable AI 기반 스마트 파일 정리\"</strong><br />다운로드 폴더나 업무 드라이브에 신규 파일이 들어오는 즉시 0.1초 만에 감지하여, 나이브 베이즈 머신러닝 및 키워드 규칙으로 최적의 프로젝트 하위 폴더에 자동 분류해 주는 차세대 파일 허브 시스템입니다.",
@@ -1408,7 +1398,7 @@
         btn_yt_autoflow: "Watch Demo (YouTube)",
         if_tab_rec: "Smart Recorder (1-Click Capture)",
         if_tab_prompt: "AI Prompt &amp; Excel Loop Builder",
-        if_gif_cap_rec: "Simply click and type as usual — AutoFlow auto-crops button images and builds a labeled flowchart in real time.",
+        if_gif_cap_ai: "Describe your task in plain language with AI Copilot — AutoFlow automatically builds and runs the scenario.",
         if_gif_cap_prompt: "Describe your task or link an Excel file (customers.xlsx) — AutoFlow auto-assembles {ROW} variables and 100-row loops.",
         fileflow_sub: "(AI File Manager)",
         fileflow_desc: "<strong>\"0.1s Real-Time Spooler & Explainable AI File Organization\"</strong><br />Instantly detects new files in your download or working folders within 0.1 seconds, automatically sorting them into structured project subdirectories using Naive Bayes ML and keyword rules.",
