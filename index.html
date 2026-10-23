@@ -165,54 +165,6 @@
       color: #0284C7;
       font-weight: 700;
     }
-    .demo-tab-bar {
-      display: flex;
-      align-items: center;
-      gap: 0.375rem;
-      padding: 0.3rem;
-      border-radius: 0.875rem;
-      background: #0F172A;
-      border: 1px solid #334155;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
-    }
-    .demo-tab-btn {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      padding: 0.5rem 0.65rem;
-      border-radius: 0.65rem;
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: #94A3B8;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      user-select: none;
-    }
-    .demo-tab-btn:hover {
-      color: #F8FAFC;
-      background: rgba(255, 255, 255, 0.06);
-    }
-    .demo-tab-btn.active-guide {
-      background: #1E293B;
-      color: #F8FAFC;
-      border: 1px solid #475569;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    }
-    .demo-tab-btn.active-live {
-      background: linear-gradient(135deg, #0284C7 0%, #4F46E5 100%);
-      color: #FFFFFF;
-      border: 1px solid #38BDF8;
-      box-shadow: 0 4px 14px rgba(14, 165, 233, 0.35);
-    }
-    @keyframes pulseGlow {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.45); }
-      50% { box-shadow: 0 0 0 5px rgba(56, 189, 248, 0); }
-    }
-    .live-try-badge {
-      animation: pulseGlow 2s infinite;
-    }
   </style>
   <meta name="google-site-verification" content="zhvxdwF1Mwy_1uG9uOjVuVBs7J2NJv1tMQWLR7837_w" />
   <meta name="google-site-verification" content="ZKmkbgf-CA1Pj3EO07J3szrG0tViBL7j4htpIUihq14" />
@@ -396,6 +348,705 @@
         </div>
       </div>
 
+
+      <!-- ================= INTERACTIVE WINDOWS 11 DESKTOP STAGE (1:1 REAL APP UI SIMULATOR) ================= -->
+      <div id="interactiveDesktopStage" class="max-w-6xl mx-auto mt-2 mb-12 text-left">
+        <!-- Stage Top Header & 8-App Switcher Dock -->
+        <div class="rounded-t-3xl bg-slate-900 border border-b-0 border-slate-700/90 p-3 sm:p-4 shadow-2xl">
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-800">
+            <div class="flex items-center gap-2.5">
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full bg-sky-500/20 border border-sky-400/40 text-sky-300 font-mono text-[11px] font-bold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span data-i18n="stage_live_badge">실제 프로그램 1:1 UI 인터랙티브 데스크톱 체험관</span>
+              </span>
+              <span class="hidden md:inline text-xs text-slate-400" data-i18n="stage_live_sub">아래 8개 앱 탭을 클릭해 설치 없이 실제 프로그램과 100% 동일한 UI를 웹에서 직접 조작해보세요!</span>
+            </div>
+            <a id="stageStoreDirectBtn" href="https://apps.microsoft.com/detail/9N420XP5HCQC" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition-all">
+              <i class="fa-brands fa-microsoft"></i>
+              <span id="stageStoreBtnText">RadialDrop 스토어 무료 받기</span>
+            </a>
+          </div>
+
+          <!-- 8-App Interactive Switcher Bar -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-1.5" id="stageAppTabs">
+            <button type="button" onclick="switchStageApp('radialdrop')" id="stageTab_radialdrop" class="stage-app-tab active flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-extrabold transition-all bg-sky-600 text-white border border-sky-400 shadow-lg shadow-sky-600/25">
+              <img src="assets/RadialDrop_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
+              <span class="truncate">RadialDrop</span>
+            </button>
+            <button type="button" onclick="switchStageApp('queueclip')" id="stageTab_queueclip" class="stage-app-tab flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800/90 hover:bg-slate-800 text-slate-300 border border-slate-700">
+              <img src="assets/QueueClip_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
+              <span class="truncate">QueueClip</span>
+            </button>
+            <button type="button" onclick="switchStageApp('quickpath')" id="stageTab_quickpath" class="stage-app-tab flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800/90 hover:bg-slate-800 text-slate-300 border border-slate-700">
+              <img src="assets/QuickPath_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
+              <span class="truncate">QuickPath</span>
+            </button>
+            <button type="button" onclick="switchStageApp('mouseflow')" id="stageTab_mouseflow" class="stage-app-tab flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800/90 hover:bg-slate-800 text-slate-300 border border-slate-700">
+              <img src="assets/MouseFlowAI_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
+              <span class="truncate">MouseFlow AI</span>
+            </button>
+            <button type="button" onclick="switchStageApp('excelcompare')" id="stageTab_excelcompare" class="stage-app-tab flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800/90 hover:bg-slate-800 text-slate-300 border border-slate-700">
+              <img src="assets/ExcelCompare_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
+              <span class="truncate">ExcelCompare</span>
+            </button>
+            <button type="button" onclick="switchStageApp('filehub')" id="stageTab_filehub" class="stage-app-tab flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800/90 hover:bg-slate-800 text-slate-300 border border-slate-700">
+              <img src="assets/FileHubAI_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
+              <span class="truncate">FileHub AI</span>
+            </button>
+            <button type="button" onclick="switchStageApp('autoflow')" id="stageTab_autoflow" class="stage-app-tab flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800/90 hover:bg-slate-800 text-slate-300 border border-slate-700">
+              <img src="assets/StoreLogo_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
+              <span class="truncate">AutoFlow RPA</span>
+            </button>
+            <button type="button" onclick="switchStageApp('overlaypic')" id="stageTab_overlaypic" class="stage-app-tab flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800/90 hover:bg-slate-800 text-slate-300 border border-slate-700">
+              <img src="assets/OverlayPic_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
+              <span class="truncate">OverlayPic</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Windows 11 Virtual Desktop Monitor Viewport -->
+        <div class="relative rounded-b-3xl overflow-hidden border border-slate-700 shadow-2xl bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F2942] min-h-[500px] flex flex-col justify-between">
+          <!-- Subtle Windows 11 Bloom Wallpaper Glow -->
+          <div class="absolute inset-0 pointer-events-none opacity-35" style="background: radial-gradient(circle at 25% 30%, rgba(56, 189, 248, 0.35), transparent 45%), radial-gradient(circle at 75% 65%, rgba(99, 102, 241, 0.30), transparent 50%);"></div>
+
+          <!-- ================= SCENE 1: RADIALDROP (1:1 EXACT XAML PORT) ================= -->
+          <div id="stageScene_radialdrop" class="stage-scene relative z-10 p-4 sm:p-6 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+            <!-- Left: Windows Explorer File + 1:1 CS:GO 6-Sector RadialWheelWindow -->
+            <div class="lg:col-span-7 flex flex-col items-center">
+              <!-- Instruction & Draggable File Selector Bar -->
+              <div class="w-full mb-3 px-3.5 py-2 rounded-xl bg-slate-900/85 backdrop-blur border border-slate-700 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-200">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-400/30 font-mono text-[10px] font-bold">STEP 1</span>
+                  <span data-i18n="rd_stage_guide">드래그할 샘플 파일을 고른 뒤 아래 <strong>실제 360° 휠 섹터(1~6)</strong>에 마우스를 올리고 클릭해보세요!</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" onclick="selectStageRdFile(0)" id="stageRdFileBtn0" class="px-2.5 py-1 rounded-lg bg-sky-600 text-white font-bold text-[11px] border border-sky-300">📄 기획안_최종.docx</button>
+                  <button type="button" onclick="selectStageRdFile(1)" id="stageRdFileBtn1" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-bold text-[11px] border border-slate-600">🖼️ 시안_로고.png</button>
+                  <button type="button" onclick="selectStageRdFile(2)" id="stageRdFileBtn2" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-bold text-[11px] border border-slate-600">📊 정산표.xlsx</button>
+                </div>
+              </div>
+
+              <!-- 1:1 RadialWheelWindow.xaml SVG Port -->
+              <div class="relative flex items-center justify-center">
+                
+<svg id="rdExactSvgWheel" viewBox="0 0 390 390" class="w-[290px] h-[290px] sm:w-[330px] sm:h-[330px] drop-shadow-[0_14px_28px_rgba(0,0,0,0.55)] select-none">
+  <defs>
+    <radialGradient id="rdDiscGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#475569" stop-opacity="0.82" />
+      <stop offset="65%" stop-color="#334155" stop-opacity="0.88" />
+      <stop offset="100%" stop-color="#1E293B" stop-opacity="0.94" />
+    </radialGradient>
+    <linearGradient id="rdActiveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0.78" />
+    </linearGradient>
+  </defs>
+  <!-- Layer 0: Frosted Slate Background Disc (Exact XAML Canvas.Left=50, Width=290) -->
+  <circle cx="195" cy="195" r="145" fill="url(#rdDiscGrad)" stroke="rgba(255,255,255,0.28)" stroke-width="1.2" />
+  <!-- Outer Hairline Accent Ring -->
+  <circle cx="195" cy="195" r="142" fill="none" stroke="rgba(255,255,255,0.13)" stroke-width="1" pointer-events="none" />
+  <!-- Layer 1: 6 Sector Wedges -->
+  <path id="rdWedge_0" d="M 151.70,170.00 A 50.00,50.00 0 0 1 195.00,145.00 L 195.00,50.00 A 145.00,145.00 0 0 0 69.43,122.50 Z" fill="rgba(0,0,0,0.01)" stroke="transparent" stroke-width="1.5" class="cursor-pointer transition-colors duration-100" onmouseenter="hoverRadialSector(0)" onclick="clickRadialSector(0)" /><path id="rdWedge_1" d="M 195.00,145.00 A 50.00,50.00 0 0 1 238.30,170.00 L 320.57,122.50 A 145.00,145.00 0 0 0 195.00,50.00 Z" fill="rgba(0,0,0,0.01)" stroke="transparent" stroke-width="1.5" class="cursor-pointer transition-colors duration-100" onmouseenter="hoverRadialSector(1)" onclick="clickRadialSector(1)" /><path id="rdWedge_2" d="M 238.30,170.00 A 50.00,50.00 0 0 1 238.30,220.00 L 320.57,267.50 A 145.00,145.00 0 0 0 320.57,122.50 Z" fill="rgba(0,0,0,0.01)" stroke="transparent" stroke-width="1.5" class="cursor-pointer transition-colors duration-100" onmouseenter="hoverRadialSector(2)" onclick="clickRadialSector(2)" /><path id="rdWedge_3" d="M 238.30,220.00 A 50.00,50.00 0 0 1 195.00,245.00 L 195.00,340.00 A 145.00,145.00 0 0 0 320.57,267.50 Z" fill="rgba(0,0,0,0.01)" stroke="transparent" stroke-width="1.5" class="cursor-pointer transition-colors duration-100" onmouseenter="hoverRadialSector(3)" onclick="clickRadialSector(3)" /><path id="rdWedge_4" d="M 195.00,245.00 A 50.00,50.00 0 0 1 151.70,220.00 L 69.43,267.50 A 145.00,145.00 0 0 0 195.00,340.00 Z" fill="rgba(0,0,0,0.01)" stroke="transparent" stroke-width="1.5" class="cursor-pointer transition-colors duration-100" onmouseenter="hoverRadialSector(4)" onclick="clickRadialSector(4)" /><path id="rdWedge_5" d="M 151.70,220.00 A 50.00,50.00 0 0 1 151.70,170.00 L 69.43,122.50 A 145.00,145.00 0 0 0 69.43,267.50 Z" fill="rgba(0,0,0,0.01)" stroke="transparent" stroke-width="1.5" class="cursor-pointer transition-colors duration-100" onmouseenter="hoverRadialSector(5)" onclick="clickRadialSector(5)" />
+  <!-- Layer 2: CS:GO Radial Divider Lines -->
+  <line x1="151.70" y1="170.00" x2="69.43" y2="122.50" stroke="rgba(226,232,240,0.42)" stroke-width="1" pointer-events="none" /><line x1="195.00" y1="145.00" x2="195.00" y2="50.00" stroke="rgba(226,232,240,0.42)" stroke-width="1" pointer-events="none" /><line x1="238.30" y1="170.00" x2="320.57" y2="122.50" stroke="rgba(226,232,240,0.42)" stroke-width="1" pointer-events="none" /><line x1="238.30" y1="220.00" x2="320.57" y2="267.50" stroke="rgba(226,232,240,0.42)" stroke-width="1" pointer-events="none" /><line x1="195.00" y1="245.00" x2="195.00" y2="340.00" stroke="rgba(226,232,240,0.42)" stroke-width="1" pointer-events="none" /><line x1="151.70" y1="220.00" x2="69.43" y2="267.50" stroke="rgba(226,232,240,0.42)" stroke-width="1" pointer-events="none" />
+  <!-- Layer 3: Inner Hub Double Rings -->
+  <circle cx="195" cy="195" r="54" fill="none" stroke="rgba(255,255,255,0.20)" stroke-width="1" pointer-events="none" />
+  <circle cx="195" cy="195" r="51" fill="none" stroke="rgba(148,163,184,0.32)" stroke-width="1" pointer-events="none" />
+  <!-- Layer 4 & 5: Sector Numbers, Icons, Lime Tags, Titles -->
+  <text x="164.00" y="144.81" text-anchor="middle" fill="#EAEEF4" font-family="Consolas, monospace" font-size="10.5" font-weight="bold" pointer-events="none">1</text>
+      <g transform="translate(143.00, 104.93)" pointer-events="none">
+        <g transform="translate(-8, -22) scale(0.68)">
+          <path d="M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V15H8A1,1 0 0,0 9,16A3,3 0 0,0 12,19A3,3 0 0,0 15,16A1,1 0 0,0 16,15H19V19Z" fill="#FFFFFF" />
+        </g>
+        <text x="0" y="1" text-anchor="middle" fill="#A3E635" font-family="Consolas, monospace" font-size="8.5" font-weight="bold">SLOT 1</text>
+        <text id="rdSecTitle_0" x="0" y="13" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Pretendard, sans-serif" font-size="10.5" font-weight="bold">선반 담기</text>
+      </g>
+    <text x="226.00" y="144.81" text-anchor="middle" fill="#EAEEF4" font-family="Consolas, monospace" font-size="10.5" font-weight="bold" pointer-events="none">2</text>
+      <g transform="translate(247.00, 104.93)" pointer-events="none">
+        <g transform="translate(-8, -22) scale(0.68)">
+          <path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" fill="#FFFFFF" />
+        </g>
+        <text x="0" y="1" text-anchor="middle" fill="#A3E635" font-family="Consolas, monospace" font-size="8.5" font-weight="bold">NEW DIR</text>
+        <text id="rdSecTitle_1" x="0" y="13" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Pretendard, sans-serif" font-size="10.5" font-weight="bold">새 폴더</text>
+      </g>
+    <text x="257.00" y="198.50" text-anchor="middle" fill="#EAEEF4" font-family="Consolas, monospace" font-size="10.5" font-weight="bold" pointer-events="none">3</text>
+      <g transform="translate(299.00, 195.00)" pointer-events="none">
+        <g transform="translate(-8, -22) scale(0.68)">
+          <path d="M12,2L1,7L12,12L21,7.91V14.5A0.5,0.5 0 0,0 22,15A0.5,0.5 0 0,0 22.5,14.5V7.24L12,2M2.5,8.27L11,12.13V21.46L2.5,17.2V8.27M13,21.46V12.13L21.5,8.27V17.2L13,21.46Z" fill="#FFFFFF" />
+        </g>
+        <text x="0" y="1" text-anchor="middle" fill="#A3E635" font-family="Consolas, monospace" font-size="8.5" font-weight="bold">ZIP</text>
+        <text id="rdSecTitle_2" x="0" y="13" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Pretendard, sans-serif" font-size="10.5" font-weight="bold">Zip 압축</text>
+      </g>
+    <text x="226.00" y="252.19" text-anchor="middle" fill="#EAEEF4" font-family="Consolas, monospace" font-size="10.5" font-weight="bold" pointer-events="none">4</text>
+      <g transform="translate(247.00, 285.07)" pointer-events="none">
+        <g transform="translate(-8, -22) scale(0.68)">
+          <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" fill="#FFFFFF" />
+        </g>
+        <text x="0" y="1" text-anchor="middle" fill="#A3E635" font-family="Consolas, monospace" font-size="8.5" font-weight="bold">PATH</text>
+        <text id="rdSecTitle_3" x="0" y="13" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Pretendard, sans-serif" font-size="10.5" font-weight="bold">경로 복사</text>
+      </g>
+    <text x="164.00" y="252.19" text-anchor="middle" fill="#EAEEF4" font-family="Consolas, monospace" font-size="10.5" font-weight="bold" pointer-events="none">5</text>
+      <g transform="translate(143.00, 285.07)" pointer-events="none">
+        <g transform="translate(-8, -22) scale(0.68)">
+          <path d="M8.5,13.5L11,16.5L14.5,12L19,18H5M21,19V5C21,3.89 20.1,3 19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19Z" fill="#FFFFFF" />
+        </g>
+        <text x="0" y="1" text-anchor="middle" fill="#A3E635" font-family="Consolas, monospace" font-size="8.5" font-weight="bold">IMAGE</text>
+        <text id="rdSecTitle_4" x="0" y="13" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Pretendard, sans-serif" font-size="10.5" font-weight="bold">이미지 변환</text>
+      </g>
+    <text x="133.00" y="198.50" text-anchor="middle" fill="#EAEEF4" font-family="Consolas, monospace" font-size="10.5" font-weight="bold" pointer-events="none">6</text>
+      <g transform="translate(91.00, 195.00)" pointer-events="none">
+        <g transform="translate(-8, -22) scale(0.68)">
+          <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" fill="#FFFFFF" />
+        </g>
+        <text x="0" y="1" text-anchor="middle" fill="#A3E635" font-family="Consolas, monospace" font-size="8.5" font-weight="bold">SHELF</text>
+        <text id="rdSecTitle_5" x="0" y="13" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Pretendard, sans-serif" font-size="10.5" font-weight="bold">선반 열기</text>
+      </g>
+    
+  <!-- Center Core Hub (96x96 Circle at Center) -->
+  <g class="cursor-pointer" onmouseenter="hoverRadialSector(-1)" onclick="resetRadialWheel()">
+    <circle id="rdCenterCircle" cx="195" cy="195" r="48" fill="rgba(51,65,85,0.92)" stroke="#38BDF8" stroke-width="1.4" />
+    <text id="rdCoreIcon" x="195" y="184" text-anchor="middle" fill="#FCA5A5" font-size="16" font-weight="bold">✕</text>
+    <text id="rdCoreTitle" x="195" y="199" text-anchor="middle" fill="#FCA5A5" font-size="10.5" font-weight="bold">CANCEL</text>
+    <text id="rdCoreDesc" x="195" y="212" text-anchor="middle" fill="#CBD5E1" font-size="8" font-weight="600">놓으면 취소</text>
+  </g>
+</svg>
+
+              </div>
+            </div>
+
+            <!-- Right: 1:1 Exact RadialShelfWindow.xaml Port (#364964 Frosted Slate Card) -->
+            <div class="lg:col-span-5 flex flex-col items-center">
+              <div class="w-full max-w-[340px] rounded-[14px] bg-[#364964] border-[1.2px] border-[#5B759C] p-3 shadow-[0_12px_30px_rgba(0,0,0,0.48)] text-white font-sans">
+                <!-- 0. 헤더 바 (Exact RadialShelfWindow.xaml Row 0) -->
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-1.5 bg-[#2E405C] border border-[#4B658C] rounded-[6px] px-2 py-1">
+                      <img src="assets/RadialDrop_150x150.png" class="w-3.5 h-3.5 object-contain" alt="" />
+                      <span class="text-[11px] font-bold text-[#38BDF8]">RadialDrop</span>
+                    </div>
+                    <span id="rdExactSummary" class="text-[11px] text-[#CBD5E1]">2개 파일</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-xs text-[#CBD5E1]">
+                    <span title="선반 고정">📌</span>
+                    <span class="cursor-pointer hover:text-white" onclick="clearStageRdSlot()">✕</span>
+                  </div>
+                </div>
+
+                <!-- 1. 멀티 슬롯(Multi-Slot) 탭 전환 바 (Exact #263852 Segmented Bar) -->
+                <div class="grid grid-cols-3 gap-1 bg-[#263852] border border-[#476288] rounded-[8px] p-1 mb-2.5">
+                  <button type="button" onclick="switchStageRdSlot(0)" id="rdSlotBtn_0" class="py-1 px-1.5 rounded-[6px] bg-[#384D6E] border border-[#38BDF8] text-[10.5px] font-bold text-[#F8FAFC] flex items-center justify-center gap-1">
+                    <span>🧺</span> <span id="rdSlotLbl_0">슬롯 1 (2)</span>
+                  </button>
+                  <button type="button" onclick="switchStageRdSlot(1)" id="rdSlotBtn_1" class="py-1 px-1.5 rounded-[6px] bg-transparent border border-transparent text-[10.5px] font-semibold text-[#CBD5E1] flex items-center justify-center gap-1">
+                    <span>📁</span> <span id="rdSlotLbl_1">슬롯 2 (0)</span>
+                  </button>
+                  <button type="button" onclick="switchStageRdSlot(2)" id="rdSlotBtn_2" class="py-1 px-1.5 rounded-[6px] bg-transparent border border-transparent text-[10.5px] font-semibold text-[#CBD5E1] flex items-center justify-center gap-1">
+                    <span>📌</span> <span id="rdSlotLbl_2">슬롯 3 (0)</span>
+                  </button>
+                </div>
+
+                <!-- 2. 메인 파일 목록 / 드롭존 (#263852 Inset Box) -->
+                <div id="rdExactFileList" class="bg-[#263852] border border-[#476288] rounded-[8px] p-2.5 min-h-[165px] space-y-1.5 mb-2.5">
+                </div>
+
+                <!-- 3. 하단 액션 바 -->
+                <div class="grid grid-cols-2 gap-1.5">
+                  <button type="button" onclick="exportStageRdFiles()" class="py-2 px-2.5 rounded-[7px] bg-[#0284C7] hover:bg-[#0369A1] text-white font-bold text-[11px] flex items-center justify-center gap-1.5 shadow transition-all">
+                    <span>📤</span> <span>타겟 폴더로 일괄 드롭</span>
+                  </button>
+                  <button type="button" onclick="clearStageRdSlot()" class="py-2 px-2.5 rounded-[7px] bg-[#2E405C] hover:bg-[#3B5275] border border-[#4B658C] text-[#CBD5E1] font-bold text-[11px] flex items-center justify-center gap-1.5 transition-all">
+                    <span>🗑️</span> <span>슬롯 비우기</span>
+                  </button>
+                </div>
+              </div>
+              <div id="rdExactToast" class="mt-2.5 px-3 py-1.5 rounded-lg bg-slate-950/90 border border-sky-500/40 text-sky-300 text-xs font-medium text-center w-full max-w-[340px]">
+                💡 실제 RadialDrop의 6섹터 CS:GO 휠과 3슬롯 선반 UI입니다. 섹터 1~6을 클릭해보세요!
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= SCENE 2: QUEUECLIP (1:1 EXACT XAML PORT OF MainWindow.xaml) ================= -->
+          <div id="stageScene_queueclip" class="stage-scene hidden relative z-10 p-4 sm:p-6 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <!-- Left: 1:1 Exact QueueClip MainWindow.xaml (#FFFFFF Fluent Window, 380px width) -->
+            <div class="lg:col-span-6 flex justify-center">
+              <div class="w-full max-w-[380px] rounded-[16px] bg-[#FFFFFF] border border-[#E2E8F0] shadow-[0_20px_40px_rgba(15,23,42,0.45)] overflow-hidden text-[#0F172A] font-sans">
+                <!-- 1. 헤더 (모던 2줄 레이아웃 - MainWindow.xaml Row 0) -->
+                <div class="bg-[#F8FAFC] border-b border-[#E2E8F0] px-3 py-2 space-y-1.5">
+                  <!-- 1행 -->
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1.5">
+                      <span class="text-xs">📋</span>
+                      <span class="font-bold text-xs text-[#0F172A]">QueueClip</span>
+                      <span class="px-1.5 py-0.5 rounded-[5px] bg-[#FEF3C7] border border-[#FDE68A] text-[#D97706] font-bold text-[9px]">PRO READY</span>
+                      <span class="text-[9.5px] text-[#94A3B8] font-semibold">v1.0.6</span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                      <div class="flex items-center bg-[#E2E8F0] rounded-full p-0.5 text-[8.5px] font-bold">
+                        <span class="px-1.5 py-0.2 rounded-full bg-[#3B82F6] text-white">KO</span>
+                        <span class="px-1.5 py-0.2 text-[#64748B]">EN</span>
+                      </div>
+                      <span class="w-5 h-5 flex items-center justify-center text-[10px] text-[#64748B]">━</span>
+                      <span class="w-5 h-5 flex items-center justify-center text-[10px] text-[#64748B]">▽</span>
+                      <span class="w-5 h-5 flex items-center justify-center rounded-[5px] bg-[#FEE2E2] border border-[#FECACA] text-[#DC2626] text-[10px] font-bold">✕</span>
+                    </div>
+                  </div>
+                  <!-- 2행: 모드(Q/L/S) 뱃지 + 대기열/히스토리 탭 + 되돌리기(↩) -->
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1.5">
+                      <button type="button" onclick="cycleQcMode()" id="qcModeBtn" class="px-2 py-0.5 rounded-[6px] bg-[#EFF6FF] border border-[#BFDBFE] text-[#1D4ED8] font-bold text-[10px] flex items-center gap-1">
+                        <span id="qcModeIcon">⏩</span> <span id="qcModeText">Queue</span>
+                      </button>
+                      <div class="flex items-center bg-[#E2E8F0] rounded-[7px] p-0.5 text-[9.5px]">
+                        <span id="qcTabCount" class="px-2 py-0.5 rounded-[5.5px] bg-[#FFFFFF] text-[#0F172A] font-bold shadow-sm">대기열 (3)</span>
+                        <span class="px-2 py-0.5 text-[#64748B] font-semibold">히스토리</span>
+                      </div>
+                      <button type="button" onclick="resetStageQc()" title="방금 꺼낸 클립 되돌리기 (Undo)" class="w-5 h-5 rounded-[5px] bg-[#F8FAFC] hover:bg-[#E2E8F0] border border-[#CBD5E1] text-[#334155] font-bold text-[10px] flex items-center justify-center">↩</button>
+                    </div>
+                    <div class="flex items-center gap-1 text-[#64748B] text-[11px]">
+                      <span class="w-5 h-5 flex items-center justify-center font-bold">?</span>
+                      <span class="w-5 h-5 flex items-center justify-center">⚙</span>
+                      <span class="w-5 h-5 flex items-center justify-center text-[9px]">▲</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. 클립보드 목록 (#FAFAFA LstClips) -->
+                <div id="qcExactList" class="bg-[#FAFAFA] p-2 space-y-1.5 min-h-[210px] max-h-[230px] overflow-y-auto">
+                </div>
+
+                <!-- 3. 하단 바 (Exact 3 Buttons: #FEE500 Yellow, #2563EB Blue, #FEF2F2 Red) -->
+                <div class="bg-[#F8FAFC] border-t border-[#E2E8F0] p-2 grid grid-cols-12 gap-1.5">
+                  <button type="button" onclick="stageQcPasteOne()" class="col-span-5 h-[30px] rounded-[6px] bg-[#FEE500] hover:bg-[#FDD800] border border-[#EAB308] text-[#191919] font-bold text-[10.5px] flex items-center justify-center shadow-sm active:scale-95 transition-all">
+                    즉시 붙여넣기 (Ctrl+V)
+                  </button>
+                  <button type="button" onclick="stageQcTurboPaste()" class="col-span-5 h-[30px] rounded-[6px] bg-[#2563EB] hover:bg-[#1D4ED8] border border-[#1D4ED8] text-white font-bold text-[10.5px] flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all">
+                    <span>🚀</span> <span>터보 연속입력</span>
+                  </button>
+                  <button type="button" onclick="resetStageQc()" class="col-span-2 h-[30px] rounded-[6px] bg-[#FEF2F2] hover:bg-[#FEE2E2] border border-[#FECACA] text-[#DC2626] font-bold text-[10.5px] flex items-center justify-center">
+                    비우기
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Windows 11 Excel / ERP Target Form -->
+            <div class="lg:col-span-6 space-y-3">
+              <div class="rounded-2xl bg-white border border-slate-200 shadow-2xl overflow-hidden text-slate-900">
+                <div class="bg-emerald-700 text-white px-4 py-2.5 flex items-center justify-between text-xs font-bold">
+                  <span>📊 Microsoft Excel — 고객발주서_입력폼.xlsx</span>
+                  <span class="px-2 py-0.5 rounded bg-emerald-900/60 font-mono text-[10px]">Ctrl+C / Alt+V 연동</span>
+                </div>
+                <div class="p-4 space-y-3">
+                  <!-- Quick Copy Source Buttons -->
+                  <div>
+                    <div class="text-xs font-bold text-slate-600 mb-1.5">1️⃣ 아래 샘플 데이터를 클릭해 왼쪽 실제 QueueClip 창에 복사(Ctrl+C)해보세요:</div>
+                    <div class="flex flex-wrap gap-1.5">
+                      <button type="button" onclick="stageQcAdd('주식회사 플로우스위트')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-blue-50 border border-slate-300 text-xs font-semibold text-slate-800">+ 📋 "주식회사 플로우스위트"</button>
+                      <button type="button" onclick="stageQcAdd('02-1588-0000')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-blue-50 border border-slate-300 text-xs font-semibold text-slate-800">+ 📋 "02-1588-0000"</button>
+                      <button type="button" onclick="stageQcAdd('품번-2026-01')" class="px-2.5 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 border border-blue-300 text-xs font-bold text-blue-700">+ 🔢 패턴 토큰 "품번-2026-01"</button>
+                    </div>
+                  </div>
+
+                  <!-- Target Spreadsheet Rows -->
+                  <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <div class="bg-slate-100 px-3 py-1.5 border-b border-slate-200 text-[11px] font-mono font-bold text-slate-600 grid grid-cols-12">
+                      <span class="col-span-3">열 (Column)</span>
+                      <span class="col-span-9">자동 입력된 셀 값 (QueueClip에서 노란/파란 버튼 클릭!)</span>
+                    </div>
+                    <div class="divide-y divide-slate-200 text-xs font-mono">
+                      <div class="grid grid-cols-12 items-center px-3 py-2">
+                        <span class="col-span-3 font-bold text-slate-500">B2 (거래처)</span>
+                        <input id="stageQcCell_0" readonly placeholder="대기 중..." class="col-span-9 px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-900 font-bold" />
+                      </div>
+                      <div class="grid grid-cols-12 items-center px-3 py-2">
+                        <span class="col-span-3 font-bold text-slate-500">B3 (연락처)</span>
+                        <input id="stageQcCell_1" readonly placeholder="대기 중..." class="col-span-9 px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-900 font-bold" />
+                      </div>
+                      <div class="grid grid-cols-12 items-center px-3 py-2">
+                        <span class="col-span-3 font-bold text-slate-500">B4 (품목번호)</span>
+                        <input id="stageQcCell_2" readonly placeholder="대기 중..." class="col-span-9 px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-900 font-bold" />
+                      </div>
+                      <div class="grid grid-cols-12 items-center px-3 py-2">
+                        <span class="col-span-3 font-bold text-slate-500">B5 (추가항목)</span>
+                        <input id="stageQcCell_3" readonly placeholder="대기 중..." class="col-span-9 px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-900 font-bold" />
+                      </div>
+                    </div>
+                  </div>
+                  <div id="stageQcStatus" class="text-xs font-bold text-blue-600">
+                    💡 왼쪽 실제 QueueClip 창에서 3번째 항목의 파란색 [＋] 버튼을 누르면 품번 숫자가 자동 증가하며 복제됩니다!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= SCENE 3: QUICKPATH (1:1 EXACT XAML PORT OF QuickPathBar.xaml) ================= -->
+          <div id="stageScene_quickpath" class="stage-scene hidden relative z-10 p-4 sm:p-6 flex-1 flex flex-col items-center justify-center">
+            <div class="w-full max-w-4xl space-y-3">
+              <!-- Background Active File Explorer Window Strip -->
+              <div class="rounded-xl bg-slate-800/90 border border-slate-600 px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-200">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-400/40 font-mono text-[10px] font-bold">열려 있는 탐색기 창</span>
+                  <span class="font-mono text-amber-200 font-bold">📁 D:\Projects\2026_신규프로젝트\03_최종시안</span>
+                </div>
+                <span class="text-[11px] text-slate-400">아래 저장 창 타이틀바에 부착된 <strong class="text-amber-300">[QuickPath HUD 바]</strong>를 클릭해보세요!</span>
+              </div>
+
+              <!-- Foreground Windows 11 Save As Dialog with Docked 1:1 QuickPathBar.xaml -->
+              <div id="stageQpDialog" class="rounded-2xl bg-[#FFFFFF] border-2 border-slate-300 shadow-2xl overflow-hidden text-slate-900 transition-all duration-300">
+                <!-- Windows Save As Titlebar + Docked QuickPathBar.xaml (Exact #FFFBEB / #FCD34D / #B45309) -->
+                <div class="bg-[#F1F5F9] border-b border-slate-300 px-3 py-2 flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2 text-xs font-bold text-slate-800">
+                    <span>💾 다른 이름으로 저장 (Save As)</span>
+                  </div>
+
+                  <!-- 1:1 Exact QuickPathBar.xaml Widget Docked on Titlebar -->
+                  <div class="flex items-center gap-1.5 bg-white border border-slate-300 rounded-[6px] px-1.5 py-1 shadow-md">
+                    <div class="flex items-center gap-1 bg-[#FFFBEB] border border-[#FCD34D] rounded-[5px] px-2 py-0.5">
+                      <img src="assets/QuickPath_150x150.png" class="w-3.5 h-3.5 object-contain" alt="" />
+                      <span class="text-[10.5px] font-bold text-[#B45309]">QuickPath</span>
+                    </div>
+                    <button type="button" onclick="triggerStageQpJump(0)" class="flex items-center gap-1.5 bg-slate-50 hover:bg-[#FEF3C7] border border-slate-300 hover:border-[#F59E0B] rounded-[5px] px-2.5 py-0.5 transition-all group">
+                      <span class="text-xs">📁</span>
+                      <span class="text-[11px] font-semibold text-slate-800 group-hover:text-[#B45309]">D:\Projects\2026_신규프로젝트\03_최종시안</span>
+                      <span class="px-1.5 py-0.2 rounded-[3px] bg-[#FEF3C7] border border-[#FCD34D] text-[9.5px] font-bold text-[#B45309]">Ctrl+G</span>
+                    </button>
+                    <button type="button" onclick="triggerStageQpJump(1)" class="px-2 py-0.5 rounded-[5px] bg-white hover:bg-slate-100 border border-slate-300 text-[10.5px] font-semibold text-slate-700">
+                      Folders ▼
+                    </button>
+                  </div>
+
+                  <span class="text-xs text-slate-400 font-bold px-1">✕</span>
+                </div>
+
+                <!-- Windows Save As Address Bar & File View -->
+                <div class="p-4 space-y-3 bg-white">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-slate-500 shrink-0">현재 폴더 위치:</span>
+                    <div id="stageQpAddressBar" class="flex-1 px-3 py-1.5 rounded-lg bg-rose-50 border border-rose-300 font-mono text-xs font-bold text-rose-700 flex items-center justify-between">
+                      <span>⚠️ C:\Users\YJC\AppData\Local\Temp (엉뚱한 기본 폴더 — 여기서 10번 클릭해 찾아가야 함)</span>
+                      <button type="button" onclick="triggerStageQpJump(0)" class="px-2.5 py-0.5 rounded bg-amber-500 hover:bg-amber-600 text-white font-sans font-bold text-[11px] shadow">⚡ 즉시 순간이동 (Ctrl+G)</button>
+                    </div>
+                  </div>
+
+                  <div id="stageQpFolderContent" class="rounded-xl bg-slate-50 border border-slate-200 p-3 min-h-[110px] font-mono text-xs text-slate-600 space-y-1.5">
+                    <div class="text-slate-400">📂 Temp 폴더 내부 (원하는 작업 폴더가 아닙니다)</div>
+                    <div>📄 ~DF8A12.tmp</div>
+                    <div>📄 chrome_download_temp.crdownload</div>
+                  </div>
+
+                  <!-- Filename Input Bar (100% Preserved) -->
+                  <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 items-center pt-1">
+                    <span class="sm:col-span-2 text-xs font-bold text-slate-600">파일 이름(N):</span>
+                    <div class="sm:col-span-7 px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-300 font-mono text-xs font-bold text-emerald-900 flex items-center justify-between">
+                      <span>거래처_세금계산서_2026_최종.pdf</span>
+                      <span class="text-[10px] text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded">파일명 100% 보존됨</span>
+                    </div>
+                    <div class="sm:col-span-3 flex gap-1.5">
+                      <button type="button" onclick="triggerStageQpJump(0)" class="flex-1 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs">저장(S)</button>
+                      <button type="button" onclick="resetStageQp()" class="py-1.5 px-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs">초기화</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= SCENE 4: MOUSEFLOW AI (1:1 EXACT XAML PORT OF QuickHudWindow.xaml + Gesture Trail) ================= -->
+          <div id="stageScene_mouseflow" class="stage-scene hidden relative z-10 p-4 sm:p-6 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <!-- Left: Interactive Gesture Trail Canvas on Virtual Windows Desktop -->
+            <div class="lg:col-span-7 space-y-2">
+              <div class="px-3 py-2 rounded-xl bg-slate-900/90 border border-violet-500/40 flex items-center justify-between text-xs text-slate-200">
+                <span>🖱️ 아래 화면에서 <strong>마우스를 드래그해 선(↓, ↑, ↓→)</strong>을 긋거나 우측 실제 <strong>Quick Action HUD 타일</strong>을 눌러보세요!</span>
+                <span id="stageMfBadge" class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 font-mono font-bold">제스처 대기 중</span>
+              </div>
+              <div class="relative h-[300px] rounded-2xl bg-slate-950 border border-slate-700 overflow-hidden select-none shadow-2xl">
+                <div id="stageMfWin" class="absolute inset-6 rounded-xl bg-white text-slate-900 border border-slate-300 shadow-xl flex flex-col justify-between p-4 transition-all duration-300 pointer-events-none">
+                  <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                    <span class="text-xs font-bold text-slate-700">📄 2026_상반기_사업계획서.docx — Word</span>
+                    <div class="flex gap-1.5">
+                      <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                      <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                      <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                    </div>
+                  </div>
+                  <div class="my-auto text-center">
+                    <div id="stageMfStatus" class="text-base font-black text-violet-700 mb-1">이 창 위에서 마우스를 드래그해 제스처를 그려보세요!</div>
+                    <div class="text-xs text-slate-500">↓ 아래로 긋기: 창 최소화 · ↑ 위로 긋기: 창 최대화 · ↓→ 니은자 긋기: 창 닫기</div>
+                  </div>
+                  <div class="text-[11px] text-slate-400 font-mono flex justify-between">
+                    <span>MouseFlow AI Trajectory Engine</span>
+                    <span>CPU 0.0% · 60fps</span>
+                  </div>
+                </div>
+                <canvas id="stageMfCanvas" width="640" height="300" class="absolute inset-0 w-full h-full cursor-crosshair touch-none"></canvas>
+              </div>
+            </div>
+
+            <!-- Right: 1:1 Exact QuickHudWindow.xaml Port (#FFFFFF Card, 340x260, 2x4 TilesGrid) -->
+            <div class="lg:col-span-5 flex flex-col items-center">
+              <div class="w-full max-w-[340px] rounded-[10px] bg-[#FFFFFF] border border-[#CBD5E1] shadow-[0_18px_36px_rgba(15,23,42,0.45)] overflow-hidden text-[#0F172A] font-sans">
+                <!-- Header (QuickHudWindow.xaml Row 0) -->
+                <div class="h-[32px] bg-[#F8FAFC] border-b border-[#E2E8F0] px-2.5 flex items-center justify-between">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded-[3px] bg-[#2563EB] text-white text-[9px] flex items-center justify-center font-bold">⚡</span>
+                    <span class="text-[11px] font-bold text-[#0F172A]">Quick Action HUD</span>
+                    <span class="px-1.5 py-0.2 rounded-[3px] bg-[#EFF6FF] border border-[#BFDBFE] text-[9px] font-bold text-[#2563EB]">General</span>
+                  </div>
+                  <span class="text-[9px] text-[#94A3B8]">ESC to close</span>
+                </div>
+                <!-- 8 Action Tiles (2 columns x 4 rows UniformGrid) -->
+                <div class="p-2 grid grid-cols-2 gap-1.5 bg-white">
+                  <button type="button" onclick="execStageMfHud('↓', '창 최소화')" class="p-2 rounded-[6px] bg-white hover:bg-[#EFF6FF] border border-[#E2E8F0] hover:border-[#93C5FD] flex items-center gap-2 text-left transition-all">
+                    <span class="w-4 h-4 rounded-[3px] bg-[#F1F5F9] border border-[#CBD5E1] text-[9px] font-bold text-[#475569] flex items-center justify-center">1</span>
+                    <span class="text-xs">📉</span>
+                    <span class="text-[11px] font-semibold text-[#1E293B] truncate">창 최소화 (↓)</span>
+                  </button>
+                  <button type="button" onclick="execStageMfHud('↑', '창 최대화')" class="p-2 rounded-[6px] bg-white hover:bg-[#EFF6FF] border border-[#E2E8F0] hover:border-[#93C5FD] flex items-center gap-2 text-left transition-all">
+                    <span class="w-4 h-4 rounded-[3px] bg-[#F1F5F9] border border-[#CBD5E1] text-[9px] font-bold text-[#475569] flex items-center justify-center">2</span>
+                    <span class="text-xs">📈</span>
+                    <span class="text-[11px] font-semibold text-[#1E293B] truncate">창 최대화 (↑)</span>
+                  </button>
+                  <button type="button" onclick="execStageMfHud('↓→', '창 닫기')" class="p-2 rounded-[6px] bg-white hover:bg-[#EFF6FF] border border-[#E2E8F0] hover:border-[#93C5FD] flex items-center gap-2 text-left transition-all">
+                    <span class="w-4 h-4 rounded-[3px] bg-[#F1F5F9] border border-[#CBD5E1] text-[9px] font-bold text-[#475569] flex items-center justify-center">3</span>
+                    <span class="text-xs">❌</span>
+                    <span class="text-[11px] font-semibold text-[#1E293B] truncate">창 닫기 (↓→)</span>
+                  </button>
+                  <button type="button" onclick="execStageMfHud('←', '이전 탭 이동')" class="p-2 rounded-[6px] bg-white hover:bg-[#EFF6FF] border border-[#E2E8F0] hover:border-[#93C5FD] flex items-center gap-2 text-left transition-all">
+                    <span class="w-4 h-4 rounded-[3px] bg-[#F1F5F9] border border-[#CBD5E1] text-[9px] font-bold text-[#475569] flex items-center justify-center">4</span>
+                    <span class="text-xs">⬅️</span>
+                    <span class="text-[11px] font-semibold text-[#1E293B] truncate">이전 탭 (←)</span>
+                  </button>
+                  <button type="button" onclick="execStageMfHud('→', '다음 탭 이동')" class="p-2 rounded-[6px] bg-white hover:bg-[#EFF6FF] border border-[#E2E8F0] hover:border-[#93C5FD] flex items-center gap-2 text-left transition-all">
+                    <span class="w-4 h-4 rounded-[3px] bg-[#F1F5F9] border border-[#CBD5E1] text-[9px] font-bold text-[#475569] flex items-center justify-center">5</span>
+                    <span class="text-xs">➡️</span>
+                    <span class="text-[11px] font-semibold text-[#1E293B] truncate">다음 탭 (→)</span>
+                  </button>
+                  <button type="button" onclick="execStageMfHud('📌', '항상 위 고정')" class="p-2 rounded-[6px] bg-white hover:bg-[#EFF6FF] border border-[#E2E8F0] hover:border-[#93C5FD] flex items-center gap-2 text-left transition-all">
+                    <span class="w-4 h-4 rounded-[3px] bg-[#F1F5F9] border border-[#CBD5E1] text-[9px] font-bold text-[#475569] flex items-center justify-center">6</span>
+                    <span class="text-xs">📌</span>
+                    <span class="text-[11px] font-semibold text-[#1E293B] truncate">항상 위 고정</span>
+                  </button>
+                  <button type="button" onclick="execStageMfHud('🖥️', '바탕화면 보기')" class="p-2 rounded-[6px] bg-white hover:bg-[#EFF6FF] border border-[#E2E8F0] hover:border-[#93C5FD] flex items-center gap-2 text-left transition-all">
+                    <span class="w-4 h-4 rounded-[3px] bg-[#F1F5F9] border border-[#CBD5E1] text-[9px] font-bold text-[#475569] flex items-center justify-center">7</span>
+                    <span class="text-xs">🖥️</span>
+                    <span class="text-[11px] font-semibold text-[#1E293B] truncate">바탕화면 보기</span>
+                  </button>
+                  <button type="button" onclick="execStageMfHud('✂️', '화면 캡처')" class="p-2 rounded-[6px] bg-white hover:bg-[#EFF6FF] border border-[#E2E8F0] hover:border-[#93C5FD] flex items-center gap-2 text-left transition-all">
+                    <span class="w-4 h-4 rounded-[3px] bg-[#F1F5F9] border border-[#CBD5E1] text-[9px] font-bold text-[#475569] flex items-center justify-center">8</span>
+                    <span class="text-xs">✂️</span>
+                    <span class="text-[11px] font-semibold text-[#1E293B] truncate">화면 캡처</span>
+                  </button>
+                </div>
+                <!-- Footer Hint -->
+                <div class="h-[24px] bg-[#FAFAFA] border-t border-[#F1F5F9] flex items-center justify-center text-[9px] text-[#64748B]">
+                  💡 Press number 1-8 or click to execute instantly
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= SCENE 5: EXCELCOMPARE (1:1 REAL DUAL-GRID UI) ================= -->
+          <div id="stageScene_excelcompare" class="stage-scene hidden relative z-10 p-4 sm:p-6 flex-1 flex flex-col justify-center">
+            <div class="rounded-2xl bg-[#0F172A] border border-slate-700 shadow-2xl overflow-hidden text-white">
+              <!-- ExcelCompare Top App Bar -->
+              <div class="bg-[#1E293B] border-b border-slate-700 px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <div class="flex items-center gap-2">
+                  <img src="assets/ExcelCompare_150x150.png" class="w-5 h-5 rounded" alt="" />
+                  <span class="font-extrabold text-white">ExcelCompare v1.0.1</span>
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono text-[10px]">차이점 3건 감지 (0.02초)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" id="stageEcFilterBtn" onclick="toggleStageEcDiff()" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all">
+                    🔍 차이점만 보기 (Diff Only): OFF
+                  </button>
+                  <span class="hidden sm:inline text-[11px] text-slate-400">색상 셀을 클릭하면 원본 Excel 위치로 점프합니다</span>
+                </div>
+              </div>
+
+              <!-- Side-by-Side Synchronized DataGrid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-800 font-mono text-xs">
+                <!-- Left Sheet A -->
+                <div class="p-3 space-y-1">
+                  <div class="text-[11px] font-bold text-slate-400 pb-1 border-b border-slate-800">📄 기준 파일 (A): 2026_1월_품목단가표.xlsx [Sheet1]</div>
+                  <div class="stage-ec-same grid grid-cols-12 py-1.5 px-2 rounded bg-slate-900/60 text-slate-400">
+                    <span class="col-span-2">행 1</span><span class="col-span-5">모니터 27인치</span><span class="col-span-5 text-right">₩250,000</span>
+                  </div>
+                  <div onclick="jumpStageEc('Sheet1!C2', '단가 수정됨: ₩45,000 → ₩52,000')" class="grid grid-cols-12 py-1.5 px-2 rounded bg-amber-500/20 border border-amber-400/50 text-amber-200 cursor-pointer hover:bg-amber-500/30">
+                    <span class="col-span-2 font-bold">행 2</span><span class="col-span-5">기계식 키보드</span><span class="col-span-5 text-right line-through text-slate-400">₩45,000</span>
+                  </div>
+                  <div class="stage-ec-same grid grid-cols-12 py-1.5 px-2 rounded bg-slate-900/60 text-slate-400">
+                    <span class="col-span-2">행 3</span><span class="col-span-5">무선 마우스</span><span class="col-span-5 text-right">₩18,000</span>
+                  </div>
+                  <div onclick="jumpStageEc('Sheet1!A4', '삭제된 행: 구형 USB 허브')" class="grid grid-cols-12 py-1.5 px-2 rounded bg-rose-500/20 border border-rose-400/50 text-rose-200 cursor-pointer hover:bg-rose-500/30">
+                    <span class="col-span-2 font-bold">행 4</span><span class="col-span-5">구형 USB 허브</span><span class="col-span-5 text-right font-bold">₩12,000 (삭제)</span>
+                  </div>
+                  <div onclick="jumpStageEc('Sheet1!A5', '신규 추가된 행: C타입 고속충전기')" class="grid grid-cols-12 py-1.5 px-2 rounded bg-slate-900/40 text-slate-600 italic">
+                    <span class="col-span-2">행 5</span><span class="col-span-10">(빈 행)</span>
+                  </div>
+                </div>
+
+                <!-- Right Sheet B -->
+                <div class="p-3 space-y-1">
+                  <div class="text-[11px] font-bold text-emerald-400 pb-1 border-b border-slate-800">📄 비교 파일 (B): 2026_2월_품목단가표_수정.xlsx [Sheet1]</div>
+                  <div class="stage-ec-same grid grid-cols-12 py-1.5 px-2 rounded bg-slate-900/60 text-slate-400">
+                    <span class="col-span-2">행 1</span><span class="col-span-5">모니터 27인치</span><span class="col-span-5 text-right">₩250,000</span>
+                  </div>
+                  <div onclick="jumpStageEc('Sheet1!C2', '단가 수정됨: ₩45,000 → ₩52,000')" class="grid grid-cols-12 py-1.5 px-2 rounded bg-amber-500/20 border border-amber-400/50 text-amber-300 font-bold cursor-pointer hover:bg-amber-500/30">
+                    <span class="col-span-2">행 2</span><span class="col-span-5">기계식 키보드</span><span class="col-span-5 text-right">₩52,000 ✏️수정</span>
+                  </div>
+                  <div class="stage-ec-same grid grid-cols-12 py-1.5 px-2 rounded bg-slate-900/60 text-slate-400">
+                    <span class="col-span-2">행 3</span><span class="col-span-5">무선 마우스</span><span class="col-span-5 text-right">₩18,000</span>
+                  </div>
+                  <div onclick="jumpStageEc('Sheet1!A4', '삭제된 행: 구형 USB 허브')" class="grid grid-cols-12 py-1.5 px-2 rounded bg-slate-900/40 text-slate-600 italic">
+                    <span class="col-span-2">행 4</span><span class="col-span-10">(삭제됨)</span>
+                  </div>
+                  <div onclick="jumpStageEc('Sheet1!A5', '신규 추가된 행: C타입 고속충전기')" class="grid grid-cols-12 py-1.5 px-2 rounded bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 font-bold cursor-pointer hover:bg-emerald-500/30">
+                    <span class="col-span-2">행 5</span><span class="col-span-5">C타입 고속충전기</span><span class="col-span-5 text-right">₩29,000 ✨추가</span>
+                  </div>
+                </div>
+              </div>
+
+              <div id="stageEcJumpBar" class="bg-slate-950 border-t border-slate-800 px-4 py-2 text-xs font-mono text-emerald-300 flex items-center justify-between">
+                <span>💡 위 표에서 노랑(수정)·빨강(삭제)·초록(추가) 행을 클릭하거나 [🔍 차이점만 보기] 버튼을 눌러보세요!</span>
+                <span class="text-slate-400">Excel 실시간 셀 연동 준비됨</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= SCENE 6: FILEHUB AI (1:1 SMART DISPATCHER UI) ================= -->
+          <div id="stageScene_filehub" class="stage-scene hidden relative z-10 p-4 sm:p-6 flex-1 flex flex-col justify-center">
+            <div class="rounded-2xl bg-white border border-slate-300 shadow-2xl overflow-hidden text-slate-900">
+              <div class="bg-[#F8FAFC] border-b border-slate-200 px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <div class="flex items-center gap-2">
+                  <img src="assets/FileHubAI_150x150.png" class="w-5 h-5 rounded" alt="" />
+                  <span class="font-extrabold text-slate-900">FileHub AI — 0.1초 스마트 자동 분류 허브</span>
+                  <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px]">🟢 감시 스풀러 ON</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" onclick="runStageFhSort()" class="px-3 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow">⚡ 0.1초 자동 분류 실행</button>
+                  <button type="button" onclick="resetStageFhSort()" class="px-2.5 py-1 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs">↩ 원래대로 복원</button>
+                </div>
+              </div>
+              <div class="p-4 grid grid-cols-1 md:grid-cols-12 gap-4 text-xs">
+                <div class="md:col-span-5 rounded-xl bg-slate-50 border border-slate-200 p-3 space-y-2">
+                  <div class="flex items-center justify-between font-bold text-slate-700">
+                    <span>📥 Downloads (감시 폴더)</span>
+                    <span id="stageFhCount" class="text-indigo-600 font-mono">4개 파일</span>
+                  </div>
+                  <div id="stageFhList" class="space-y-1.5 font-mono text-[11px]"></div>
+                </div>
+                <div class="md:col-span-7 grid grid-cols-2 gap-2">
+                  <div class="p-3 rounded-xl bg-indigo-50/70 border border-indigo-200 flex flex-col justify-between">
+                    <div class="font-bold text-indigo-950">📄 01_문서 (PDF/DOCX)</div>
+                    <div id="stageFhCat_doc" class="text-[11px] font-mono text-indigo-700 mt-2">대기 중 (0개)</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 flex flex-col justify-between">
+                    <div class="font-bold text-emerald-950">📊 02_스프레드시트 (XLSX)</div>
+                    <div id="stageFhCat_xls" class="text-[11px] font-mono text-emerald-700 mt-2">대기 중 (0개)</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-sky-50/70 border border-sky-200 flex flex-col justify-between">
+                    <div class="font-bold text-sky-950">🖼️ 03_이미지 (PNG/JPG)</div>
+                    <div id="stageFhCat_img" class="text-[11px] font-mono text-sky-700 mt-2">대기 중 (0개)</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 flex flex-col justify-between">
+                    <div class="font-bold text-amber-950">📦 04_압축파일 (ZIP)</div>
+                    <div id="stageFhCat_zip" class="text-[11px] font-mono text-amber-700 mt-2">대기 중 (0개)</div>
+                  </div>
+                </div>
+              </div>
+              <div id="stageFhPreview" class="bg-slate-900 text-indigo-200 px-4 py-2 text-xs font-mono">
+                💡 왼쪽 파일을 클릭해 즉시 미리보기를 확인하거나 [⚡ 0.1초 자동 분류 실행]을 눌러보세요!
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= SCENE 7: AUTOFLOW RPA (REAL AI COPILOT & NODE FLOW) ================= -->
+          <div id="stageScene_autoflow" class="stage-scene hidden relative z-10 p-4 sm:p-6 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+            <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-cyan-500/40 shadow-2xl bg-slate-950">
+              <img src="assets/261022_AutoFlow_AI_SCRIPT_Captioned.gif" alt="AutoFlow RPA Real Screen" class="w-full h-auto block" />
+            </div>
+            <div class="lg:col-span-5 rounded-2xl bg-slate-900/95 border border-slate-700 p-4 text-white space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 font-mono text-[10px] font-bold">AutoFlow AI 코파일럿</span>
+                <span class="text-[11px] text-slate-400 font-mono">v1.0.15</span>
+              </div>
+              <h4 class="font-extrabold text-base text-white">자연어 한 줄로 노코드 순서도 자동 완성</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                왼쪽 실제 구동 화면처럼 AI 코파일럿에 원하는 업무만 입력하면 이미지 캡처·판단·반복 노드가 자동으로 연결됩니다.
+              </p>
+              <div class="space-y-1.5 text-xs font-mono">
+                <div class="p-2 rounded-lg bg-slate-950 border border-cyan-500/40 text-cyan-200">1. [AI 프롬프트] "메모장 열고 안녕하세요 타이핑해줘"</div>
+                <div class="p-2 rounded-lg bg-slate-950 border border-slate-800 text-slate-300">2. [자동 생성] 프로세스 실행 ➔ 1초 대기 ➔ 텍스트 입력</div>
+                <div class="p-2 rounded-lg bg-emerald-950/50 border border-emerald-500/40 text-emerald-300 font-bold">3. [즉시 실행] 코딩 0줄로 100% 자동 수행 완료!</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= SCENE 8: OVERLAYPIC (REAL FRAMELESS PIN SIMULATOR) ================= -->
+          <div id="stageScene_overlaypic" class="stage-scene hidden relative z-10 p-4 sm:p-6 flex-1 flex flex-col justify-center">
+            <div class="rounded-2xl bg-slate-900 border border-amber-400/40 overflow-hidden shadow-2xl text-white">
+              <div class="bg-slate-950 px-4 py-2.5 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <div class="flex items-center gap-2">
+                  <img src="assets/OverlayPic_150x150.png" class="w-5 h-5 rounded" alt="" />
+                  <span class="font-bold">OverlayPic — 마우스 휠 투명도 조절 & Ctrl+클릭 투과 모드</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <label class="flex items-center gap-1.5 text-amber-300 font-mono">
+                    <span>투명도: <strong id="stageOpVal">75%</strong></span>
+                    <input id="stageOpSlider" type="range" min="15" max="100" value="75" oninput="updateStageOp()" class="w-20 accent-amber-400 cursor-pointer" />
+                  </label>
+                  <button type="button" id="stageOpThruBtn" onclick="toggleStageOpThru()" class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-600 font-bold text-xs">
+                    👻 클릭 투과(Click-Through): OFF
+                  </button>
+                </div>
+              </div>
+              <div id="stageOpArena" class="relative h-[280px] bg-slate-950 p-5 overflow-hidden select-none" onwheel="wheelStageOp(event)">
+                <!-- Underlying Workspace -->
+                <div class="w-full h-full rounded-xl bg-slate-900 border border-slate-700 p-4 flex flex-col justify-between">
+                  <div class="text-xs text-slate-300">
+                    <div class="font-bold text-sky-400 mb-1">🖥️ 아래에 깔린 작업 창 (Figma / VS Code / Excel)</div>
+                    시안 이미지를 위에 겹쳐놓고 <strong>마우스 휠</strong>로 투명도를 조절하거나, 상단 <strong>[👻 클릭 투과: ON]</strong>을 켜서 이미지 뒤에 가려진 아래 버튼을 직접 클릭해보세요!
+                  </div>
+                  <div class="flex gap-3">
+                    <button type="button" onclick="clickStageOpUnder()" class="px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-extrabold text-xs shadow-lg">
+                      🎨 시안 이미지 뒤의 작업 버튼 클릭하기 (<span id="stageOpCount">0</span>회 성공)
+                    </button>
+                  </div>
+                </div>
+                <!-- Frameless OverlayPic Pin -->
+                <div id="stageOpPin" class="absolute left-12 top-10 w-64 rounded-xl border-2 border-amber-400 bg-gradient-to-br from-amber-500/95 to-rose-600/95 p-3.5 shadow-2xl cursor-move" style="opacity:0.75;">
+                  <div class="flex justify-between text-[10px] font-mono font-bold text-slate-950 bg-amber-300 px-2 py-0.5 rounded mb-2">
+                    <span>📌 UI_Mockup_Pin.png</span>
+                    <span>Wheel: 투명도</span>
+                  </div>
+                  <div class="text-xs font-extrabold text-white mb-1">항상 위(Always-on-Top) 투명 시안</div>
+                  <div class="text-[11px] text-amber-100 font-mono bg-black/30 p-2 rounded">
+                    • 드래그하여 위치 이동<br/>• 마우스 휠로 투명도 조절<br/>• 투과 모드 ON 시 아래 창 클릭 통과
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Windows 11 Taskbar at Bottom of Monitor -->
+          <div class="relative z-20 bg-slate-950/90 backdrop-blur-md border-t border-slate-800 px-4 py-2 flex items-center justify-between text-xs text-slate-400">
+            <div class="flex items-center gap-2">
+              <span class="text-sky-400 font-bold flex items-center gap-1.5"><i class="fa-brands fa-windows text-sm"></i> Windows 11 Live Preview</span>
+            </div>
+            <div class="flex items-center gap-3 font-mono text-[11px]">
+              <span id="stageActiveAppLabel" class="text-emerald-400 font-bold">● RadialDrop 실행 중</span>
+              <span class="hidden sm:inline">CPU 0% · RAM Light</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- 8 Product Quick Cards Strip -->
       <div class="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-8 gap-3 max-w-7xl mx-auto mb-8 text-left">
         <!-- 1. OverlayPic Card -->
@@ -506,10 +1157,6 @@
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-widest text-cyan-700 bg-cyan-50 border border-cyan-200" data-i18n="suite_badge">Product Lineup</span>
         <h2 class="text-3xl sm:text-5xl font-black text-slate-900 mt-3" data-i18n="suite_title">FlowSuite 8대 핵심 유틸리티 라인업</h2>
         <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed" data-i18n="suite_desc">각각의 도구는 독립적으로도 강력하며, 함께 사용할 때 상상 이상의 업무 시너지를 발휘합니다.</p>
-        <div class="mt-5 inline-flex flex-wrap items-center justify-center gap-2 px-4 py-2 rounded-2xl bg-slate-900 text-white text-xs font-bold shadow-lg border border-sky-500/40">
-          <span class="px-2 py-0.5 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 text-[10px] font-mono font-black uppercase tracking-wider live-try-badge">NEW · LIVE SANDBOX</span>
-          <span data-i18n="suite_live_hint">각 제품 우측의 <strong class="text-sky-300">[🎮 웹에서 직접 써보기]</strong> 탭을 누르면 설치 없이 브라우저에서 즉시 체험할 수 있습니다!</span>
-        </div>
       </div>
 
       <!-- ================= 1. OverlayPic Section ================= -->
@@ -541,6 +1188,9 @@
               <a href="https://apps.microsoft.com/detail/9P7BRM0XFCLD" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20">
                 <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
+              <button type="button" onclick="jumpToStageApp('overlaypic')" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all">
+                <i class="fa-solid fa-desktop text-sky-400"></i> <span data-i18n="btn_try_on_stage">상단 가상 데스크톱에서 실제 UI 조작 ↑</span>
+              </button>
               <a href="https://youtu.be/VfMIh2AVmZo" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 hover:text-rose-700 font-bold text-sm flex items-center justify-center gap-2 transition-all">
                 <i class="fa-brands fa-youtube text-rose-500 text-base"></i> <span data-i18n="btn_yt_overlaypic">유튜브 시연 영상</span>
               </a>
@@ -552,112 +1202,37 @@
               </a>
             </div>
           </div>
-          <div class="lg:col-span-5 flex flex-col gap-2.5">
-            <!-- Mode Switcher -->
-            <div class="demo-tab-bar">
-              <button type="button" id="tabBtnGuide_overlaypic" onclick="switchProductView('overlaypic', 'guide')" class="demo-tab-btn active-guide">
-                <i class="fa-brands fa-youtube text-rose-400"></i>
-                <span data-i18n="tab_video_guide">🎬 시연 영상 & 가이드</span>
-              </button>
-              <button type="button" id="tabBtnLive_overlaypic" onclick="switchProductView('overlaypic', 'live')" class="demo-tab-btn">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span data-i18n="tab_live_try">🎮 웹에서 직접 써보기</span>
-                <span class="px-1.5 py-0.2 rounded bg-sky-500/30 border border-sky-400/50 text-[9px] font-mono text-sky-200 live-try-badge">LIVE</span>
-              </button>
+          <div class="lg:col-span-5 flex flex-col gap-3">
+            <!-- YouTube Video Embed -->
+            <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-black aspect-video group">
+              <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/VfMIh2AVmZo" title="OverlayPic 유튜브 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
             </div>
-
-            <!-- Panel 1: Video & Mechanics -->
-            <div id="panelGuide_overlaypic" class="flex flex-col gap-3">
-              <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-black aspect-video group">
-                <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/VfMIh2AVmZo" title="OverlayPic 유튜브 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-              </div>
-              <div class="flex items-center justify-between px-1 text-xs">
-                <a href="https://youtu.be/VfMIh2AVmZo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 hover:text-rose-600 transition-colors">
-                  <i class="fa-brands fa-youtube text-rose-500 text-sm"></i>
-                  <span class="font-medium" data-i18n="yt_link_text">YouTube 바로가기</span>
-                  <span class="text-slate-400 text-[11px] font-mono">(youtu.be/VfMIh2AVmZo)</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
-                </a>
-                <span class="text-[11px] text-amber-700 font-mono font-medium flex items-center gap-1"><i class="fa-solid fa-play text-[9px]"></i> <span data-i18n="yt_demo_text">공식 데모 영상</span></span>
-              </div>
-              <div class="rounded-xl p-4 bg-slate-50 border border-slate-200 text-center shadow-md mt-1">
-                <div class="text-slate-500 text-xs font-mono font-bold mb-2.5">Floating Pin Mechanics</div>
-                <div class="space-y-2 text-left text-xs text-slate-700">
-                  <div class="p-2.5 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-between">
-                    <span data-i18n="op_mech_opacity">투명도 (Opacity)</span>
-                    <span class="font-mono text-amber-600 font-bold">Wheel Scroll</span>
-                  </div>
-                  <div class="p-2.5 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-between">
-                    <span data-i18n="op_mech_pan">위치 이동 (Pan)</span>
-                    <span class="font-mono text-amber-600 font-bold">Left Drag</span>
-                  </div>
-                  <div class="p-2.5 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-between">
-                    <span data-i18n="op_mech_clickthru">투과 모드 (Click-through)</span>
-                    <span class="font-mono text-amber-600 font-bold">Ctrl + Click</span>
-                  </div>
-                </div>
-              </div>
+            <!-- Video Direct Link & Info -->
+            <div class="flex items-center justify-between px-1 text-xs">
+              <a href="https://youtu.be/VfMIh2AVmZo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 hover:text-rose-600 transition-colors">
+                <i class="fa-brands fa-youtube text-rose-500 text-sm"></i>
+                <span class="font-medium" data-i18n="yt_link_text">YouTube 바로가기</span>
+                <span class="text-slate-400 text-[11px] font-mono">(youtu.be/VfMIh2AVmZo)</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+              </a>
+              <span class="text-[11px] text-amber-700 font-mono font-medium flex items-center gap-1"><i class="fa-solid fa-play text-[9px]"></i> <span data-i18n="yt_demo_text">공식 데모 영상</span></span>
             </div>
-
-            <!-- Panel 2: Interactive Live Demo (OverlayPic) -->
-            <div id="panelLive_overlaypic" class="hidden rounded-2xl overflow-hidden border border-amber-400/50 shadow-2xl bg-slate-900 text-white">
-              <div class="px-3.5 py-2.5 bg-slate-950 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
-                <div class="flex items-center gap-2">
-                  <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-400/40 font-mono text-[10px] font-bold">LIVE SANDBOX</span>
-                  <span class="font-bold text-slate-200" data-i18n="op_live_title">시안 투명도 & 클릭 투과 체험</span>
+            <!-- Floating Pin Mechanics -->
+            <div class="rounded-xl p-4 bg-slate-50 border border-slate-200 text-center shadow-md mt-1">
+              <div class="text-slate-500 text-xs font-mono font-bold mb-2.5">Floating Pin Mechanics</div>
+              <div class="space-y-2 text-left text-xs text-slate-700">
+                <div class="p-2.5 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-between">
+                  <span data-i18n="op_mech_opacity">투명도 (Opacity)</span>
+                  <span class="font-mono text-amber-600 font-bold">Wheel Scroll</span>
                 </div>
-                <div class="flex items-center gap-2">
-                  <label class="flex items-center gap-1.5 text-[11px] text-amber-300 font-mono">
-                    <span data-i18n="op_live_opacity">투명도</span>: <span id="opValLabel">75%</span>
-                    <input type="range" id="opSlider" min="15" max="100" value="75" oninput="updateOverlayPicDemo()" class="w-16 accent-amber-400 cursor-pointer" />
-                  </label>
-                  <button type="button" id="opClickThruBtn" onclick="toggleOverlayClickThru()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-[11px] font-bold text-slate-200 transition-all">
-                    👻 <span id="opClickThruText" data-i18n="op_live_thru_off">투과 모드: OFF</span>
-                  </button>
+                <div class="p-2.5 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-between">
+                  <span data-i18n="op_mech_pan">위치 이동 (Pan)</span>
+                  <span class="font-mono text-amber-600 font-bold">Left Drag</span>
                 </div>
-              </div>
-
-              <!-- Virtual Workspace Area -->
-              <div id="opArena" class="relative h-72 bg-slate-950 p-4 overflow-hidden select-none" onwheel="handleOverlayWheel(event)">
-                <!-- Underlying App Window -->
-                <div class="w-full h-full rounded-xl bg-slate-900 border border-slate-700 p-4 flex flex-col justify-between">
-                  <div>
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-2 mb-3">
-                      <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-code text-sky-400 mr-1"></i> UI_Workspace_Editor.app (아래에 깔린 작업 창)</span>
-                      <span id="opClickCounter" class="text-[11px] font-mono text-emerald-400 font-bold">클릭 횟수: 0회</span>
-                    </div>
-                    <p class="text-xs text-slate-300 leading-relaxed mb-3" data-i18n="op_live_under_desc">
-                      1. 노란색 <strong>[시안 핀 창]</strong>을 마우스로 드래그하거나 휠을 굴려 투명도를 조절해보세요.<br/>
-                      2. 상단의 <strong>[👻 투과 모드: ON]</strong>을 켜면 시안 이미지에 가려진 아래 버튼들을 그대로 클릭할 수 있습니다!
-                    </p>
-                  </div>
-                  <div class="grid grid-cols-2 gap-2.5 pt-2">
-                    <button type="button" onclick="triggerUnderButton(1)" class="py-2.5 px-3 rounded-xl bg-sky-600 hover:bg-sky-500 active:scale-95 text-white font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5">
-                      <i class="fa-solid fa-paintbrush"></i> <span data-i18n="op_live_btn1">시안 컬러(#0EA5E9) 적용</span>
-                    </button>
-                    <button type="button" onclick="triggerUnderButton(2)" class="py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5">
-                      <i class="fa-solid fa-check-double"></i> <span data-i18n="op_live_btn2">간격 24px 정렬 완료</span>
-                    </button>
-                  </div>
+                <div class="p-2.5 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-between">
+                  <span data-i18n="op_mech_clickthru">투과 모드 (Click-through)</span>
+                  <span class="font-mono text-amber-600 font-bold">Ctrl + Click</span>
                 </div>
-
-                <!-- Floating OverlayPic Reference Pin Window -->
-                <div id="opFloatingCard" class="absolute left-8 top-9 w-64 rounded-xl border-2 border-amber-400 bg-gradient-to-br from-amber-500/95 via-orange-500/90 to-rose-600/90 p-3.5 shadow-2xl cursor-move transition-opacity duration-75" style="opacity: 0.75;">
-                  <div class="flex items-center justify-between text-[11px] font-mono font-bold text-slate-950 bg-amber-300/90 px-2 py-1 rounded mb-2">
-                    <span>📌 Design_Spec_v2.png</span>
-                    <span id="opPinBadge">DRAG / WHEEL</span>
-                  </div>
-                  <div class="text-xs font-extrabold text-white drop-shadow mb-1" data-i18n="op_live_pin_title">🎨 UI 디자인 가이드 시안 (항상 위)</div>
-                  <div class="text-[11px] text-amber-100 font-mono space-y-1 bg-black/30 p-2 rounded-lg">
-                    <div>• Main Color: <span class="text-sky-300 font-bold">#0EA5E9</span></div>
-                    <div>• Padding: <span class="text-emerald-300 font-bold">24px Grid</span></div>
-                    <div class="text-[10px] text-amber-200 pt-1" data-i18n="op_live_pin_tip">💡 마우스 드래그 이동 / 휠 스크롤 투명도</div>
-                  </div>
-                </div>
-              </div>
-
-              <div id="opStatusToast" class="px-3.5 py-2 bg-slate-950 border-t border-slate-800 text-[11px] text-amber-300 font-medium flex items-center justify-between">
-                <span data-i18n="op_live_footer">💡 시안 창 위에서 마우스 휠을 굴리거나 [👻 투과 모드]를 켜고 아래 버튼을 눌러보세요!</span>
               </div>
             </div>
           </div>
@@ -693,86 +1268,23 @@
               <a href="https://apps.microsoft.com/detail/9NPC24FV5230" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-600/20">
                 <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 다운로드</span>
               </a>
+              <button type="button" onclick="jumpToStageApp('autoflow')" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all">
+                <i class="fa-solid fa-desktop text-sky-400"></i> <span data-i18n="btn_try_on_stage">상단 가상 데스크톱에서 실제 UI 조작 ↑</span>
+              </button>
               <a href="https://youtu.be/eJsirzljZug" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 hover:text-rose-700 font-bold text-sm flex items-center justify-center gap-2 transition-all">
                 <i class="fa-brands fa-youtube text-rose-500 text-base"></i> <span data-i18n="btn_yt_autoflow">유튜브 시연 영상</span>
               </a>
             </div>
           </div>
-          <div class="lg:col-span-6 flex flex-col gap-2.5">
-            <!-- Mode Switcher -->
-            <div class="demo-tab-bar">
-              <button type="button" id="tabBtnGuide_autoflow" onclick="switchProductView('autoflow', 'guide')" class="demo-tab-btn active-guide">
-                <i class="fa-solid fa-film text-cyan-400"></i>
-                <span data-i18n="tab_gif_guide">🎬 AI 자동생성 녹화 GIF</span>
-              </button>
-              <button type="button" id="tabBtnLive_autoflow" onclick="switchProductView('autoflow', 'live')" class="demo-tab-btn">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span data-i18n="tab_live_try">🎮 웹에서 직접 써보기</span>
-                <span class="px-1.5 py-0.2 rounded bg-sky-500/30 border border-sky-400/50 text-[9px] font-mono text-sky-200 live-try-badge">LIVE</span>
-              </button>
-            </div>
-
-            <!-- Panel 1: AutoFlow AI Copilot Live Captioned GIF Showcase -->
-            <div id="panelGuide_autoflow" class="rounded-2xl overflow-hidden border border-cyan-200/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('autoflowDemoGif').src, 'AutoFlow RPA — AI Copilot Live Demo')">
+          <div class="lg:col-span-6 flex flex-col gap-3">
+            <!-- AutoFlow AI Copilot Live Captioned GIF Showcase -->
+            <div class="rounded-2xl overflow-hidden border border-cyan-200/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('autoflowDemoGif').src, 'AutoFlow RPA — AI Copilot Live Demo')">
               <div class="relative bg-slate-950">
                 <img id="autoflowDemoGif" src="assets/261022_AutoFlow_AI_SCRIPT_Captioned.gif" alt="AutoFlow RPA AI Copilot Live Workflow Demo" class="w-full h-auto block" />
               </div>
               <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between gap-2 text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5 font-medium text-cyan-200"><i class="fa-solid fa-wand-magic-sparkles text-amber-400 shrink-0"></i> <span data-i18n="if_gif_cap_ai">AI 코파일럿에 원하는 작업을 입력하면 시나리오 순서도가 자동으로 생성·실행됩니다.</span></span>
                 <span class="text-cyan-400 font-semibold flex items-center gap-1 shrink-0"><i class="fa-solid fa-magnifying-glass-plus"></i> <span data-i18n="click_to_zoom">클릭하여 크게 보기</span></span>
-              </div>
-            </div>
-
-            <!-- Panel 2: Interactive Live Demo (AutoFlow RPA) -->
-            <div id="panelLive_autoflow" class="hidden rounded-2xl overflow-hidden border border-cyan-400/50 shadow-2xl bg-slate-900 text-white">
-              <div class="px-3.5 py-2.5 bg-slate-950 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
-                <div class="flex items-center gap-2">
-                  <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 font-mono text-[10px] font-bold">AI RPA SANDBOX</span>
-                  <span class="font-bold text-slate-200" data-i18n="af_live_title">AI 프롬프트 순서도 생성 & 자동 입력</span>
-                </div>
-                <button type="button" id="afRunBtn" onclick="runAutoFlowDemo()" class="px-3 py-1 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-extrabold text-xs shadow-md flex items-center gap-1.5 transition-all">
-                  <i class="fa-solid fa-play text-[10px]"></i> <span data-i18n="af_live_run">▶ 시나리오 자동 실행 (F5)</span>
-                </button>
-              </div>
-
-              <div class="p-4 bg-slate-950 space-y-3">
-                <!-- Prompt Selector -->
-                <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
-                  <span class="text-slate-400 font-mono" data-i18n="af_live_prompt_lbl">AI 명령 선택:</span>
-                  <button type="button" onclick="selectAutoFlowPreset(0)" id="afPreset0" class="px-2.5 py-1 rounded-lg bg-cyan-950 border border-cyan-500/60 text-cyan-200 font-bold hover:bg-cyan-900 transition-all">
-                    ✨ "엑셀 고객 3명을 ERP에 자동 등록해줘"
-                  </button>
-                  <button type="button" onclick="selectAutoFlowPreset(1)" id="afPreset1" class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 font-bold hover:bg-slate-700 transition-all">
-                    🔍 "화면에서 [승인] 버튼 찾아 3회 연속 클릭"
-                  </button>
-                </div>
-
-                <!-- Visual Flowchart Nodes -->
-                <div class="grid grid-cols-3 gap-2 text-center text-[11px] font-mono">
-                  <div id="afNode1" class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 transition-all">
-                    <div class="text-cyan-400 font-bold mb-0.5">STEP 1</div>
-                    <div id="afNode1Text" class="text-slate-200 text-xs font-sans font-bold">📊 엑셀 행 읽기</div>
-                  </div>
-                  <div id="afNode2" class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 transition-all">
-                    <div class="text-amber-400 font-bold mb-0.5">STEP 2</div>
-                    <div id="afNode2Text" class="text-slate-200 text-xs font-sans font-bold">⌨️ ERP 자동 타이핑</div>
-                  </div>
-                  <div id="afNode3" class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 transition-all">
-                    <div class="text-emerald-400 font-bold mb-0.5">STEP 3</div>
-                    <div id="afNode3Text" class="text-slate-200 text-xs font-sans font-bold">🖱️ [등록] 이미지 클릭</div>
-                  </div>
-                </div>
-
-                <!-- Simulated ERP Log Output -->
-                <div class="rounded-xl bg-slate-900 border border-slate-800 p-3 font-mono text-xs space-y-1.5 min-h-[104px]">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800 pb-1">
-                    <span>🖥️ Virtual_ERP_Client.exe</span>
-                    <span id="afProgressBadge" class="text-cyan-400 font-bold">대기 중 (우측 상단 [▶ 실행] 클릭)</span>
-                  </div>
-                  <div id="afLogList" class="space-y-1 text-[11px] text-slate-300 pt-1">
-                    <div class="text-slate-500">💡 상단 [▶ 시나리오 자동 실행 (F5)] 버튼을 누르면 노드가 순서대로 동작합니다.</div>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -824,23 +1336,13 @@
               <a href="https://apps.microsoft.com/detail/9P108CX3SDZF" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-violet-600/20">
                 <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
+              <button type="button" onclick="jumpToStageApp('mouseflow')" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all">
+                <i class="fa-solid fa-desktop text-sky-400"></i> <span data-i18n="btn_try_on_stage">상단 가상 데스크톱에서 실제 UI 조작 ↑</span>
+              </button>
             </div>
           </div>
-                    <div class="lg:col-span-7 flex flex-col gap-2.5">
-            <!-- Mode Switcher -->
-            <div class="demo-tab-bar">
-              <button type="button" id="tabBtnGuide_mouseflow" onclick="switchProductView('mouseflow', 'guide')" class="demo-tab-btn active-guide">
-                <i class="fa-solid fa-images text-sky-400"></i>
-                <span data-i18n="tab_3step_guide">📊 3단계 그림 설명 (STEP 1→2→3)</span>
-              </button>
-              <button type="button" id="tabBtnLive_mouseflow" onclick="switchProductView('mouseflow', 'live')" class="demo-tab-btn">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span data-i18n="tab_live_try">🎮 웹에서 직접 써보기</span>
-                <span class="px-1.5 py-0.2 rounded bg-sky-500/30 border border-sky-400/50 text-[9px] font-mono text-sky-200 live-try-badge">LIVE</span>
-              </button>
-            </div>
-
-            <div id="panelGuide_mouseflow" class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('mouseflowGuideImg').src, 'MouseFlow AI Visual Quick Guide')">
+          <div class="lg:col-span-7 flex flex-col gap-2">
+            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('mouseflowGuideImg').src, 'MouseFlow AI Visual Quick Guide')">
               <img id="mouseflowGuideImg" src="assets/MouseFlowAI_VisualGuide_KO.png?v=2" alt="MouseFlow AI Visual Quick Guide" class="w-full h-auto block" />
               <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles text-violet-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
@@ -850,46 +1352,6 @@
                   </button>
                   <span class="text-cyan-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-magnifying-glass-plus"></i> <span data-i18n="click_to_zoom">클릭하여 크게 보기</span></span>
                 </div>
-              </div>
-            </div>
-
-            <!-- Panel 2: Interactive Live Demo (MouseFlow AI) -->
-            <div id="panelLive_mouseflow" class="hidden rounded-2xl overflow-hidden border border-violet-400/50 shadow-2xl bg-slate-900 text-white">
-              <div class="px-3.5 py-2.5 bg-slate-950 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
-                <div class="flex items-center gap-2">
-                  <span class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 border border-violet-400/40 font-mono text-[10px] font-bold">GESTURE SANDBOX</span>
-                  <span class="font-bold text-slate-200" data-i18n="mf_live_title">마우스로 선을 그어 가상 창을 제어해보세요!</span>
-                </div>
-                <div class="flex items-center gap-1.5">
-                  <button type="button" onclick="simulateMouseGesture('↓')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-violet-700 text-[11px] font-mono border border-slate-700">↓ 최소화</button>
-                  <button type="button" onclick="simulateMouseGesture('↑')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-violet-700 text-[11px] font-mono border border-slate-700">↑ 최대화</button>
-                  <button type="button" onclick="simulateMouseGesture('↓→')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-rose-700 text-[11px] font-mono border border-slate-700">↓→ 창 닫기</button>
-                </div>
-              </div>
-
-              <div class="relative h-64 bg-slate-950 overflow-hidden select-none">
-                <!-- Simulated Target Window -->
-                <div id="mfTargetWin" class="absolute inset-6 rounded-xl bg-slate-900 border border-slate-700 shadow-xl flex flex-col justify-between p-4 transition-all duration-300 pointer-events-none">
-                  <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-                    <span class="text-xs font-mono text-slate-300">📄 Project_Report_2026.docx</span>
-                    <div class="flex items-center gap-1.5">
-                      <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-                      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-                      <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
-                    </div>
-                  </div>
-                  <div class="text-center my-auto">
-                    <div id="mfWinStatus" class="text-sm font-extrabold text-violet-300 mb-1" data-i18n="mf_live_prompt">이 화면 위에서 마우스를 드래그해 선(↓, ↑, ←, →, ↓→)을 그어보세요!</div>
-                    <div class="text-xs text-slate-400 font-mono">아래로 긋기(↓): 최소화 · 위로 긋기(↑): 최대화 · 니은자(↓→): 창 닫기</div>
-                  </div>
-                  <div class="text-[11px] text-slate-500 font-mono flex justify-between">
-                    <span>Right-Click Gesture Engine: ACTIVE</span>
-                    <span id="mfRecognizedBadge" class="text-cyan-400 font-bold">궤적 대기 중...</span>
-                  </div>
-                </div>
-
-                <!-- Interactive Gesture Canvas Overlay -->
-                <canvas id="mfCanvas" width="640" height="256" class="absolute inset-0 w-full h-full cursor-crosshair touch-none"></canvas>
               </div>
             </div>
           </div>
@@ -925,23 +1387,13 @@
               <a href="https://apps.microsoft.com/detail/9NM6VMC967PL" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20">
                 <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
+              <button type="button" onclick="jumpToStageApp('excelcompare')" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all">
+                <i class="fa-solid fa-desktop text-sky-400"></i> <span data-i18n="btn_try_on_stage">상단 가상 데스크톱에서 실제 UI 조작 ↑</span>
+              </button>
             </div>
           </div>
-                    <div class="lg:col-span-7 flex flex-col gap-2.5">
-            <!-- Mode Switcher -->
-            <div class="demo-tab-bar">
-              <button type="button" id="tabBtnGuide_excelcompare" onclick="switchProductView('excelcompare', 'guide')" class="demo-tab-btn active-guide">
-                <i class="fa-solid fa-images text-sky-400"></i>
-                <span data-i18n="tab_3step_guide">📊 3단계 그림 설명 (STEP 1→2→3)</span>
-              </button>
-              <button type="button" id="tabBtnLive_excelcompare" onclick="switchProductView('excelcompare', 'live')" class="demo-tab-btn">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span data-i18n="tab_live_try">🎮 웹에서 직접 써보기</span>
-                <span class="px-1.5 py-0.2 rounded bg-sky-500/30 border border-sky-400/50 text-[9px] font-mono text-sky-200 live-try-badge">LIVE</span>
-              </button>
-            </div>
-
-            <div id="panelGuide_excelcompare" class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('excelcompareGuideImg').src, 'ExcelCompare Visual Quick Guide')">
+          <div class="lg:col-span-7 flex flex-col gap-2">
+            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('excelcompareGuideImg').src, 'ExcelCompare Visual Quick Guide')">
               <img id="excelcompareGuideImg" src="assets/ExcelCompare_VisualGuide_KO.png?v=2" alt="ExcelCompare Visual Quick Guide" class="w-full h-auto block" />
               <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-table-columns text-emerald-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
@@ -950,58 +1402,6 @@
                     <i class="fa-solid fa-language"></i> <span data-i18n="btn_switch_guide_lang">한/영 전환 (KO·EN)</span>
                   </button>
                   <span class="text-cyan-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-magnifying-glass-plus"></i> <span data-i18n="click_to_zoom">클릭하여 크게 보기</span></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Panel 2: Interactive Live Demo (ExcelCompare) -->
-            <div id="panelLive_excelcompare" class="hidden rounded-2xl overflow-hidden border border-emerald-400/50 shadow-2xl bg-slate-900 text-white">
-              <div class="px-3.5 py-2.5 bg-slate-950 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
-                <div class="flex items-center gap-2">
-                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 font-mono text-[10px] font-bold">0.1s EXCEL DIFF</span>
-                  <span class="font-bold text-slate-200" data-i18n="ec_live_title">양면 비교 & 차이점만 보기 필터 체험</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <button type="button" id="ecDiffOnlyBtn" onclick="toggleExcelDiffOnly()" class="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px] transition-all">
-                    🔍 <span id="ecDiffOnlyLabel" data-i18n="ec_live_filter_on">차이점만 보기: OFF (전체 5행)</span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="p-3.5 bg-slate-950 space-y-2.5 text-xs">
-                <div class="grid grid-cols-2 gap-2 font-mono text-[11px]">
-                  <div class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">📄 A: 1월_단가표_원본.xlsx</div>
-                  <div class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-emerald-300">📄 B: 2월_단가표_수정본.xlsx</div>
-                </div>
-
-                <!-- Dual Grid Rows -->
-                <div class="space-y-1 font-mono text-[11px]">
-                  <div class="ec-row-same grid grid-cols-2 gap-2 p-2 rounded bg-slate-900/70 border border-slate-800 text-slate-400">
-                    <div>#1 | A-101 | 모니터 27" | 250,000</div>
-                    <div>#1 | A-101 | 모니터 27" | 250,000 (동일)</div>
-                  </div>
-                  <div onclick="jumpExcelCell('C2', '단가 수정: 45,000 → 52,000 (+7,000)')" class="grid grid-cols-2 gap-2 p-2 rounded bg-amber-500/15 border border-amber-400/50 text-amber-200 cursor-pointer hover:bg-amber-500/25 transition-all">
-                    <div>#2 | A-102 | 기계식 키보드 | <span class="line-through text-slate-400">45,000</span></div>
-                    <div class="font-bold text-amber-300">#2 | A-102 | 기계식 키보드 | 52,000 ✏️수정</div>
-                  </div>
-                  <div class="ec-row-same grid grid-cols-2 gap-2 p-2 rounded bg-slate-900/70 border border-slate-800 text-slate-400">
-                    <div>#3 | A-103 | 무선 마우스 | 18,000</div>
-                    <div>#3 | A-103 | 무선 마우스 | 18,000 (동일)</div>
-                  </div>
-                  <div onclick="jumpExcelCell('A4', '행 삭제됨: A-104 구형 USB 허브')" class="grid grid-cols-2 gap-2 p-2 rounded bg-rose-500/15 border border-rose-400/50 text-rose-200 cursor-pointer hover:bg-rose-500/25 transition-all">
-                    <div class="font-bold text-rose-300">#4 | A-104 | 구형 USB 허브 | 12,000 🗑️삭제</div>
-                    <div class="text-slate-500 italic">(삭제된 행)</div>
-                  </div>
-                  <div onclick="jumpExcelCell('A5', '신규 추가행: A-105 초고속 충전기 (29,000)')" class="grid grid-cols-2 gap-2 p-2 rounded bg-emerald-500/15 border border-emerald-400/50 text-emerald-200 cursor-pointer hover:bg-emerald-500/25 transition-all">
-                    <div class="text-slate-500 italic">(빈 행)</div>
-                    <div class="font-bold text-emerald-300">#5 | A-105 | 초고속 충전기 | 29,000 ✨추가</div>
-                  </div>
-                </div>
-
-                <!-- Real-time Excel Jump Status Bar -->
-                <div id="ecJumpStatus" class="p-2.5 rounded-xl bg-slate-900 border border-emerald-500/40 text-[11px] text-emerald-300 font-mono flex items-center justify-between">
-                  <span>💡 색상 행(수정/삭제/추가)을 클릭하면 실제 Excel 해당 셀로 즉시 점프합니다!</span>
-                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">0.01초 비교 완료</span>
                 </div>
               </div>
             </div>
@@ -1038,26 +1438,16 @@
               <a href="https://apps.microsoft.com/detail/9PM5WS6W4VPS" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20">
                 <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
+              <button type="button" onclick="jumpToStageApp('queueclip')" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all">
+                <i class="fa-solid fa-desktop text-sky-400"></i> <span data-i18n="btn_try_on_stage">상단 가상 데스크톱에서 실제 UI 조작 ↑</span>
+              </button>
               <a href="privacy-queueclip.html" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-colors">
                 <i class="fa-solid fa-shield-halved text-slate-500"></i> <span data-i18n="footer_privacy">개인정보처리방침</span>
               </a>
             </div>
           </div>
-                    <div class="lg:col-span-7 flex flex-col gap-2.5">
-            <!-- Mode Switcher -->
-            <div class="demo-tab-bar">
-              <button type="button" id="tabBtnGuide_queueclip" onclick="switchProductView('queueclip', 'guide')" class="demo-tab-btn active-guide">
-                <i class="fa-solid fa-images text-sky-400"></i>
-                <span data-i18n="tab_3step_guide">📊 3단계 그림 설명 (STEP 1→2→3)</span>
-              </button>
-              <button type="button" id="tabBtnLive_queueclip" onclick="switchProductView('queueclip', 'live')" class="demo-tab-btn">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span data-i18n="tab_live_try">🎮 웹에서 직접 써보기</span>
-                <span class="px-1.5 py-0.2 rounded bg-sky-500/30 border border-sky-400/50 text-[9px] font-mono text-sky-200 live-try-badge">LIVE</span>
-              </button>
-            </div>
-
-            <div id="panelGuide_queueclip" class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('queueclipGuideImg').src, 'QueueClip Visual Quick Guide')">
+          <div class="lg:col-span-7 flex flex-col gap-2">
+            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('queueclipGuideImg').src, 'QueueClip Visual Quick Guide')">
               <img id="queueclipGuideImg" src="assets/QueueClip_VisualGuide_KO.png?v=2" alt="QueueClip Visual Quick Guide" class="w-full h-auto block" />
               <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-layer-group text-sky-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
@@ -1066,57 +1456,6 @@
                     <i class="fa-solid fa-language"></i> <span data-i18n="btn_switch_guide_lang">한/영 전환 (KO·EN)</span>
                   </button>
                   <span class="text-cyan-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-magnifying-glass-plus"></i> <span data-i18n="click_to_zoom">클릭하여 크게 보기</span></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Panel 2: Interactive Live Demo (QueueClip) -->
-            <div id="panelLive_queueclip" class="hidden rounded-2xl overflow-hidden border border-blue-400/50 shadow-2xl bg-slate-900 text-white">
-              <div class="px-3.5 py-2.5 bg-slate-950 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
-                <div class="flex items-center gap-2">
-                  <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/40 font-mono text-[10px] font-bold">FIFO QUEUE SANDBOX</span>
-                  <span class="font-bold text-slate-200" data-i18n="qc_live_title">순차 복사(Ctrl+C) & 터보 연속 붙여넣기(Alt+V)</span>
-                </div>
-                <button type="button" onclick="resetQueueClipDemo()" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 border border-slate-700 text-[11px] text-slate-300">
-                  🔄 샘플 큐 리셋
-                </button>
-              </div>
-
-              <div class="p-3.5 bg-slate-950 grid grid-cols-1 sm:grid-cols-12 gap-3 text-xs">
-                <!-- Left: Copy Source & Queue Tray -->
-                <div class="sm:col-span-6 space-y-2">
-                  <div class="text-[11px] font-bold text-sky-300">1️⃣ 클릭해서 큐(Queue)에 추가해보세요:</div>
-                  <div class="flex flex-wrap gap-1.5">
-                    <button type="button" onclick="enqueueClipItem('홍길동 (VIP)')" class="px-2 py-1 rounded bg-slate-900 hover:bg-blue-950 border border-slate-700 hover:border-blue-400 text-[11px] font-mono">+ "홍길동 (VIP)"</button>
-                    <button type="button" onclick="enqueueClipItem('010-9876-5432')" class="px-2 py-1 rounded bg-slate-900 hover:bg-blue-950 border border-slate-700 hover:border-blue-400 text-[11px] font-mono">+ "010-9876-5432"</button>
-                    <button type="button" onclick="enqueueClipItem('서울 강남구 역삼동')" class="px-2 py-1 rounded bg-slate-900 hover:bg-blue-950 border border-slate-700 hover:border-blue-400 text-[11px] font-mono">+ "서울 강남구"</button>
-                    <button type="button" onclick="incrementPatternChip()" class="px-2 py-1 rounded bg-blue-600/30 hover:bg-blue-600/50 border border-blue-400 text-blue-200 text-[11px] font-mono font-bold">🔢 패턴 증가: <span id="qcPatternLabel">품번-01</span> [+1]</button>
-                  </div>
-                  <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5 min-h-[115px]">
-                    <div class="flex items-center justify-between text-[10px] font-mono text-slate-400">
-                      <span>📋 대기열 큐 (FIFO 순서대로 나감)</span>
-                      <span id="qcCountBadge" class="text-sky-400 font-bold">3개 대기 중</span>
-                    </div>
-                    <div id="qcQueueList" class="space-y-1 font-mono text-[11px]"></div>
-                  </div>
-                </div>
-
-                <!-- Right: Target Form & Turbo Paste -->
-                <div class="sm:col-span-6 flex flex-col justify-between p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
-                  <div class="text-[11px] font-bold text-emerald-300">2️⃣ 우측 입력 폼에 연속 붙여넣기:</div>
-                  <div class="space-y-1.5 font-mono text-[11px]">
-                    <input id="qcField0" type="text" readonly placeholder="칸 1: 고객명 (대기 중)" class="w-full px-2.5 py-1.5 rounded bg-slate-950 border border-slate-700 text-white" />
-                    <input id="qcField1" type="text" readonly placeholder="칸 2: 연락처 (대기 중)" class="w-full px-2.5 py-1.5 rounded bg-slate-950 border border-slate-700 text-white" />
-                    <input id="qcField2" type="text" readonly placeholder="칸 3: 배송지 (대기 중)" class="w-full px-2.5 py-1.5 rounded bg-slate-950 border border-slate-700 text-white" />
-                  </div>
-                  <div class="grid grid-cols-2 gap-1.5 pt-1">
-                    <button type="button" onclick="pasteNextQueueClip()" class="py-2 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-bold text-[11px]">
-                      📋 1개씩 붙여넣기
-                    </button>
-                    <button type="button" onclick="turboPasteQueueClip()" class="py-2 px-2 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-extrabold text-[11px] shadow-lg">
-                      🚀 터보 올패스트!
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1153,23 +1492,13 @@
               <a href="https://apps.microsoft.com/detail/9PMJGRSJ6SJX" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/20">
                 <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
+              <button type="button" onclick="jumpToStageApp('filehub')" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all">
+                <i class="fa-solid fa-desktop text-sky-400"></i> <span data-i18n="btn_try_on_stage">상단 가상 데스크톱에서 실제 UI 조작 ↑</span>
+              </button>
             </div>
           </div>
-                    <div class="lg:col-span-7 flex flex-col gap-2.5">
-            <!-- Mode Switcher -->
-            <div class="demo-tab-bar">
-              <button type="button" id="tabBtnGuide_filehub" onclick="switchProductView('filehub', 'guide')" class="demo-tab-btn active-guide">
-                <i class="fa-solid fa-images text-sky-400"></i>
-                <span data-i18n="tab_3step_guide">📊 3단계 그림 설명 (STEP 1→2→3)</span>
-              </button>
-              <button type="button" id="tabBtnLive_filehub" onclick="switchProductView('filehub', 'live')" class="demo-tab-btn">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span data-i18n="tab_live_try">🎮 웹에서 직접 써보기</span>
-                <span class="px-1.5 py-0.2 rounded bg-sky-500/30 border border-sky-400/50 text-[9px] font-mono text-sky-200 live-try-badge">LIVE</span>
-              </button>
-            </div>
-
-            <div id="panelGuide_filehub" class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('filehubGuideImg').src, 'FileHub AI Visual Quick Guide')">
+          <div class="lg:col-span-7 flex flex-col gap-2">
+            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('filehubGuideImg').src, 'FileHub AI Visual Quick Guide')">
               <img id="filehubGuideImg" src="assets/FileHubAI_VisualGuide_KO.png?v=2" alt="FileHub AI Visual Quick Guide" class="w-full h-auto block" />
               <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-folder-tree text-indigo-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
@@ -1179,59 +1508,6 @@
                   </button>
                   <span class="text-cyan-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-magnifying-glass-plus"></i> <span data-i18n="click_to_zoom">클릭하여 크게 보기</span></span>
                 </div>
-              </div>
-            </div>
-
-            <!-- Panel 2: Interactive Live Demo (FileHub AI) -->
-            <div id="panelLive_filehub" class="hidden rounded-2xl overflow-hidden border border-indigo-400/50 shadow-2xl bg-slate-900 text-white">
-              <div class="px-3.5 py-2.5 bg-slate-950 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
-                <div class="flex items-center gap-2">
-                  <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-400/40 font-mono text-[10px] font-bold">0.1s AUTO DISPATCH</span>
-                  <span class="font-bold text-slate-200" data-i18n="fh_live_title">다운로드 폴더 0.1초 자동 분류 & 즉시 미리보기</span>
-                </div>
-                <div class="flex items-center gap-1.5">
-                  <button type="button" onclick="runFileHubDispatch()" class="px-3 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-[11px] shadow-md">
-                    ⚡ 0.1초 자동 분류 실행
-                  </button>
-                  <button type="button" onclick="resetFileHubDemo()" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-[11px] text-slate-300">
-                    ↩ Undo 복원
-                  </button>
-                </div>
-              </div>
-
-              <div class="p-3.5 bg-slate-950 grid grid-cols-1 sm:grid-cols-12 gap-3 text-xs">
-                <!-- Messy Downloads Folder -->
-                <div class="sm:col-span-6 p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
-                  <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
-                    <span>📥 Downloads (정리 전 파일 클릭 시 미리보기)</span>
-                    <span id="fhMessyCount" class="text-amber-400 font-bold">4개 파일</span>
-                  </div>
-                  <div id="fhMessyList" class="space-y-1.5 font-mono text-[11px]"></div>
-                </div>
-
-                <!-- Auto-Sorted Category Folders -->
-                <div class="sm:col-span-6 p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
-                  <div class="text-[11px] font-mono text-indigo-300 font-bold mb-1">📂 10대 표준 자동 분류 폴더</div>
-                  <div id="fhCat_doc" class="p-2 rounded bg-slate-950 border border-slate-800 flex items-center justify-between text-[11px]">
-                    <span>📄 01_문서 (PDF/Word)</span>
-                    <span id="fhBadge_doc" class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 font-mono text-[10px]">0개</span>
-                  </div>
-                  <div id="fhCat_xls" class="p-2 rounded bg-slate-950 border border-slate-800 flex items-center justify-between text-[11px]">
-                    <span>📊 02_스프레드시트 (Excel)</span>
-                    <span id="fhBadge_xls" class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 font-mono text-[10px]">0개</span>
-                  </div>
-                  <div id="fhCat_img" class="p-2 rounded bg-slate-950 border border-slate-800 flex items-center justify-between text-[11px]">
-                    <span>🖼️ 03_이미지_디자인 (PNG)</span>
-                    <span id="fhBadge_img" class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 font-mono text-[10px]">0개</span>
-                  </div>
-                  <div id="fhCat_zip" class="p-2 rounded bg-slate-950 border border-slate-800 flex items-center justify-between text-[11px]">
-                    <span>📦 04_압축_아카이브 (ZIP)</span>
-                    <span id="fhBadge_zip" class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 font-mono text-[10px]">0개</span>
-                  </div>
-                </div>
-              </div>
-              <div id="fhPreviewBar" class="px-3.5 py-2 bg-slate-950 border-t border-slate-800 text-[11px] text-indigo-300 font-mono">
-                💡 왼쪽 파일을 클릭해 즉시 미리보기를 테스트하거나 상단 [⚡ 0.1초 자동 분류 실행]을 눌러보세요!
               </div>
             </div>
           </div>
@@ -1267,23 +1543,13 @@
               <a href="https://apps.microsoft.com/detail/9N420XP5HCQC" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20">
                 <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
+              <button type="button" onclick="jumpToStageApp('radialdrop')" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all">
+                <i class="fa-solid fa-desktop text-sky-400"></i> <span data-i18n="btn_try_on_stage">상단 가상 데스크톱에서 실제 UI 조작 ↑</span>
+              </button>
             </div>
           </div>
-                    <div class="lg:col-span-7 flex flex-col gap-2.5">
-            <!-- Mode Switcher -->
-            <div class="demo-tab-bar">
-              <button type="button" id="tabBtnGuide_radialdrop" onclick="switchProductView('radialdrop', 'guide')" class="demo-tab-btn active-guide">
-                <i class="fa-solid fa-images text-sky-400"></i>
-                <span data-i18n="tab_3step_guide">📊 3단계 그림 설명 (STEP 1→2→3)</span>
-              </button>
-              <button type="button" id="tabBtnLive_radialdrop" onclick="switchProductView('radialdrop', 'live')" class="demo-tab-btn">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span data-i18n="tab_live_try">🎮 웹에서 직접 써보기</span>
-                <span class="px-1.5 py-0.2 rounded bg-sky-500/30 border border-sky-400/50 text-[9px] font-mono text-sky-200 live-try-badge">LIVE</span>
-              </button>
-            </div>
-
-            <div id="panelGuide_radialdrop" class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('radialdropGuideImg').src, 'RadialDrop Visual Quick Guide')">
+          <div class="lg:col-span-7 flex flex-col gap-2">
+            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('radialdropGuideImg').src, 'RadialDrop Visual Quick Guide')">
               <img id="radialdropGuideImg" src="assets/RadialDrop_VisualGuide_KO.png?v=2" alt="RadialDrop Visual Quick Guide" class="w-full h-auto block" />
               <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-compass-drafting text-blue-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
@@ -1293,76 +1559,6 @@
                   </button>
                   <span class="text-cyan-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-magnifying-glass-plus"></i> <span data-i18n="click_to_zoom">클릭하여 크게 보기</span></span>
                 </div>
-              </div>
-            </div>
-
-            <!-- Panel 2: Interactive Live Demo (RadialDrop) -->
-            <div id="panelLive_radialdrop" class="hidden rounded-2xl overflow-hidden border border-blue-400/50 shadow-2xl bg-slate-900 text-white">
-              <div class="px-3.5 py-2.5 bg-slate-950 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
-                <div class="flex items-center gap-2">
-                  <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/40 font-mono text-[10px] font-bold">360° RADIAL WHEEL & SHELF</span>
-                  <span class="font-bold text-slate-200" data-i18n="rd_live_title">파일 클릭/우클릭으로 360° 휠 & 3슬롯 선반을 체험하세요!</span>
-                </div>
-                <button type="button" onclick="summonRadialWheelCenter()" class="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-[11px]">
-                  🎯 360° 휠 즉시 소환
-                </button>
-              </div>
-
-              <div id="rdArena" class="relative h-72 bg-slate-950 p-3.5 grid grid-cols-12 gap-3 select-none overflow-hidden" oncontextmenu="event.preventDefault(); summonRadialWheelCenter();">
-                <!-- Left: Draggable Desktop Files & 360° Wheel Stage -->
-                <div class="col-span-7 relative rounded-xl bg-slate-900/90 border border-slate-800 p-3 flex flex-col justify-between">
-                  <div class="text-[11px] text-slate-400 font-mono">1️⃣ 사용할 파일 선택 후 [🎯 360° 휠] 액션 클릭:</div>
-                  <div class="flex flex-wrap gap-2 my-1">
-                    <button type="button" onclick="selectRadialFile('기획안_2026.docx')" id="rdFile0" class="px-2.5 py-1.5 rounded-lg bg-blue-950 border border-blue-400 text-blue-200 font-mono text-xs font-bold flex items-center gap-1.5">
-                      📄 기획안_2026.docx
-                    </button>
-                    <button type="button" onclick="selectRadialFile('브랜드_로고.png')" id="rdFile1" class="px-2.5 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 font-mono text-xs font-bold flex items-center gap-1.5">
-                      🖼️ 브랜드_로고.png
-                    </button>
-                  </div>
-
-                  <!-- Interactive Circular 360° Radial Wheel HUD -->
-                  <div id="rdWheelWidget" class="relative my-auto mx-auto w-44 h-44 rounded-full bg-slate-950/95 border-2 border-sky-500/60 shadow-[0_0_25px_rgba(14,165,233,0.28)] flex items-center justify-center transition-transform duration-200">
-                    <!-- Inner Neon Ring -->
-                    <div class="w-20 h-20 rounded-full bg-slate-900 border border-sky-400/50 flex flex-col items-center justify-center text-center p-1 shadow-inner">
-                      <span class="text-[9px] font-mono text-sky-400 font-bold">360° HUD</span>
-                      <span id="rdCenterLabel" class="text-[10px] font-extrabold text-white leading-tight">액션 선택</span>
-                    </div>
-                    <!-- Top Sector (12 o'clock) -->
-                    <button type="button" onmouseenter="document.getElementById('rdCenterLabel').textContent='선반 수납'" onclick="execRadialAction('shelf')" class="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-full bg-sky-600 hover:bg-sky-500 text-white border border-sky-300 text-[10px] font-extrabold shadow-lg whitespace-nowrap transition-all hover:scale-105">
-                      📥 선반 수납
-                    </button>
-                    <!-- Right Sector (3 o'clock) -->
-                    <button type="button" onmouseenter="document.getElementById('rdCenterLabel').textContent='ZIP 압축'" onclick="execRadialAction('zip')" class="absolute top-1/2 -right-3 -translate-y-1/2 px-2.5 py-1 rounded-full bg-amber-600 hover:bg-amber-500 text-white border border-amber-300 text-[10px] font-extrabold shadow-lg whitespace-nowrap transition-all hover:scale-105">
-                      🗜️ ZIP 압축
-                    </button>
-                    <!-- Bottom Sector (6 o'clock) -->
-                    <button type="button" onmouseenter="document.getElementById('rdCenterLabel').textContent='경로 복사'" onclick="execRadialAction('path')" class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-300 text-[10px] font-extrabold shadow-lg whitespace-nowrap transition-all hover:scale-105">
-                      📋 경로 복사
-                    </button>
-                    <!-- Left Sector (9 o'clock) -->
-                    <button type="button" onmouseenter="document.getElementById('rdCenterLabel').textContent='포맷 변환'" onclick="execRadialAction('convert')" class="absolute top-1/2 -left-3 -translate-y-1/2 px-2.5 py-1 rounded-full bg-violet-600 hover:bg-violet-500 text-white border border-violet-300 text-[10px] font-extrabold shadow-lg whitespace-nowrap transition-all hover:scale-105">
-                      🔄 변환 링
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Right: 3-Slot Floating Shelf -->
-                <div class="col-span-5 rounded-xl bg-slate-900 border border-blue-500/40 p-3 flex flex-col justify-between">
-                  <div>
-                    <div class="flex items-center justify-between text-[11px] font-mono text-blue-300 font-bold mb-2">
-                      <span>🗄️ 3슬롯 플로팅 선반</span>
-                      <span id="rdShelfCount">1/3</span>
-                    </div>
-                    <div id="rdShelfSlots" class="space-y-1.5 font-mono text-[11px]"></div>
-                  </div>
-                  <button type="button" onclick="dropAllFromShelf()" class="w-full py-2 px-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-[11px] shadow-md transition-all">
-                    📤 타겟 폴더로 일괄 드롭!
-                  </button>
-                </div>
-              </div>
-              <div id="rdStatusBar" class="px-3.5 py-2 bg-slate-950 border-t border-slate-800 text-[11px] text-sky-300 font-mono">
-                💡 왼쪽 360° 휠의 [📥 선반 수납], [🗜️ 즉시 ZIP 압축], [📋 경로 복사] 버튼을 직접 눌러보세요!
               </div>
             </div>
           </div>
@@ -1398,23 +1594,13 @@
               <a href="https://apps.microsoft.com/detail/9P2G9QTM1FV2" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-600/20">
                 <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
               </a>
+              <button type="button" onclick="jumpToStageApp('quickpath')" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all">
+                <i class="fa-solid fa-desktop text-sky-400"></i> <span data-i18n="btn_try_on_stage">상단 가상 데스크톱에서 실제 UI 조작 ↑</span>
+              </button>
             </div>
           </div>
-                    <div class="lg:col-span-7 flex flex-col gap-2.5">
-            <!-- Mode Switcher -->
-            <div class="demo-tab-bar">
-              <button type="button" id="tabBtnGuide_quickpath" onclick="switchProductView('quickpath', 'guide')" class="demo-tab-btn active-guide">
-                <i class="fa-solid fa-images text-sky-400"></i>
-                <span data-i18n="tab_3step_guide">📊 3단계 그림 설명 (STEP 1→2→3)</span>
-              </button>
-              <button type="button" id="tabBtnLive_quickpath" onclick="switchProductView('quickpath', 'live')" class="demo-tab-btn">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span data-i18n="tab_live_try">🎮 웹에서 직접 써보기</span>
-                <span class="px-1.5 py-0.2 rounded bg-sky-500/30 border border-sky-400/50 text-[9px] font-mono text-sky-200 live-try-badge">LIVE</span>
-              </button>
-            </div>
-
-            <div id="panelGuide_quickpath" class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('quickpathGuideImg').src, 'QuickPath Visual Quick Guide')">
+          <div class="lg:col-span-7 flex flex-col gap-2">
+            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('quickpathGuideImg').src, 'QuickPath Visual Quick Guide')">
               <img id="quickpathGuideImg" src="assets/QuickPath_VisualGuide_KO.png?v=2" alt="QuickPath Visual Quick Guide" class="w-full h-auto block" />
               <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
@@ -1423,59 +1609,6 @@
                     <i class="fa-solid fa-language"></i> <span data-i18n="btn_switch_guide_lang">한/영 전환 (KO·EN)</span>
                   </button>
                   <span class="text-cyan-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-magnifying-glass-plus"></i> <span data-i18n="click_to_zoom">클릭하여 크게 보기</span></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Panel 2: Interactive Live Demo (QuickPath) -->
-            <div id="panelLive_quickpath" class="hidden rounded-2xl overflow-hidden border border-amber-400/50 shadow-2xl bg-slate-900 text-white">
-              <div class="px-3.5 py-2.5 bg-slate-950 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
-                <div class="flex items-center gap-2">
-                  <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-400/40 font-mono text-[10px] font-bold">0.1s DIALOG TELEPORTER</span>
-                  <span class="font-bold text-slate-200" data-i18n="qp_live_title">Ctrl+G 한 번으로 저장 창 경로 0.1초 순간이동!</span>
-                </div>
-                <button type="button" onclick="teleportQuickPath(0)" class="px-3 py-1 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-[11px] shadow-md">
-                  ⚡ Ctrl+G 순간이동 실행!
-                </button>
-              </div>
-
-              <div class="p-3.5 bg-slate-950 space-y-2.5 text-xs">
-                <!-- Background Open Explorer Windows -->
-                <div class="space-y-1">
-                  <div class="text-[11px] text-slate-400 font-mono">📂 현재 열려 있는 탐색기 폴더 (클릭 시 즉시 점프):</div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 font-mono text-[11px]">
-                    <button type="button" onclick="teleportQuickPath(0)" class="p-2 rounded-lg bg-slate-900 hover:bg-amber-950/60 border border-amber-500/50 text-amber-200 text-left truncate">
-                      ⚡ #1: D:\Projects\2026_신규시안\최종
-                    </button>
-                    <button type="button" onclick="teleportQuickPath(1)" class="p-2 rounded-lg bg-slate-900 hover:bg-sky-950/60 border border-sky-500/40 text-sky-200 text-left truncate">
-                      📌 #2: E:\재무팀_공유\2026_세금계산서
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Simulated Windows Save As Dialog -->
-                <div id="qpDialogBox" class="rounded-xl bg-slate-900 border-2 border-slate-700 p-3 space-y-2 transition-all duration-300">
-                  <!-- QuickPath Floating Titlebar HUD -->
-                  <div class="flex items-center justify-between bg-slate-950 px-2.5 py-1.5 rounded-lg border border-amber-400/40 text-[11px] font-mono">
-                    <span class="text-white font-bold">💾 다른 이름으로 저장 (Save As)</span>
-                    <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">⚡ QuickPath HUD 연동됨</span>
-                  </div>
-
-                  <!-- Address Bar -->
-                  <div class="flex items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-700 font-mono text-[11px]">
-                    <span class="text-slate-400 shrink-0">현재 경로:</span>
-                    <span id="qpCurrentPath" class="text-rose-300 font-bold truncate">C:\Users\User\AppData\Local\Temp (엉뚱한 기본 폴더 😫)</span>
-                  </div>
-
-                  <!-- Filename Box (100% preserved) -->
-                  <div class="flex items-center justify-between gap-2 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800 font-mono text-[11px]">
-                    <span class="text-slate-400">파일 이름(N): <strong class="text-emerald-300">거래처_세금계산서_2026.pdf</strong> <span class="text-[10px] text-slate-500">(100% 보존)</span></span>
-                    <button type="button" onclick="resetQuickPathDemo()" class="text-[10px] text-slate-400 hover:text-white underline">초기화</button>
-                  </div>
-                </div>
-
-                <div id="qpStatusToast" class="text-[11px] text-amber-300 font-mono px-1">
-                  💡 상단 [⚡ Ctrl+G 순간이동 실행!] 버튼을 눌러 폴더 트리 클릭 없이 0.1초 만에 경로가 바뀌는 걸 확인하세요!
                 </div>
               </div>
             </div>
@@ -1911,11 +2044,9 @@
         fb_msg_ph: "어떤 점이 좋았나요? 혹은 개선이 필요한 부분이나 궁금한 점을 자유롭게 적어주세요.",
         fb_submit_btn: "댓글 등록하기",
         guide_badge_3step: "한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)",
-        suite_live_hint: "각 제품 우측의 <strong class=\"text-sky-300\">[🎮 웹에서 직접 써보기]</strong> 탭을 누르면 설치 없이 브라우저에서 즉시 체험할 수 있습니다!",
-        tab_video_guide: "🎬 시연 영상 & 가이드",
-        tab_gif_guide: "🎬 AI 자동생성 녹화 GIF",
-        tab_3step_guide: "📊 3단계 그림 설명 (STEP 1→2→3)",
-        tab_live_try: "🎮 웹에서 직접 써보기",
+        stage_live_badge: "실제 프로그램 1:1 UI 인터랙티브 데스크톱 체험관",
+        stage_live_sub: "아래 8개 앱 탭을 클릭해 설치 없이 실제 프로그램과 100% 동일한 UI를 웹에서 직접 조작해보세요!",
+        btn_try_on_stage: "상단 가상 데스크톱에서 실제 UI 조작 ↑",
         click_to_zoom: "클릭하여 크게 보기",
         btn_switch_guide_lang: "영문 가이드 보기 (EN)",
         fb_direct_contact: "직접 문의 & 공식 채널",
@@ -2098,11 +2229,9 @@
         fb_msg_ph: "What did you like? Feel free to share suggestions, questions, or bug reports.",
         fb_submit_btn: "Post Comment",
         guide_badge_3step: "3-Step Visual Quick Guide (STEP 1 &rarr; 2 &rarr; 3)",
-        suite_live_hint: "Click the <strong class=\"text-sky-300\">[🎮 Try Live in Browser]</strong> tab on any product below to test it interactively with zero installation!",
-        tab_video_guide: "🎬 Video & Quick Guide",
-        tab_gif_guide: "🎬 AI Copilot Live GIF",
-        tab_3step_guide: "📊 3-Step Visual Guide",
-        tab_live_try: "🎮 Try Live in Browser",
+        stage_live_badge: "1:1 Authentic App UI Interactive Desktop Playground",
+        stage_live_sub: "Switch across the 8 apps below to test the exact 1:1 program UI right in your browser!",
+        btn_try_on_stage: "Try 1:1 App UI on Top Desktop Stage ↑",
         click_to_zoom: "Click to Zoom",
         btn_switch_guide_lang: "한글 가이드 보기 (KO)",
         fb_direct_contact: "Direct Channels",
@@ -2485,199 +2614,376 @@
       if (e.key === 'Escape') closeImageLightbox();
     });
 
-    // ================= 8-PRODUCT INTERACTIVE LIVE SANDBOX CONTROLLERS =================
-    function switchProductView(productId, mode) {
-      const guidePanel = document.getElementById(`panelGuide_${productId}`);
-      const livePanel = document.getElementById(`panelLive_${productId}`);
-      const btnGuide = document.getElementById(`tabBtnGuide_${productId}`);
-      const btnLive = document.getElementById(`tabBtnLive_${productId}`);
-      if (!guidePanel || !livePanel || !btnGuide || !btnLive) return;
+    // ================= 1:1 AUTHENTIC XAML UI INTERACTIVE STAGE CONTROLLERS =================
+    const stageAppsMeta = {
+      radialdrop: { name: 'RadialDrop', store: 'https://apps.microsoft.com/detail/9N420XP5HCQC' },
+      queueclip: { name: 'QueueClip', store: 'https://apps.microsoft.com/detail/9PM5WS6W4VPS' },
+      quickpath: { name: 'QuickPath', store: 'https://apps.microsoft.com/detail/9P2G9QTM1FV2' },
+      mouseflow: { name: 'MouseFlow AI', store: 'https://apps.microsoft.com/detail/9P108CX3SDZF' },
+      excelcompare: { name: 'ExcelCompare', store: 'https://apps.microsoft.com/detail/9NM6VMC967PL' },
+      filehub: { name: 'FileHub AI', store: 'https://apps.microsoft.com/detail/9PMJGRSJ6SJX' },
+      autoflow: { name: 'AutoFlow RPA', store: 'https://apps.microsoft.com/detail/9NPC24FV5230' },
+      overlaypic: { name: 'OverlayPic', store: 'https://apps.microsoft.com/detail/9P7BRM0XFCLD' }
+    };
 
-      if (mode === 'live') {
-        guidePanel.classList.add('hidden');
-        livePanel.classList.remove('hidden');
-        btnGuide.classList.remove('active-guide');
-        btnLive.classList.add('active-live');
-        if (productId === 'mouseflow') initMouseFlowCanvas();
-        if (productId === 'queueclip') renderQueueClipDemo();
-        if (productId === 'filehub') renderFileHubDemo();
-        if (productId === 'radialdrop') renderRadialShelf();
-      } else {
-        livePanel.classList.add('hidden');
-        guidePanel.classList.remove('hidden');
-        btnLive.classList.remove('active-live');
-        btnGuide.classList.add('active-guide');
-      }
-    }
-
-    // --- 1. OverlayPic Live Demo ---
-    let opClickThru = false;
-    let opClickCount = 0;
-    function updateOverlayPicDemo() {
-      const slider = document.getElementById('opSlider');
-      const card = document.getElementById('opFloatingCard');
-      const lbl = document.getElementById('opValLabel');
-      if (!slider || !card || !lbl) return;
-      lbl.textContent = `${slider.value}%`;
-      card.style.opacity = (parseInt(slider.value, 10) / 100).toFixed(2);
-    }
-    function handleOverlayWheel(e) {
-      const slider = document.getElementById('opSlider');
-      if (!slider) return;
-      e.preventDefault();
-      const delta = e.deltaY < 0 ? 8 : -8;
-      const next = Math.min(100, Math.max(15, parseInt(slider.value, 10) + delta));
-      slider.value = next;
-      updateOverlayPicDemo();
-    }
-    function toggleOverlayClickThru() {
-      opClickThru = !opClickThru;
-      const card = document.getElementById('opFloatingCard');
-      const btn = document.getElementById('opClickThruBtn');
-      const txt = document.getElementById('opClickThruText');
-      const toast = document.getElementById('opStatusToast');
-      if (!card || !btn || !txt) return;
-      if (opClickThru) {
-        card.style.pointerEvents = 'none';
-        card.classList.add('ring-2', 'ring-emerald-400');
-        btn.className = 'px-2.5 py-1 rounded-lg bg-emerald-600 text-white border border-emerald-400 text-[11px] font-bold transition-all';
-        txt.textContent = currentLang === 'en' ? 'Click-Through: ON' : '투과 모드: ON (클릭 통과!)';
-        if (toast) toast.innerHTML = '✨ <strong>투과 모드 ON!</strong> 이제 시안 이미지에 가려진 아래 작업 창 버튼을 그대로 클릭해보세요!';
-      } else {
-        card.style.pointerEvents = 'auto';
-        card.classList.remove('ring-2', 'ring-emerald-400');
-        btn.className = 'px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-[11px] font-bold text-slate-200 transition-all';
-        txt.textContent = currentLang === 'en' ? 'Click-Through: OFF' : '투과 모드: OFF';
-        if (toast) toast.innerHTML = '💡 시안 창을 마우스로 드래그해 이동하거나, [👻 투과 모드]를 다시 켜보세요!';
-      }
-    }
-    function triggerUnderButton(idx) {
-      opClickCount++;
-      const counter = document.getElementById('opClickCounter');
-      const toast = document.getElementById('opStatusToast');
-      if (counter) counter.textContent = `클릭 성공: ${opClickCount}회!`;
-      if (toast) {
-        toast.innerHTML = idx === 1
-          ? `🎉 <strong>성공!</strong> 시안 이미지 뒤의 [컬러 #0EA5E9 적용] 버튼이 클릭되었습니다! (누적 ${opClickCount}회)`
-          : `🎉 <strong>성공!</strong> 시안 이미지 뒤의 [간격 24px 정렬] 버튼이 클릭되었습니다! (누적 ${opClickCount}회)`;
-      }
-    }
-    // Make OverlayPic floating card draggable
-    (function setupOverlayDrag() {
-      let dragging = false, startX = 0, startY = 0, origLeft = 32, origTop = 36;
-      document.addEventListener('pointerdown', (e) => {
-        const card = document.getElementById('opFloatingCard');
-        if (!card || !card.contains(e.target) || opClickThru) return;
-        dragging = true;
-        startX = e.clientX;
-        startY = e.clientY;
-        origLeft = card.offsetLeft;
-        origTop = card.offsetTop;
-        card.setPointerCapture(e.pointerId);
+    function switchStageApp(appId) {
+      Object.keys(stageAppsMeta).forEach(id => {
+        const scene = document.getElementById(`stageScene_${id}`);
+        const tab = document.getElementById(`stageTab_${id}`);
+        if (scene) scene.classList.toggle('hidden', id !== appId);
+        if (tab) {
+          if (id === appId) {
+            tab.className = 'stage-app-tab active flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-extrabold transition-all bg-sky-600 text-white border border-sky-400 shadow-lg shadow-sky-600/25';
+          } else {
+            tab.className = 'stage-app-tab flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800/90 hover:bg-slate-800 text-slate-300 border border-slate-700';
+          }
+        }
       });
-      document.addEventListener('pointermove', (e) => {
-        if (!dragging) return;
-        const card = document.getElementById('opFloatingCard');
-        const arena = document.getElementById('opArena');
-        if (!card || !arena) return;
-        const nx = Math.max(8, Math.min(arena.clientWidth - card.offsetWidth - 8, origLeft + (e.clientX - startX)));
-        const ny = Math.max(8, Math.min(arena.clientHeight - card.offsetHeight - 8, origTop + (e.clientY - startY)));
-        card.style.left = `${nx}px`;
-        card.style.top = `${ny}px`;
-      });
-      document.addEventListener('pointerup', () => { dragging = false; });
-    })();
+      const meta = stageAppsMeta[appId];
+      const storeBtn = document.getElementById('stageStoreDirectBtn');
+      const storeTxt = document.getElementById('stageStoreBtnText');
+      const taskLbl = document.getElementById('stageActiveAppLabel');
+      if (meta && storeBtn && storeTxt) {
+        storeBtn.href = meta.store;
+        storeTxt.textContent = currentLang === 'en' ? `Get ${meta.name} Free` : `${meta.name} 스토어 무료 받기`;
+      }
+      if (meta && taskLbl) {
+        taskLbl.textContent = `● ${meta.name} 실행 중`;
+      }
+      if (appId === 'mouseflow') initStageMfCanvas();
+    }
 
-    // --- 2. AutoFlow RPA Live Demo ---
-    let afPresetIdx = 0;
-    function selectAutoFlowPreset(idx) {
-      afPresetIdx = idx;
-      const p0 = document.getElementById('afPreset0');
-      const p1 = document.getElementById('afPreset1');
-      const n1 = document.getElementById('afNode1Text');
-      const n2 = document.getElementById('afNode2Text');
-      const n3 = document.getElementById('afNode3Text');
+    function jumpToStageApp(appId) {
+      switchStageApp(appId);
+      const stage = document.getElementById('interactiveDesktopStage');
+      if (stage) stage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // --- 1. RadialDrop 1:1 XAML Wheel & 3-Slot Shelf Logic ---
+    const rdSectorData = [
+      { icon: '🧺', tag: 'SLOT 1', ko: '선반 담기', en: 'Add to Shelf', desc: '선택한 파일을 3-Slot 선반에 수납합니다.' },
+      { icon: '📁', tag: 'NEW DIR', ko: '새 폴더', en: 'New Folder', desc: '새 폴더를 만들고 파일을 정리합니다.' },
+      { icon: '📦', tag: 'ZIP', ko: 'Zip 압축', en: 'Quick Zip', desc: '파일들을 하나의 ZIP으로 즉시 압축합니다.' },
+      { icon: '📋', tag: 'PATH', ko: '경로 복사', en: 'Copy Path', desc: '파일의 전체 경로를 클립보드에 복사합니다.' },
+      { icon: '🖼️', tag: 'IMAGE', ko: '이미지 변환', en: 'Convert Image', desc: '이미지를 고화질 PNG로 즉시 변환합니다.' },
+      { icon: '🚀', tag: 'SHELF', ko: '선반 열기', en: 'Open Shelf', desc: '3슬롯 플로팅 선반 창을 즉시 호출합니다.' }
+    ];
+    const rdSampleFiles = ['기획안_최종.docx', '시안_로고.png', '정산표.xlsx'];
+    let rdCurFileIdx = 0;
+    let rdCurSlot = 0;
+    let rdSlots = [
+      ['사업계획서_2026.pdf', '디자인_가이드.png'],
+      [],
+      []
+    ];
+
+    function selectStageRdFile(idx) {
+      rdCurFileIdx = idx;
+      [0, 1, 2].forEach(i => {
+        const b = document.getElementById(`stageRdFileBtn${i}`);
+        if (b) {
+          b.className = i === idx
+            ? 'px-2.5 py-1 rounded-lg bg-sky-600 text-white font-bold text-[11px] border border-sky-300'
+            : 'px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-bold text-[11px] border border-slate-600';
+        }
+      });
+    }
+
+    function hoverRadialSector(idx) {
+      for (let i = 0; i < 6; i++) {
+        const w = document.getElementById(`rdWedge_${i}`);
+        if (w) {
+          w.setAttribute('fill', i === idx ? 'url(#rdActiveGrad)' : 'rgba(0,0,0,0.01)');
+          w.setAttribute('stroke', i === idx ? '#38BDF8' : 'transparent');
+        }
+      }
+      const ic = document.getElementById('rdCoreIcon');
+      const tt = document.getElementById('rdCoreTitle');
+      const ds = document.getElementById('rdCoreDesc');
+      if (!ic || !tt || !ds) return;
+      if (idx < 0 || !rdSectorData[idx]) {
+        ic.textContent = '✕';
+        ic.setAttribute('fill', '#FCA5A5');
+        tt.textContent = 'CANCEL';
+        tt.setAttribute('fill', '#FCA5A5');
+        ds.textContent = currentLang === 'en' ? 'Release to cancel' : '놓으면 취소';
+      } else {
+        const s = rdSectorData[idx];
+        ic.textContent = s.icon;
+        ic.setAttribute('fill', '#38BDF8');
+        tt.textContent = currentLang === 'en' ? s.en : s.ko;
+        tt.setAttribute('fill', '#FFFFFF');
+        ds.textContent = s.tag;
+      }
+    }
+
+    function clickRadialSector(idx) {
+      const file = rdSampleFiles[rdCurFileIdx];
+      const toast = document.getElementById('rdExactToast');
       if (idx === 0) {
-        if (p0) p0.className = 'px-2.5 py-1 rounded-lg bg-cyan-950 border border-cyan-500/60 text-cyan-200 font-bold transition-all';
-        if (p1) p1.className = 'px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 font-bold transition-all';
-        if (n1) n1.textContent = '📊 엑셀 고객행 읽기';
-        if (n2) n2.textContent = '⌨️ ERP 자동 타이핑';
-        if (n3) n3.textContent = '🖱️ [등록] 버튼 클릭';
+        if (!rdSlots[rdCurSlot].includes(file)) rdSlots[rdCurSlot].push(file);
+        renderStageRdShelf();
+        if (toast) toast.innerHTML = `🧺 <strong>[선반 담기 완료]</strong> "${file}" 파일이 우측 실제 RadialDrop 선반 슬롯 ${rdCurSlot + 1}에 수납되었습니다!`;
+      } else if (idx === 1) {
+        const folderName = `새폴더_${file.split('.')[0]}`;
+        rdSlots[rdCurSlot].push(`📁 ${folderName}/`);
+        renderStageRdShelf();
+        if (toast) toast.innerHTML = `📁 <strong>[새 폴더로 묶기 완료]</strong> "${folderName}" 폴더를 생성해 파일을 정리했습니다!`;
+      } else if (idx === 2) {
+        const zipName = `${file.split('.')[0]}.zip`;
+        rdSlots[rdCurSlot].push(zipName);
+        renderStageRdShelf();
+        if (toast) toast.innerHTML = `📦 <strong>[즉시 ZIP 압축 완료]</strong> "${zipName}" 압축 아카이브가 생성되어 선반에 담겼습니다!`;
+      } else if (idx === 3) {
+        if (toast) toast.innerHTML = `📋 <strong>[전체 경로 복사 완료]</strong> "C:\\Users\\YJC\\Downloads\\${file}" 경로가 클립보드에 복사되었습니다!`;
+      } else if (idx === 4) {
+        const pngName = `${file.split('.')[0]}_변환.png`;
+        rdSlots[rdCurSlot].push(pngName);
+        renderStageRdShelf();
+        if (toast) toast.innerHTML = `🖼️ <strong>[이미지 변환 완료]</strong> "${pngName}" 고화질 PNG로 즉시 변환되었습니다!`;
+      } else if (idx === 5) {
+        renderStageRdShelf();
+        if (toast) toast.innerHTML = `🚀 <strong>[선반 열기 호출]</strong> 우측 3슬롯 플로팅 선반 창이 활성화되었습니다!`;
+      }
+    }
+
+    function resetRadialWheel() {
+      hoverRadialSector(-1);
+      const toast = document.getElementById('rdExactToast');
+      if (toast) toast.innerHTML = '✕ 중앙 CANCEL 허브 클릭 — 동작이 취소되었습니다.';
+    }
+
+    function switchStageRdSlot(slotIdx) {
+      rdCurSlot = slotIdx;
+      renderStageRdShelf();
+    }
+
+    function renderStageRdShelf() {
+      const summary = document.getElementById('rdExactSummary');
+      const list = document.getElementById('rdExactFileList');
+      if (!summary || !list) return;
+      const items = rdSlots[rdCurSlot];
+      summary.textContent = `${items.length}개 파일`;
+
+      [0, 1, 2].forEach(i => {
+        const btn = document.getElementById(`rdSlotBtn_${i}`);
+        const lbl = document.getElementById(`rdSlotLbl_${i}`);
+        if (lbl) lbl.textContent = `슬롯 ${i + 1} (${rdSlots[i].length})`;
+        if (btn) {
+          btn.className = i === rdCurSlot
+            ? 'py-1 px-1.5 rounded-[6px] bg-[#384D6E] border border-[#38BDF8] text-[10.5px] font-bold text-[#F8FAFC] flex items-center justify-center gap-1'
+            : 'py-1 px-1.5 rounded-[6px] bg-transparent border border-transparent text-[10.5px] font-semibold text-[#CBD5E1] flex items-center justify-center gap-1';
+        }
+      });
+
+      if (items.length === 0) {
+        list.innerHTML = `
+          <div class="h-[140px] flex flex-col items-center justify-center text-center text-[#CBD5E1]">
+            <div class="text-2xl mb-1">📥</div>
+            <div class="text-[11px] font-bold">파일을 여기에 드래그 앤 드롭</div>
+            <div class="text-[10px] text-[#94A3B8]">또는 왼쪽 360° 휠의 [1. 선반 담기] 클릭</div>
+          </div>`;
       } else {
-        if (p1) p1.className = 'px-2.5 py-1 rounded-lg bg-cyan-950 border border-cyan-500/60 text-cyan-200 font-bold transition-all';
-        if (p0) p0.className = 'px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 font-bold transition-all';
-        if (n1) n1.textContent = '🔍 4K 화면 이미지 서치';
-        if (n2) n2.textContent = '🎯 정밀 좌표 이동';
-        if (n3) n3.textContent = '⚡ 3회 연속 자동 클릭';
+        list.innerHTML = items.map((name, idx) => `
+          <div class="px-2.5 py-1.5 rounded-[6px] bg-[#2E405C] border border-[#4B658C] flex items-center justify-between text-[11px]">
+            <span class="truncate font-medium text-[#F8FAFC]">📄 ${name}</span>
+            <button type="button" onclick="removeStageRdItem(${idx})" class="text-[#94A3B8] hover:text-rose-300 text-[10px] ml-2">✕</button>
+          </div>
+        `).join('');
       }
-      runAutoFlowDemo();
     }
-    function runAutoFlowDemo() {
-      const nodes = [document.getElementById('afNode1'), document.getElementById('afNode2'), document.getElementById('afNode3')];
-      const logEl = document.getElementById('afLogList');
-      const badge = document.getElementById('afProgressBadge');
-      if (!logEl || !badge) return;
-      logEl.innerHTML = '';
-      nodes.forEach(n => n && n.classList.remove('border-cyan-400', 'bg-cyan-950/60', 'scale-105'));
 
-      const steps = afPresetIdx === 0 ? [
-        '✅ [STEP 1] customers.xlsx 로드 완료 → 1행: "홍길동 (VIP)" 추출',
-        '⌨️ [STEP 2] ERP 고객명 입력란 포커스 & 0.05초 고속 자동 타이핑 완료',
-        '🎉 [STEP 3] [등록 완료] 버튼 이미지 감지(99.8% 일치) → 자동 클릭 성공!'
-      ] : [
-        '✅ [STEP 1] 화면 내 [승인] 버튼 이미지(Approve_Btn.png) 0.02초 만에 감지',
-        '🎯 [STEP 2] 감지된 좌표 (X: 842, Y: 510)로 마우스 자동 이동',
-        '🎉 [STEP 3] 3회 반복 클릭 시나리오 100% 무인 실행 완료!'
+    function removeStageRdItem(idx) {
+      rdSlots[rdCurSlot].splice(idx, 1);
+      renderStageRdShelf();
+    }
+    function clearStageRdSlot() {
+      rdSlots[rdCurSlot] = [];
+      renderStageRdShelf();
+    }
+    function exportStageRdFiles() {
+      const cnt = rdSlots[rdCurSlot].length;
+      rdSlots[rdCurSlot] = [];
+      renderStageRdShelf();
+      const toast = document.getElementById('rdExactToast');
+      if (toast) toast.innerHTML = `📤 <strong>[일괄 드롭 완료]</strong> 슬롯 ${rdCurSlot + 1}의 파일 ${cnt}개를 타겟 폴더로 전송 후 선반을 자동 비웠습니다!`;
+    }
+
+    // --- 2. QueueClip 1:1 XAML Window Logic ---
+    let stageQcItems = [
+      { text: '주식회사 플로우스위트', fav: true, hasToken: false },
+      { text: '02-1588-0000', fav: false, hasToken: false },
+      { text: '품번-2026-01', fav: false, hasToken: true, num: 1 }
+    ];
+    let stageQcMode = 'Queue';
+    let stageQcCellCursor = 0;
+
+    function renderStageQc() {
+      const list = document.getElementById('qcExactList');
+      const tabCnt = document.getElementById('qcTabCount');
+      if (!list || !tabCnt) return;
+      tabCnt.textContent = `대기열 (${stageQcItems.length})`;
+
+      if (stageQcItems.length === 0) {
+        list.innerHTML = `
+          <div class="h-[180px] flex flex-col items-center justify-center text-center text-[#64748B]">
+            <div class="text-2xl opacity-50 mb-1">📥</div>
+            <div class="text-[11.5px] font-semibold">대기열이 비어 있습니다</div>
+            <div class="text-[10px] text-[#94A3B8]">우측 샘플 버튼을 눌러 복사(Ctrl+C)해보세요</div>
+          </div>`;
+        return;
+      }
+
+      list.innerHTML = stageQcItems.map((item, idx) => `
+        <div class="rounded-[8px] bg-[#FFFFFF] border border-[#E2E8F0] px-2 py-1.5 flex items-center justify-between gap-2 shadow-sm">
+          <div class="flex items-center gap-2 min-w-0">
+            <div class="pr-2 border-r border-[#E2E8F0]">
+              <span class="px-1.5 py-0.5 rounded-full text-[9.5px] font-bold text-white ${idx === 0 ? 'bg-[#0F172A]' : 'bg-[#334155]'}">#${idx + 1}</span>
+            </div>
+            <span class="text-[11.5px] font-medium text-[#1E293B] truncate">
+              ${item.hasToken ? `품번-2026-<span class="px-1 py-0.2 rounded bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] font-bold">${String(item.num).padStart(2, '0')}</span>` : item.text}
+            </span>
+          </div>
+          <div class="flex items-center gap-1 shrink-0">
+            ${item.hasToken ? `<button type="button" onclick="expandStageQcPattern(${idx})" title="스마트 패턴 +1 자동 복제" class="w-5 h-5 rounded-[5px] bg-[#EFF6FF] hover:bg-[#DBEAFE] border border-[#BFDBFE] text-[#2563EB] font-bold text-[11px] flex items-center justify-center">＋</button>` : ''}
+            <span class="text-[13px] ${item.fav ? 'text-[#EAB308]' : 'text-[#CBD5E1]'}">${item.fav ? '★' : '☆'}</span>
+            <button type="button" onclick="removeStageQcItem(${idx})" class="w-4 h-4 text-[#94A3B8] hover:text-rose-600 text-[9px]">✕</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function cycleQcMode() {
+      const modes = [
+        { name: 'Queue', icon: '⏩' },
+        { name: 'Loop', icon: '🔁' },
+        { name: 'Stack', icon: '⏫' }
       ];
-
-      steps.forEach((msg, i) => {
-        setTimeout(() => {
-          nodes.forEach(n => n && n.classList.remove('border-cyan-400', 'bg-cyan-950/60', 'scale-105'));
-          if (nodes[i]) nodes[i].classList.add('border-cyan-400', 'bg-cyan-950/60', 'scale-105');
-          badge.textContent = `실행 중 (${i + 1}/3 단계)...`;
-          const line = document.createElement('div');
-          line.className = i === 2 ? 'text-emerald-300 font-bold' : 'text-cyan-200';
-          line.textContent = msg;
-          logEl.appendChild(line);
-          if (i === 2) badge.textContent = '⚡ 0.3초 만에 자동화 완료!';
-        }, i * 320);
-      });
+      const next = modes[(modes.findIndex(m => m.name === stageQcMode) + 1) % modes.length];
+      stageQcMode = next.name;
+      document.getElementById('qcModeIcon').textContent = next.icon;
+      document.getElementById('qcModeText').textContent = next.name;
     }
 
-    // --- 3. MouseFlow AI Live Demo ---
-    let mfReady = false;
-    function initMouseFlowCanvas() {
-      if (mfReady) return;
-      const canvas = document.getElementById('mfCanvas');
-      if (!canvas) return;
-      mfReady = true;
-      const ctx = canvas.getContext('2d');
-      let drawing = false;
-      let pts = [];
-
-      function getPos(e) {
-        const rect = canvas.getBoundingClientRect();
-        return {
-          x: ((e.clientX - rect.left) / rect.width) * canvas.width,
-          y: ((e.clientY - rect.top) / rect.height) * canvas.height
-        };
-      }
-      canvas.addEventListener('pointerdown', (e) => {
-        drawing = true;
-        pts = [getPos(e)];
-        canvas.setPointerCapture(e.pointerId);
+    function expandStageQcPattern(idx) {
+      const src = stageQcItems[idx];
+      if (!src) return;
+      const nextNum = (src.num || 1) + 1;
+      src.num = nextNum;
+      stageQcItems.push({
+        text: `품번-2026-${String(nextNum).padStart(2, '0')}`,
+        fav: false,
+        hasToken: true,
+        num: nextNum
       });
-      canvas.addEventListener('pointermove', (e) => {
+      renderStageQc();
+      const st = document.getElementById('stageQcStatus');
+      if (st) st.textContent = `✨ 스마트 패턴 증감: "품번-2026-${String(nextNum).padStart(2, '0')}" 항목이 대기열에 자동 생성되었습니다!`;
+    }
+
+    function stageQcAdd(txt) {
+      const isToken = txt.includes('품번');
+      stageQcItems.push({ text: txt, fav: false, hasToken: isToken, num: 1 });
+      renderStageQc();
+    }
+
+    function removeStageQcItem(idx) {
+      stageQcItems.splice(idx, 1);
+      renderStageQc();
+    }
+
+    function stageQcPasteOne() {
+      if (stageQcItems.length === 0) return;
+      const item = stageQcMode === 'Stack' ? stageQcItems.pop() : stageQcItems.shift();
+      if (stageQcMode === 'Loop') stageQcItems.push(item);
+      const val = item.hasToken ? `품번-2026-${String(item.num).padStart(2, '0')}` : item.text;
+      const cell = document.getElementById(`stageQcCell_${stageQcCellCursor % 4}`);
+      if (cell) {
+        cell.value = val;
+        cell.classList.add('bg-emerald-50', 'border-emerald-400');
+        setTimeout(() => cell.classList.remove('bg-emerald-50', 'border-emerald-400'), 400);
+      }
+      stageQcCellCursor++;
+      renderStageQc();
+    }
+
+    function stageQcTurboPaste() {
+      if (stageQcItems.length === 0) resetStageQc();
+      const total = Math.min(4, stageQcItems.length);
+      for (let i = 0; i < total; i++) {
+        setTimeout(() => stageQcPasteOne(), i * 160);
+      }
+    }
+
+    function resetStageQc() {
+      stageQcItems = [
+        { text: '주식회사 플로우스위트', fav: true, hasToken: false },
+        { text: '02-1588-0000', fav: false, hasToken: false },
+        { text: '품번-2026-01', fav: false, hasToken: true, num: 1 }
+      ];
+      stageQcCellCursor = 0;
+      [0, 1, 2, 3].forEach(i => {
+        const c = document.getElementById(`stageQcCell_${i}`);
+        if (c) c.value = '';
+      });
+      renderStageQc();
+    }
+
+    // --- 3. QuickPath 1:1 Titlebar HUD Logic ---
+    function triggerStageQpJump(mode) {
+      const bar = document.getElementById('stageQpAddressBar');
+      const box = document.getElementById('stageQpFolderContent');
+      const dlg = document.getElementById('stageQpDialog');
+      if (!bar || !box) return;
+      const targetPath = mode === 0
+        ? 'D:\\Projects\\2026_신규프로젝트\\03_최종시안'
+        : 'E:\\재무팀_공유\\2026_세금계산서_보관함';
+      bar.className = 'flex-1 px-3 py-1.5 rounded-lg bg-amber-50 border-2 border-amber-400 font-mono text-xs font-extrabold text-amber-900 flex items-center justify-between';
+      bar.innerHTML = `<span>⚡ ${targetPath} (0.1초 순간이동 완료!)</span><span class="px-2 py-0.5 rounded bg-emerald-600 text-white font-sans text-[10px]">점프 성공</span>`;
+      box.innerHTML = `
+        <div class="text-amber-700 font-bold">📂 ${targetPath} 내부 파일 목록:</div>
+        <div>📁 01_참고레퍼런스</div>
+        <div>📄 시안_가이드라인_v2.pdf</div>
+        <div class="text-emerald-700 font-bold">✨ 이제 [저장(S)]만 누르면 이 폴더에 "거래처_세금계산서_2026_최종.pdf"가 즉시 저장됩니다!</div>`;
+      if (dlg) {
+        dlg.classList.add('ring-4', 'ring-amber-400/50');
+        setTimeout(() => dlg.classList.remove('ring-4', 'ring-amber-400/50'), 450);
+      }
+    }
+    function resetStageQp() {
+      const bar = document.getElementById('stageQpAddressBar');
+      const box = document.getElementById('stageQpFolderContent');
+      if (!bar || !box) return;
+      bar.className = 'flex-1 px-3 py-1.5 rounded-lg bg-rose-50 border border-rose-300 font-mono text-xs font-bold text-rose-700 flex items-center justify-between';
+      bar.innerHTML = `<span>⚠️ C:\\Users\\YJC\\AppData\\Local\\Temp (엉뚱한 기본 폴더)</span><button type="button" onclick="triggerStageQpJump(0)" class="px-2.5 py-0.5 rounded bg-amber-500 text-white font-sans font-bold text-[11px]">⚡ 즉시 순간이동 (Ctrl+G)</button>`;
+      box.innerHTML = `<div class="text-slate-400">📂 Temp 폴더 내부 (원하는 작업 폴더가 아닙니다)</div><div>📄 ~DF8A12.tmp</div>`;
+    }
+
+    // --- 4. MouseFlow AI 1:1 Quick Action HUD & Gesture Canvas ---
+    let stageMfInited = false;
+    function initStageMfCanvas() {
+      if (stageMfInited) return;
+      const canvas = document.getElementById('stageMfCanvas');
+      if (!canvas) return;
+      stageMfInited = true;
+      const ctx = canvas.getContext('2d');
+      let drawing = false, pts = [];
+      function pos(e) {
+        const r = canvas.getBoundingClientRect();
+        return { x: ((e.clientX - r.left) / r.width) * canvas.width, y: ((e.clientY - r.top) / r.height) * canvas.height };
+      }
+      canvas.addEventListener('pointerdown', e => { drawing = true; pts = [pos(e)]; canvas.setPointerCapture(e.pointerId); });
+      canvas.addEventListener('pointermove', e => {
         if (!drawing) return;
-        pts.push(getPos(e));
+        pts.push(pos(e));
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.beginPath();
-        ctx.strokeStyle = '#A855F7';
+        ctx.strokeStyle = '#8B5CF6';
         ctx.lineWidth = 5;
         ctx.lineCap = 'round';
         ctx.shadowColor = '#38BDF8';
         ctx.shadowBlur = 12;
-        pts.forEach((p, idx) => idx === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+        pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
         ctx.stroke();
       });
       canvas.addEventListener('pointerup', () => {
@@ -2686,265 +2992,117 @@
         if (pts.length > 3) {
           const dx = pts[pts.length - 1].x - pts[0].x;
           const dy = pts[pts.length - 1].y - pts[0].y;
-          // Check L-shape (down then right)
           const mid = pts[Math.floor(pts.length / 2)];
-          if (mid.y - pts[0].y > 30 && pts[pts.length - 1].x - mid.x > 30) {
-            simulateMouseGesture('↓→');
-          } else if (Math.abs(dy) > Math.abs(dx)) {
-            simulateMouseGesture(dy > 0 ? '↓' : '↑');
-          } else {
-            simulateMouseGesture(dx > 0 ? '→' : '←');
-          }
+          if (mid.y - pts[0].y > 30 && pts[pts.length - 1].x - mid.x > 30) execStageMfHud('↓→', '창 닫기');
+          else if (Math.abs(dy) > Math.abs(dx)) execStageMfHud(dy > 0 ? '↓' : '↑', dy > 0 ? '창 최소화' : '창 최대화');
+          else execStageMfHud(dx > 0 ? '→' : '←', dx > 0 ? '다음 탭 이동' : '이전 탭 이동');
         }
         setTimeout(() => ctx.clearRect(0, 0, canvas.width, canvas.height), 350);
       });
     }
-    function simulateMouseGesture(gesture) {
-      const win = document.getElementById('mfTargetWin');
-      const status = document.getElementById('mfWinStatus');
-      const badge = document.getElementById('mfRecognizedBadge');
-      if (!win || !status || !badge) return;
-      badge.textContent = `인식된 제스처: [${gesture}]`;
-      if (gesture === '↓') {
-        win.style.transform = 'translateY(65px) scale(0.75)';
-        win.style.opacity = '0.45';
-        status.textContent = '📉 [↓ 아래로 긋기] → 창 최소화 완료!';
-      } else if (gesture === '↑') {
-        win.style.transform = 'scale(1.04)';
-        win.style.opacity = '1';
-        status.textContent = '📈 [↑ 위로 긋기] → 창 전체화면 최대화 완료!';
-      } else if (gesture === '↓→') {
-        win.style.transform = 'scale(0.5) rotate(4deg)';
-        win.style.opacity = '0.15';
-        status.textContent = '❌ [↓→ 니은자 긋기] → 즉시 창 닫기 완료! (1초 후 복원)';
-        setTimeout(() => {
-          win.style.transform = 'scale(1)';
-          win.style.opacity = '1';
-          status.textContent = '✨ 창이 다시 복원되었습니다! 마우스로 다른 방향도 그어보세요.';
-        }, 1100);
-      } else {
-        win.style.transform = gesture === '→' ? 'translateX(18px)' : 'translateX(-18px)';
-        win.style.opacity = '1';
-        status.textContent = `🔄 [${gesture} 가로 긋기] → 브라우저 이전/다음 탭 광속 전환!`;
-        setTimeout(() => { win.style.transform = 'scale(1)'; }, 450);
-      }
+    function execStageMfHud(gesture, label) {
+      const win = document.getElementById('stageMfWin');
+      const st = document.getElementById('stageMfStatus');
+      const bg = document.getElementById('stageMfBadge');
+      if (!win || !st || !bg) return;
+      bg.textContent = `인식됨: ${gesture} (${label})`;
+      st.textContent = `⚡ [${gesture}] ${label} 즉시 실행 완료!`;
+      if (gesture === '↓') { win.style.transform = 'translateY(80px) scale(0.75)'; win.style.opacity = '0.4'; }
+      else if (gesture === '↑') { win.style.transform = 'scale(1.04)'; win.style.opacity = '1'; }
+      else if (gesture === '↓→') { win.style.transform = 'scale(0.5)'; win.style.opacity = '0.15'; }
+      else { win.style.transform = 'translateX(15px)'; win.style.opacity = '1'; }
+      setTimeout(() => { win.style.transform = 'scale(1)'; win.style.opacity = '1'; }, 950);
     }
 
-    // --- 4. ExcelCompare Live Demo ---
-    let ecDiffOnly = false;
-    function toggleExcelDiffOnly() {
-      ecDiffOnly = !ecDiffOnly;
-      const sameRows = document.querySelectorAll('.ec-row-same');
-      const lbl = document.getElementById('ecDiffOnlyLabel');
-      const btn = document.getElementById('ecDiffOnlyBtn');
-      sameRows.forEach(r => r.classList.toggle('hidden', ecDiffOnly));
-      if (lbl) lbl.textContent = ecDiffOnly ? '차이점만 보기: ON (차이점 3건만 표시)' : '차이점만 보기: OFF (전체 5행)';
-      if (btn) btn.className = ecDiffOnly
-        ? 'px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-extrabold text-[11px] transition-all'
-        : 'px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px] transition-all';
+    // --- 5. ExcelCompare Logic ---
+    let stageEcDiff = false;
+    function toggleStageEcDiff() {
+      stageEcDiff = !stageEcDiff;
+      document.querySelectorAll('.stage-ec-same').forEach(el => el.classList.toggle('hidden', stageEcDiff));
+      const btn = document.getElementById('stageEcFilterBtn');
+      if (btn) btn.textContent = stageEcDiff ? '🔍 차이점만 보기 (Diff Only): ON' : '🔍 차이점만 보기 (Diff Only): OFF';
     }
-    function jumpExcelCell(cellRef, desc) {
-      const st = document.getElementById('ecJumpStatus');
-      if (!st) return;
-      st.innerHTML = `<span>🎯 <strong>Excel 원본 셀 즉시 점프: [Sheet1!${cellRef}]</strong> — ${desc}</span><span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">동기화 완료</span>`;
+    function jumpStageEc(cell, msg) {
+      const bar = document.getElementById('stageEcJumpBar');
+      if (bar) bar.innerHTML = `<span>🎯 <strong>Excel 원본 셀 즉시 점프 완료: [${cell}]</strong> — ${msg}</span><span class="text-amber-300 font-bold">동기화됨</span>`;
     }
 
-    // --- 5. QueueClip Live Demo ---
-    let qcQueue = ['홍길동 (VIP)', '010-9876-5432', '서울 강남구 역삼동'];
-    let qcPatternNum = 1;
-    let qcFieldIdx = 0;
-    function renderQueueClipDemo() {
-      const list = document.getElementById('qcQueueList');
-      const badge = document.getElementById('qcCountBadge');
-      if (!list || !badge) return;
-      badge.textContent = `${qcQueue.length}개 대기 중`;
-      if (qcQueue.length === 0) {
-        list.innerHTML = '<div class="text-slate-500 py-2">큐가 비었습니다! 위 버튼을 눌러 데이터를 담아보세요.</div>';
-        return;
-      }
-      list.innerHTML = qcQueue.map((item, idx) => `
-        <div class="px-2.5 py-1 rounded flex items-center justify-between ${idx === 0 ? 'bg-blue-950/90 border border-sky-400 text-sky-200 font-bold' : 'bg-slate-950 border border-slate-800 text-slate-300'}">
-          <span>#${idx + 1} ${item}</span>
-          ${idx === 0 ? '<span class="text-[9px] px-1.5 py-0.2 rounded bg-sky-500 text-slate-950 font-extrabold">NEXT</span>' : ''}
-        </div>
-      `).join('');
-    }
-    function enqueueClipItem(text) {
-      qcQueue.push(text);
-      renderQueueClipDemo();
-    }
-    function incrementPatternChip() {
-      const code = `품번-${String(qcPatternNum).padStart(2, '0')}`;
-      qcQueue.push(code);
-      qcPatternNum++;
-      const lbl = document.getElementById('qcPatternLabel');
-      if (lbl) lbl.textContent = `품번-${String(qcPatternNum).padStart(2, '0')}`;
-      renderQueueClipDemo();
-    }
-    function pasteNextQueueClip() {
-      if (qcQueue.length === 0) return;
-      const item = qcQueue.shift();
-      const target = document.getElementById(`qcField${qcFieldIdx % 3}`);
-      if (target) {
-        target.value = item;
-        target.classList.add('border-emerald-400', 'bg-emerald-950/30');
-        setTimeout(() => target.classList.remove('border-emerald-400', 'bg-emerald-950/30'), 450);
-      }
-      qcFieldIdx++;
-      renderQueueClipDemo();
-    }
-    function turboPasteQueueClip() {
-      if (qcQueue.length === 0) resetQueueClipDemo();
-      const count = Math.min(3, qcQueue.length);
-      for (let i = 0; i < count; i++) {
-        setTimeout(() => pasteNextQueueClip(), i * 180);
-      }
-    }
-    function resetQueueClipDemo() {
-      qcQueue = ['홍길동 (VIP)', '010-9876-5432', '서울 강남구 역삼동'];
-      qcFieldIdx = 0;
-      [0, 1, 2].forEach(i => {
-        const el = document.getElementById(`qcField${i}`);
-        if (el) el.value = '';
-      });
-      renderQueueClipDemo();
-    }
-
-    // --- 6. FileHub AI Live Demo ---
-    const fhInitialFiles = [
-      { name: '2026_견적서_최종.pdf', cat: 'doc', preview: '📄 PDF 미리보기: 2026년 프로젝트 견적서 (총 3페이지, 240KB)' },
-      { name: '상반기_매출집계.xlsx', cat: 'xls', preview: '📊 Excel 미리보기: Sheet1 매출 합계 ₩142,500,000 (1,200행)' },
-      { name: '메인배너_시안_v3.png', cat: 'img', preview: '🖼️ 이미지 미리보기: 1920x1080 PNG (투명 배경 포함)' },
-      { name: '고객DB_백업본.zip', cat: 'zip', preview: '📦 ZIP 내부 파일 목록: customer_2026.csv 외 14개 파일' }
+    // --- 6. FileHub AI Logic ---
+    const stageFhData = [
+      { name: '2026_견적서_최종.pdf', cat: 'doc', desc: '📄 PDF 미리보기: 2026 프로젝트 견적서 (3페이지)' },
+      { name: '1분기_매출집계.xlsx', cat: 'xls', desc: '📊 Excel 미리보기: Sheet1 합계 ₩142,500,000' },
+      { name: '브랜드_메인배너.png', cat: 'img', desc: '🖼️ 이미지 미리보기: 1920x1080 PNG' },
+      { name: '고객DB_백업.zip', cat: 'zip', desc: '📦 ZIP 내부 파일 12개 즉시 미리보기' }
     ];
-    let fhSorted = false;
-    function renderFileHubDemo() {
-      const list = document.getElementById('fhMessyList');
-      const count = document.getElementById('fhMessyCount');
-      if (!list || !count) return;
-      if (fhSorted) {
-        count.textContent = '0개 남음 (정리 완료!)';
-        list.innerHTML = '<div class="p-3 rounded-lg bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 font-bold text-center">✨ 0.1초 만에 모든 파일이 우측 카테고리 폴더로 자동 분류되었습니다!</div>';
-        ['doc', 'xls', 'img', 'zip'].forEach(c => {
-          const b = document.getElementById(`fhBadge_${c}`);
-          if (b) { b.textContent = '1개 완료'; b.className = 'px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono text-[10px] font-bold'; }
+    let stageFhSorted = false;
+    function renderStageFh() {
+      const list = document.getElementById('stageFhList');
+      const cnt = document.getElementById('stageFhCount');
+      if (!list || !cnt) return;
+      if (stageFhSorted) {
+        cnt.textContent = '0개 남음 (자동 분류 완료!)';
+        list.innerHTML = `<div class="p-3 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-800 font-bold text-center">✨ 0.1초 만에 우측 4개 표준 폴더로 자동 분류되었습니다!</div>`;
+        stageFhData.forEach(d => {
+          const el = document.getElementById(`stageFhCat_${d.cat}`);
+          if (el) el.innerHTML = `<span class="text-emerald-700 font-bold">✅ ${d.name} 분류됨</span>`;
         });
       } else {
-        count.textContent = '4개 파일 대기';
-        list.innerHTML = fhInitialFiles.map((f, i) => `
-          <div onclick="previewFileHubItem(${i})" class="p-2 rounded bg-slate-950 hover:bg-indigo-950/60 border border-slate-800 hover:border-indigo-400 cursor-pointer flex items-center justify-between transition-all">
-            <span>${f.name}</span>
-            <span class="text-[10px] text-indigo-400">👁️ 미리보기</span>
-          </div>
-        `).join('');
+        cnt.textContent = '4개 파일 대기';
+        list.innerHTML = stageFhData.map((d, i) => `
+          <div onclick="previewStageFh(${i})" class="p-2 rounded bg-white hover:bg-indigo-50 border border-slate-200 cursor-pointer flex justify-between">
+            <span class="font-bold text-slate-800">${d.name}</span>
+            <span class="text-indigo-600 text-[10px] font-bold">👁️ 미리보기</span>
+          </div>`).join('');
         ['doc', 'xls', 'img', 'zip'].forEach(c => {
-          const b = document.getElementById(`fhBadge_${c}`);
-          if (b) { b.textContent = '0개'; b.className = 'px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 font-mono text-[10px]'; }
+          const el = document.getElementById(`stageFhCat_${c}`);
+          if (el) el.textContent = '대기 중 (0개)';
         });
       }
     }
-    function previewFileHubItem(idx) {
-      const bar = document.getElementById('fhPreviewBar');
-      if (bar && fhInitialFiles[idx]) {
-        bar.innerHTML = `✨ <strong>즉시 미리보기 실행:</strong> ${fhInitialFiles[idx].preview}`;
+    function previewStageFh(i) {
+      const p = document.getElementById('stageFhPreview');
+      if (p && stageFhData[i]) p.textContent = `✨ 즉시 미리보기: ${stageFhData[i].desc}`;
+    }
+    function runStageFhSort() { stageFhSorted = true; renderStageFh(); }
+    function resetStageFhSort() { stageFhSorted = false; renderStageFh(); }
+
+    // --- 8. OverlayPic Logic ---
+    let stageOpThru = false, stageOpClicks = 0;
+    function updateStageOp() {
+      const s = document.getElementById('stageOpSlider');
+      const p = document.getElementById('stageOpPin');
+      const v = document.getElementById('stageOpVal');
+      if (s && p && v) { v.textContent = `${s.value}%`; p.style.opacity = (s.value / 100).toFixed(2); }
+    }
+    function wheelStageOp(e) {
+      e.preventDefault();
+      const s = document.getElementById('stageOpSlider');
+      if (!s) return;
+      s.value = Math.min(100, Math.max(15, parseInt(s.value, 10) + (e.deltaY < 0 ? 8 : -8)));
+      updateStageOp();
+    }
+    function toggleStageOpThru() {
+      stageOpThru = !stageOpThru;
+      const p = document.getElementById('stageOpPin');
+      const b = document.getElementById('stageOpThruBtn');
+      if (p) p.style.pointerEvents = stageOpThru ? 'none' : 'auto';
+      if (b) {
+        b.textContent = stageOpThru ? '👻 클릭 투과(Click-Through): ON (통과!)' : '👻 클릭 투과(Click-Through): OFF';
+        b.className = stageOpThru ? 'px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-bold text-xs' : 'px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-600 font-bold text-xs';
       }
     }
-    function runFileHubDispatch() {
-      fhSorted = true;
-      renderFileHubDemo();
-      const bar = document.getElementById('fhPreviewBar');
-      if (bar) bar.innerHTML = '🎉 <strong>0.1초 스풀러 분류 완료!</strong> 다운로드 폴더의 파일 4개가 각 표준 폴더로 안전하게 이동되었습니다.';
-    }
-    function resetFileHubDemo() {
-      fhSorted = false;
-      renderFileHubDemo();
-      const bar = document.getElementById('fhPreviewBar');
-      if (bar) bar.innerHTML = '↩ <strong>Undo 복원 완료!</strong> 파일들이 원래 다운로드 폴더 위치로 되돌아왔습니다.';
+    function clickStageOpUnder() {
+      stageOpClicks++;
+      const c = document.getElementById('stageOpCount');
+      if (c) c.textContent = stageOpClicks;
     }
 
-    // --- 7. RadialDrop Live Demo ---
-    let rdSelectedFile = '기획안_2026.docx';
-    let rdShelf = ['기존_참고자료.pdf'];
-    function selectRadialFile(name) {
-      rdSelectedFile = name;
-      const f0 = document.getElementById('rdFile0');
-      const f1 = document.getElementById('rdFile1');
-      if (f0) f0.className = name.includes('기획안')
-        ? 'px-2.5 py-1.5 rounded-lg bg-blue-950 border border-blue-400 text-blue-200 font-mono text-xs font-bold flex items-center gap-1.5'
-        : 'px-2.5 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 font-mono text-xs font-bold flex items-center gap-1.5';
-      if (f1) f1.className = name.includes('로고')
-        ? 'px-2.5 py-1.5 rounded-lg bg-blue-950 border border-blue-400 text-blue-200 font-mono text-xs font-bold flex items-center gap-1.5'
-        : 'px-2.5 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 font-mono text-xs font-bold flex items-center gap-1.5';
-    }
-    function summonRadialWheelCenter() {
-      const w = document.getElementById('rdWheelWidget');
-      if (!w) return;
-      w.classList.add('ring-2', 'ring-sky-400', 'scale-105');
-      setTimeout(() => w.classList.remove('ring-2', 'ring-sky-400', 'scale-105'), 350);
-    }
-    function renderRadialShelf() {
-      const box = document.getElementById('rdShelfSlots');
-      const cnt = document.getElementById('rdShelfCount');
-      if (!box || !cnt) return;
-      cnt.textContent = `${rdShelf.length}/3 슬롯`;
-      box.innerHTML = [0, 1, 2].map(i => rdShelf[i]
-        ? `<div class="p-2 rounded bg-blue-950/80 border border-blue-400/60 text-blue-200 truncate">📌 Slot ${i+1}: ${rdShelf[i]}</div>`
-        : `<div class="p-2 rounded bg-slate-950 border border-dashed border-slate-800 text-slate-500">Slot ${i+1}: (비어 있음)</div>`
-      ).join('');
-    }
-    function execRadialAction(act) {
-      const bar = document.getElementById('rdStatusBar');
-      summonRadialWheelCenter();
-      if (act === 'shelf') {
-        if (rdShelf.length < 3) rdShelf.push(rdSelectedFile);
-        renderRadialShelf();
-        if (bar) bar.innerHTML = `📥 <strong>[선반 수납 성공]</strong> "${rdSelectedFile}" 파일이 우측 플로팅 선반에 임시 보관되었습니다!`;
-      } else if (act === 'zip') {
-        const zipName = rdSelectedFile.replace(/\.[^.]+$/, '') + '.zip';
-        if (rdShelf.length < 3) rdShelf.push(zipName);
-        renderRadialShelf();
-        if (bar) bar.innerHTML = `🗜️ <strong>[즉시 ZIP 압축 완료]</strong> "${zipName}" 압축 파일이 0.1초 만에 생성되었습니다!`;
-      } else if (act === 'path') {
-        if (bar) bar.innerHTML = `📋 <strong>[전체 경로 복사 완료]</strong> "D:\Workspace\${rdSelectedFile}" 경로가 클립보드에 복사되었습니다!`;
-      } else if (act === 'convert') {
-        const conv = rdSelectedFile.endsWith('.png') ? '브랜드_로고_변환.jpg' : '기획안_2026_변환.pdf';
-        if (rdShelf.length < 3) rdShelf.push(conv);
-        renderRadialShelf();
-        if (bar) bar.innerHTML = `🔄 <strong>[드롭 링 포맷 변환]</strong> "${conv}" 파일로 즉시 변환되어 선반에 담겼습니다!`;
-      }
-    }
-    function dropAllFromShelf() {
-      const bar = document.getElementById('rdStatusBar');
-      const count = rdShelf.length;
-      rdShelf = [];
-      renderRadialShelf();
-      if (bar) bar.innerHTML = `📤 <strong>[일괄 드롭 & 자동 비우기 완료]</strong> 선반에 있던 ${count}개 파일을 타겟 폴더로 한 번에 이동했습니다!`;
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      renderStageRdShelf();
+      renderStageQc();
+      renderStageFh();
+    });
 
-    // --- 8. QuickPath Live Demo ---
-    const qpPaths = [
-      'D:\Projects\2026_신규시안\최종 (✨ 0.1초 순간이동 완료!)',
-      'E:\재무팀_공유\2026_세금계산서 (✨ 0.1초 순간이동 완료!)'
-    ];
-    function teleportQuickPath(idx) {
-      const pathEl = document.getElementById('qpCurrentPath');
-      const box = document.getElementById('qpDialogBox');
-      const toast = document.getElementById('qpStatusToast');
-      if (!pathEl || !box) return;
-      pathEl.textContent = qpPaths[idx] || qpPaths[0];
-      pathEl.className = 'text-emerald-300 font-extrabold truncate';
-      box.classList.add('border-amber-400', 'ring-2', 'ring-amber-400/40');
-      setTimeout(() => box.classList.remove('ring-2', 'ring-amber-400/40'), 450);
-      if (toast) toast.innerHTML = `⚡ <strong>순간이동 성공!</strong> 파일명(거래처_세금계산서_2026.pdf)은 100% 그대로 유지한 채 폴더 위치만 0.1초 만에 점프했습니다!`;
-    }
-    function resetQuickPathDemo() {
-      const pathEl = document.getElementById('qpCurrentPath');
-      const box = document.getElementById('qpDialogBox');
-      if (!pathEl || !box) return;
-      pathEl.textContent = 'C:\Users\User\AppData\Local\Temp (엉뚱한 기본 폴더 😫)';
-      pathEl.className = 'text-rose-300 font-bold truncate';
-      box.classList.remove('border-amber-400');
-    }
   </script>
 </body>
 </html>
