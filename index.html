@@ -14,11 +14,11 @@
   <meta name="naver-site-verification" content="a11e6b7a257cfad11129aeb71b317a3f6d2ededc" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="meta_title">FlowSuite — 윈도우 필수 8대 생산성 유틸리티 스위트 (무료 다운로드)</title>
+  <title data-i18n="meta_title">FlowSuite — 윈도우 필수 9대 생산성 유틸리티 스위트 (무료 다운로드)</title>
 
   <!-- SEO & 메타 태그 -->
-  <meta name="description" data-i18n-meta="description" content="데스크톱 업무의 모든 비효율과 반복 작업을 없애는 윈도우 필수 생산성 유틸리티 스위트 FlowSuite. OverlayPic, AutoFlow RPA, MouseFlow AI, ExcelCompare, QueueClip, FileHub AI, RadialDrop, QuickPath를 한곳에서 만나보세요." />
-  <meta name="keywords" content="FlowSuite, OverlayPic, AutoFlow RPA, MouseFlow AI, ExcelCompare, QueueClip, FileHub AI, RadialDrop, QuickPath, FileFlow, GestureGo, 엑셀 비교, 윈도우 유틸리티, 노코드 자동화, 파일 자동 분류, 클립보드 매니저, 마우스 제스처, 폴더 순간이동, 드래그앤드롭, 화면 오버레이" />
+  <meta name="description" data-i18n-meta="description" content="데스크톱 업무의 모든 비효율과 반복 작업을 없애는 윈도우 필수 생산성 유틸리티 스위트 FlowSuite. OverlayPic, AutoFlow RPA, MouseFlow AI, ExcelCompare, QueueClip, FileHub AI, RadialDrop, QuickPath, WorkspaceSnap을 한곳에서 만나보세요." />
+  <meta name="keywords" content="FlowSuite, OverlayPic, AutoFlow RPA, MouseFlow AI, ExcelCompare, QueueClip, FileHub AI, RadialDrop, QuickPath, WorkspaceSnap, FileFlow, GestureGo, 엑셀 비교, 윈도우 유틸리티, 노코드 자동화, 파일 자동 분류, 클립보드 매니저, 마우스 제스처, 폴더 순간이동, 드래그앤드롭, 화면 오버레이, 창 배치 복원, 멀티모니터 미니맵" />
   <meta name="author" content="yjc-web" />
   <meta name="robots" content="index, follow" />
 
@@ -26,13 +26,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yjc-web.github.io/FlowSuite/" />
   <meta property="og:title" content="FlowSuite — The Ultimate Desktop Productivity Suite" />
-  <meta property="og:description" content="OverlayPic, AutoFlow RPA, MouseFlow AI, ExcelCompare, QueueClip, FileHub AI, RadialDrop, and QuickPath. Supercharge your Windows workflow." />
+  <meta property="og:description" content="OverlayPic, AutoFlow RPA, MouseFlow AI, ExcelCompare, QueueClip, FileHub AI, RadialDrop, QuickPath, and WorkspaceSnap. Supercharge your Windows workflow." />
   <meta property="og:image" content="assets/SuperHeroArt_1920x1080.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="FlowSuite — Desktop Productivity Suite" />
-  <meta name="twitter:description" content="OverlayPic, AutoFlow RPA, MouseFlow AI, ExcelCompare, QueueClip, FileHub AI, RadialDrop, QuickPath." />
+  <meta name="twitter:description" content="OverlayPic, AutoFlow RPA, MouseFlow AI, ExcelCompare, QueueClip, FileHub AI, RadialDrop, QuickPath, WorkspaceSnap." />
   <meta name="twitter:image" content="assets/SuperHeroArt_1920x1080.png" />
 
   <link rel="icon" type="image/png" href="assets/AppIcon_71x71.png" />
@@ -165,6 +165,72 @@
       color: #0284C7;
       font-weight: 700;
     }
+    /* Responsive Enhancements for Product Visual Guide Photos & Interactive Desktop Stage */
+    .guide-img-wrap {
+      width: 100%;
+      max-width: 100%;
+    }
+    .guide-img-wrap img,
+    #autoflowDemoGif,
+    #mouseflowGuideImg,
+    #excelcompareGuideImg,
+    #queueclipGuideImg,
+    #filehubGuideImg,
+    #radialdropGuideImg,
+    #quickpathGuideImg,
+    #workspacesnapGuideImg {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .guide-img-wrap:hover img {
+      transform: scale(1.012);
+    }
+    .ws-minimap-grid {
+      background-image: radial-gradient(rgba(148, 163, 184, 0.16) 1px, transparent 1px);
+      background-size: 14px 14px;
+    }
+    @media (max-width: 1024px) {
+      #interactiveDesktopStage .stage-scene {
+        padding: 0.875rem !important;
+      }
+      .ws-stage-layout {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .guide-caption-bar {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 0.5rem;
+      }
+      .guide-caption-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+      #imageLightboxModal {
+        padding: 0.5rem !important;
+      }
+      #imageLightboxImg {
+        max-height: 78vh !important;
+      }
+      .ws-minimap-monitors {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    @media (max-width: 480px) {
+      #rdExactSvgWheel {
+        width: 245px !important;
+        height: 245px !important;
+      }
+      #stageAppTabs .stage-app-tab {
+        padding: 0.4rem 0.5rem !important;
+        font-size: 11px !important;
+      }
+    }
   </style>
   <meta name="google-site-verification" content="zhvxdwF1Mwy_1uG9uOjVuVBs7J2NJv1tMQWLR7837_w" />
   <meta name="google-site-verification" content="ZKmkbgf-CA1Pj3EO07J3szrG0tViBL7j4htpIUihq14" />
@@ -184,7 +250,7 @@
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
         <span data-i18n="top_bar_badge">FREE TO START</span>
       </span>
-      <span class="hidden sm:inline text-slate-600" data-i18n="top_bar_text">기본 기능 무료 제공 · 업무 시간을 90% 줄여주는 윈도우 8대 필수 유틸리티 스위트</span>
+      <span class="hidden sm:inline text-slate-600" data-i18n="top_bar_text">기본 기능 무료 제공 · 업무 시간을 90% 줄여주는 윈도우 9대 필수 유틸리티 스위트</span>
       <a href="#suite" class="text-sky-600 hover:text-sky-700 flex items-center gap-1 font-bold transition-colors">
         <span data-i18n="top_bar_link">유틸리티 스위트 둘러보기</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
       </a>
@@ -211,32 +277,35 @@
       </a>
 
       <!-- Desktop Nav (Products) -->
-      <nav class="hidden xl:flex items-center gap-1 px-3 py-1.5 rounded-full bg-slate-100/80 border border-slate-200 text-xs text-slate-600 font-medium">
-        <a href="#overlaypic" class="px-2.5 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
-          <span class="w-2 h-2 rounded-full bg-amber-500"></span> OverlayPic
+      <nav class="hidden xl:flex items-center gap-0.5 px-2.5 py-1.5 rounded-full bg-slate-100/80 border border-slate-200 text-[11.5px] text-slate-600 font-medium">
+        <a href="#overlaypic" class="px-2 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> OverlayPic
         </a>
-        <a href="#autoflow" class="px-2.5 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
-          <span class="w-2 h-2 rounded-full bg-sky-500"></span> AutoFlow RPA
+        <a href="#autoflow" class="px-2 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> AutoFlow RPA
         </a>
-        <a href="#mouseflow" class="px-2.5 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
-          <span class="w-2 h-2 rounded-full bg-violet-500"></span> MouseFlow AI
+        <a href="#mouseflow" class="px-2 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-violet-500"></span> MouseFlow AI
         </a>
-        <a href="#excelcompare" class="px-2.5 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span> ExcelCompare
+        <a href="#excelcompare" class="px-2 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> ExcelCompare
         </a>
-        <a href="#queueclip" class="px-2.5 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
-          <span class="w-2 h-2 rounded-full bg-blue-500"></span> QueueClip
+        <a href="#queueclip" class="px-2 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> QueueClip
         </a>
-        <a href="#filehub" class="px-2.5 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
-          <span class="w-2 h-2 rounded-full bg-indigo-500"></span> FileHub AI
+        <a href="#filehub" class="px-2 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> FileHub AI
         </a>
-        <a href="#radialdrop" class="px-2.5 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
-          <span class="w-2 h-2 rounded-full bg-blue-600"></span> RadialDrop
+        <a href="#radialdrop" class="px-2 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> RadialDrop
         </a>
-        <a href="#quickpath" class="px-2.5 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap">
-          <span class="w-2 h-2 rounded-full bg-amber-600"></span> QuickPath
+        <a href="#quickpath" class="px-2 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span> QuickPath
         </a>
-        <a href="#feedback" class="px-2.5 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap text-sky-700 font-semibold bg-sky-50/50">
+        <a href="#workspacesnap" class="px-2 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> WorkspaceSnap
+        </a>
+        <a href="#feedback" class="px-2 py-1 rounded-full hover:text-slate-900 hover:bg-white transition-all flex items-center gap-1 whitespace-nowrap text-sky-700 font-semibold bg-sky-50/50">
           <i class="fa-regular fa-comment-dots text-sky-600 text-xs"></i> <span data-i18n="nav_feedback">사용자 피드백</span>
         </a>
       </nav>
@@ -290,8 +359,8 @@
 
       <!-- Subtitle -->
       <p class="text-base sm:text-lg lg:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl mx-auto mb-10" data-i18n="hero_desc">
-        화면 위에 항상 떠 있는 투명 참조 핀(<strong>OverlayPic</strong>), 코딩 없이 선만 잇는 <strong>화면 자동화(AutoFlow RPA)</strong>, 마우스 우클릭 제스처 창 제어(<strong>MouseFlow AI</strong>), 10만 행 대용량 <strong>초고속 엑셀 비교(ExcelCompare)</strong>, 큐&amp;스택 순차 입력 <strong>스마트 클립보드(QueueClip)</strong>, AI 파일 정리(<strong>FileHub AI</strong>), 360° 방사형 HUD 드래그 앤 드롭(<strong>RadialDrop</strong>)부터 0.1초 파일 대화상자 순간이동(<strong>QuickPath</strong>)까지.<br class="hidden sm:inline" />
-        비싼 월 구독료 없이, <strong>데스크톱 작업 시간을 90% 줄여주는 검증된 윈도우 필수 유틸리티 8종</strong>을 <strong>부담 없이 무료로 시작</strong>하세요.
+        화면 위에 항상 떠 있는 투명 참조 핀(<strong>OverlayPic</strong>), 코딩 없이 선만 잇는 <strong>화면 자동화(AutoFlow RPA)</strong>, 마우스 우클릭 제스처 창 제어(<strong>MouseFlow AI</strong>), 10만 행 대용량 <strong>초고속 엑셀 비교(ExcelCompare)</strong>, 큐&amp;스택 순차 입력 <strong>스마트 클립보드(QueueClip)</strong>, AI 파일 정리(<strong>FileHub AI</strong>), 360° 방사형 HUD 드래그 앤 드롭(<strong>RadialDrop</strong>), 0.1초 파일 대화상자 순간이동(<strong>QuickPath</strong>)부터 듀얼 모니터 2D 미니맵 &amp; 멀티탭 창 배치 0.1초 스냅 복원(<strong>WorkspaceSnap</strong>)까지.<br class="hidden sm:inline" />
+        비싼 월 구독료 없이, <strong>데스크톱 작업 시간을 90% 줄여주는 검증된 윈도우 필수 유틸리티 9종</strong>을 <strong>부담 없이 무료로 시작</strong>하세요.
       </p>
 
       <!-- Hero Main Action Button -->
@@ -364,7 +433,7 @@
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span data-i18n="stage_live_badge">실제 프로그램 1:1 UI 인터랙티브 데스크톱 체험관</span>
               </span>
-              <span class="hidden md:inline text-xs text-slate-400" data-i18n="stage_live_sub">아래 8개 앱 탭을 클릭해 설치 없이 실제 프로그램과 100% 동일한 UI를 웹에서 직접 조작해보세요!</span>
+              <span class="hidden md:inline text-xs text-slate-400" data-i18n="stage_live_sub">아래 9개 앱 탭을 클릭해 설치 없이 실제 프로그램과 100% 동일한 UI를 웹에서 직접 조작해보세요!</span>
             </div>
             <a id="stageStoreDirectBtn" href="https://apps.microsoft.com/detail/9N420XP5HCQC" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition-all">
               <i class="fa-brands fa-microsoft"></i>
@@ -372,8 +441,8 @@
             </a>
           </div>
 
-          <!-- 8-App Interactive Switcher Bar -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-1.5" id="stageAppTabs">
+          <!-- 9-App Interactive Switcher Bar -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 gap-1.5" id="stageAppTabs">
             <button type="button" onclick="switchStageApp('radialdrop')" id="stageTab_radialdrop" class="stage-app-tab active flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-extrabold transition-all bg-sky-600 text-white border border-sky-400 shadow-lg shadow-sky-600/25">
               <img src="assets/RadialDrop_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
               <span class="truncate">RadialDrop</span>
@@ -385,6 +454,10 @@
             <button type="button" onclick="switchStageApp('quickpath')" id="stageTab_quickpath" class="stage-app-tab flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800/90 hover:bg-slate-800 text-slate-300 border border-slate-700">
               <img src="assets/QuickPath_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
               <span class="truncate">QuickPath</span>
+            </button>
+            <button type="button" onclick="switchStageApp('workspacesnap')" id="stageTab_workspacesnap" class="stage-app-tab flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800/90 hover:bg-slate-800 text-slate-300 border border-slate-700">
+              <img src="assets/WorkspaceSnap_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
+              <span class="truncate">WorkspaceSnap</span>
             </button>
             <button type="button" onclick="switchStageApp('mouseflow')" id="stageTab_mouseflow" class="stage-app-tab flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800/90 hover:bg-slate-800 text-slate-300 border border-slate-700">
               <img src="assets/MouseFlowAI_150x150.png" class="w-5 h-5 rounded object-contain bg-white p-0.5 shrink-0" alt="" />
@@ -1034,6 +1107,157 @@
             </div>
           </div>
 
+          <!-- ================= SCENE 9: WORKSPACESNAP (1:1 EXACT XAML PORT OF MainWindow.xaml) ================= -->
+          <div id="stageScene_workspacesnap" class="stage-scene hidden relative z-10 p-3 sm:p-5 flex-1 flex flex-col justify-center">
+            <div class="w-full rounded-[12px] bg-[#0F111A] border border-[#22283A] shadow-[0_20px_50px_rgba(0,0,0,0.65)] overflow-hidden text-[#F1F5F9] font-sans">
+              <!-- 0. Slim 32px Custom Title Bar (#131622) -->
+              <div class="h-8 bg-[#131622] border-b border-[#22283A] px-3 flex items-center justify-between text-xs select-none">
+                <div class="flex items-center gap-2">
+                  <img src="assets/WorkspaceSnap_150x150.png" class="w-4 h-4 rounded object-contain" alt="WorkspaceSnap" />
+                  <span class="font-bold text-[12px] text-[#F1F5F9]">WorkspaceSnap</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <button type="button" onclick="toastStageWs('💡 단축키 안내: F9 현재 화면 즉시 스냅 저장 · Ctrl+Alt+1~4 프로필 0.1초 복원')" class="w-6 h-5 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#94A3B8] hover:text-white text-[10px] font-bold flex items-center justify-center" title="도움말">?</button>
+                  <button type="button" onclick="toastStageWs('ℹ️ WorkspaceSnap v1.0.0 — 듀얼 모니터 2D 미니맵 & 멀티탭 창 배치 스냅 매니저')" class="w-6 h-5 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#94A3B8] hover:text-white text-[10px] font-serif italic font-bold flex items-center justify-center" title="정보">i</button>
+                  <span class="px-1.5 h-5 rounded bg-[#1E2436] border border-[#2E364F] text-[#E2E8F0] text-[10px] font-bold flex items-center">KR</span>
+                  <span class="w-6 h-5 rounded bg-[#1E2436] border border-[#2E364F] text-amber-300 text-[10px] flex items-center justify-center">🌙</span>
+                  <button type="button" onclick="toastStageWs('📐 우측 미니맵 패널 접기/펼치기 토글 (실제 앱에서는 컴팩트 리스트 모드로 전환됩니다)')" class="px-2 h-5 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] text-[10px] font-bold hidden sm:flex items-center gap-1">접기 ◂</button>
+                  <div class="flex items-center gap-1.5 pl-2 ml-1 border-l border-[#22283A] text-[#64748B] text-[10px]">
+                    <span>─</span>
+                    <span>□</span>
+                    <span>✕</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Dual-Pane Body (Left: Step 1 Profile List / Right: Step 2 2D Dual-Monitor Minimap & Multi-Tab Editor) -->
+              <div class="ws-stage-layout grid grid-cols-1 lg:grid-cols-12">
+                <!-- Left Pane (Step 1: 스냅 저장 & 단축키 프로필 목록) -->
+                <div class="lg:col-span-4 bg-[#131622] border-b lg:border-b-0 lg:border-r border-[#22283A] p-3 flex flex-col justify-between gap-2.5">
+                  <div class="space-y-2.5">
+                    <!-- Hero Snapshot Button (#3B82F6) -->
+                    <button type="button" onclick="captureStageWsSnapshot()" class="w-full py-2.5 px-3 rounded-[8px] bg-[#3B82F6] hover:bg-[#2563EB] text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-lg shadow-blue-600/25 transition-all">
+                      <span>⛶</span>
+                      <span>현재 화면 스냅 저장 (F9)</span>
+                    </button>
+
+                    <!-- Profile List Header -->
+                    <div class="flex items-center justify-between pt-1">
+                      <div class="flex items-center gap-1.5">
+                        <span class="text-[11px] font-bold text-[#94A3B8]">프로필 목록</span>
+                        <span id="stageWsProfileCount" class="px-1.5 py-0.2 rounded-full bg-[#1E293B] border border-[#334155] text-[#38BDF8] font-mono text-[10px] font-bold">3</span>
+                      </div>
+                      <button type="button" onclick="captureStageWsSnapshot()" class="px-2 py-0.5 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] text-[10.5px] font-bold">+ 추가</button>
+                    </div>
+
+                    <!-- Profile Slot Cards -->
+                    <div id="stageWsProfileList" class="space-y-1.5"></div>
+                  </div>
+
+                  <!-- Left Bottom Control & Status Bar -->
+                  <div class="pt-2 border-t border-[#22283A] space-y-1.5">
+                    <div class="flex items-center justify-between gap-1">
+                      <div class="flex items-center gap-1">
+                        <button type="button" onclick="moveStageWsProfile(-1)" class="px-2 py-1 rounded bg-[#1C2130] hover:bg-[#262D40] border border-[#2E364F] text-[#94A3B8] text-[10px] font-bold">▲</button>
+                        <button type="button" onclick="moveStageWsProfile(1)" class="px-2 py-1 rounded bg-[#1C2130] hover:bg-[#262D40] border border-[#2E364F] text-[#94A3B8] text-[10px] font-bold">▼</button>
+                        <button type="button" onclick="toastStageWs('💾 현재 열린 모니터 1·2의 창 위치와 브라우저 멀티탭으로 선택 프로필을 덮어썼습니다!')" class="px-2 py-1 rounded bg-[#1C2130] hover:bg-[#262D40] border border-[#2E364F] text-[#CBD5E1] text-[10px] font-bold">현재 화면 덮어쓰기</button>
+                      </div>
+                      <button type="button" onclick="toastStageWs('🗑️ 데모 모드에서는 기본 샘플 프로필이 보호됩니다.')" class="px-2 py-1 rounded bg-[#2A1820] hover:bg-[#3B1D28] border border-[#EF4444]/40 text-[#EF4444] text-[10px] font-bold">삭제</button>
+                    </div>
+                    <div class="flex items-center justify-between text-[10px] text-[#94A3B8] font-mono">
+                      <span>🟢 모니터 2대 · Ctrl+Alt+1~4</span>
+                      <span id="stageWsToastMini" class="text-[#38BDF8] truncate max-w-[150px]">● 준비됨</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right Pane (Step 2: 대화형 2D 듀얼 모니터 미니맵 & 멀티탭 에디터) -->
+                <div class="lg:col-span-8 bg-[#0F111A] p-3 flex flex-col justify-between gap-2.5">
+                  <!-- Top Meta Bar -->
+                  <div class="flex flex-wrap items-center justify-between gap-2 bg-[#171B26] border border-[#262D40] rounded-[8px] px-2.5 py-1.5">
+                    <div class="flex flex-wrap items-center gap-2 flex-1 min-w-[200px]">
+                      <span class="text-[11px] font-bold text-[#94A3B8]">이름</span>
+                      <input id="stageWsNameInput" type="text" value="오전 업무모드" readonly class="px-2 py-0.5 rounded bg-[#0F111A] border border-[#2E364F] text-xs font-bold text-white w-28 sm:w-32 focus:outline-none" />
+                      <span class="text-[11px] font-bold text-[#94A3B8] hidden sm:inline">설명</span>
+                      <input id="stageWsDescInput" type="text" value="크롬 3탭 + VS Code + 프로젝트 폴더" readonly class="hidden sm:block px-2 py-0.5 rounded bg-[#0F111A] border border-[#2E364F] text-[11px] text-[#CBD5E1] flex-1 min-w-[140px] focus:outline-none" />
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <button type="button" onclick="toastStageWs('✅ 프로필 레이아웃 및 멀티탭 구성이 저장되었습니다!')" class="px-2.5 py-1 rounded bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold text-[11px]">저장</button>
+                      <span class="px-2 py-1 rounded bg-[#1C2130] border border-[#2E364F] text-[#94A3B8] text-[10.5px] font-semibold">✕ 접기</span>
+                    </div>
+                  </div>
+
+                  <!-- Interactive 2D Dual-Monitor Minimap (#0B0E17 Canvas) -->
+                  <div class="rounded-[10px] bg-[#0B0E17] border border-[#22283A] overflow-hidden">
+                    <!-- Minimap Header Bar (#1C2130) -->
+                    <div class="bg-[#1C2130] border-b border-[#262D40] px-3 py-1.5 flex flex-wrap items-center justify-between gap-2 text-[11px]">
+                      <div class="flex items-center gap-2">
+                        <span class="font-bold text-[#E2E8F0]">🖥️ 모니터 창 배치 미니맵</span>
+                        <button type="button" id="stageWsLiveBtn" onclick="toggleStageWsLive()" class="px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold text-[10px] flex items-center gap-1">
+                          <span>🟢</span> <span>실시간 반영 (현재 화면 기준)</span>
+                        </button>
+                      </div>
+                      <span id="stageWsSelectedHint" class="text-[10.5px] text-amber-300 font-mono">💡 미니맵 창 박스를 클릭 후 아래 스냅 프리셋을 눌러보세요!</span>
+                    </div>
+
+                    <!-- Dual Monitors M1 & M2 Canvas -->
+                    <div class="ws-minimap-monitors ws-minimap-grid p-2.5 grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                      <!-- Monitor 1 -->
+                      <div class="rounded-[8px] bg-[#111624] border border-[#2E364F] p-1.5">
+                        <div class="flex items-center justify-between text-[10px] font-mono text-[#94A3B8] mb-1 px-1">
+                          <span class="font-bold text-[#38BDF8]">M1 (1920×1080) · 주 모니터</span>
+                          <span>Primary Display</span>
+                        </div>
+                        <div id="stageWsMon1" class="relative h-[132px] rounded bg-[#080B12] border border-[#1E293B] overflow-hidden select-none"></div>
+                      </div>
+                      <!-- Monitor 2 -->
+                      <div class="rounded-[8px] bg-[#111624] border border-[#2E364F] p-1.5">
+                        <div class="flex items-center justify-between text-[10px] font-mono text-[#94A3B8] mb-1 px-1">
+                          <span class="font-bold text-[#A78BFA]">M2 (1920×1080) · 보조 모니터</span>
+                          <span>Extended Display</span>
+                        </div>
+                        <div id="stageWsMon2" class="relative h-[132px] rounded bg-[#080B12] border border-[#1E293B] overflow-hidden select-none"></div>
+                      </div>
+                    </div>
+
+                    <!-- Quick Snap Visual Icon Toolbar -->
+                    <div class="bg-[#151926] border-t border-[#22283A] px-2.5 py-1.5 flex flex-wrap items-center gap-1 text-[10.5px]">
+                      <button type="button" onclick="applyStageWsPreset('undo')" class="px-1.5 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] font-bold" title="실행 취소">↶</button>
+                      <button type="button" onclick="applyStageWsPreset('redo')" class="px-1.5 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] font-bold" title="다시 실행">↷</button>
+                      <span class="text-[#334155] px-0.5">|</span>
+                      <button type="button" onclick="applyStageWsPreset('auto')" class="px-2 py-1 rounded bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold flex items-center gap-1 shadow">⊞ 자동 정렬</button>
+                      <button type="button" onclick="applyStageWsPreset('grid')" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#E2E8F0] font-semibold">바둑판</button>
+                      <button type="button" onclick="applyStageWsPreset('cascade')" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#E2E8F0] font-semibold">계단식</button>
+                      <span class="text-[#334155] px-0.5">|</span>
+                      <button type="button" onclick="applyStageWsPreset('left50')" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] font-semibold">좌 50%</button>
+                      <button type="button" onclick="applyStageWsPreset('right50')" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] font-semibold">우 50%</button>
+                      <button type="button" onclick="applyStageWsPreset('top50')" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] font-semibold">상 50%</button>
+                      <button type="button" onclick="applyStageWsPreset('bottom50')" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] font-semibold">하 50%</button>
+                      <button type="button" onclick="applyStageWsPreset('split4')" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] font-semibold">4분할</button>
+                      <button type="button" onclick="applyStageWsPreset('split3')" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] font-semibold">3분할</button>
+                      <button type="button" onclick="applyStageWsPreset('full')" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#38BDF8] font-bold">전체화면</button>
+                      <span class="text-[#334155] px-0.5">|</span>
+                      <button type="button" onclick="applyStageWsPreset('swapMon')" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-amber-300 font-bold">⇄ 모니터 전환</button>
+                      <button type="button" onclick="applyStageWsPreset('zorder')" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-emerald-300 font-bold">Z▾</button>
+                    </div>
+                  </div>
+
+                  <!-- Multi-Tab & Window Item List -->
+                  <div class="rounded-[8px] bg-[#131622] border border-[#22283A] p-2.5 space-y-1.5">
+                    <div class="flex flex-wrap items-center justify-between gap-1 text-[11px]">
+                      <span class="font-bold text-[#E2E8F0]">📑 포함된 앱 · 탐색기 폴더 · 브라우저 멀티탭 구성</span>
+                      <div class="flex items-center gap-1">
+                        <button type="button" onclick="addStageWsBrowserTab()" class="px-2 py-0.5 rounded bg-[#0EA5E9]/20 hover:bg-[#0EA5E9]/30 border border-[#0EA5E9]/40 text-[#38BDF8] text-[10px] font-bold">+ 탭 추가</button>
+                        <button type="button" onclick="importStageWsBrowserTabs()" class="px-2 py-0.5 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] text-[10px] font-bold">🌐 현재 브라우저 탭 가져오기</button>
+                      </div>
+                    </div>
+                    <div id="stageWsWinList" class="space-y-1.5 max-h-[125px] overflow-y-auto pr-1"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Windows 11 Taskbar at Bottom of Monitor -->
           <div class="relative z-20 bg-slate-950/90 backdrop-blur-md border-t border-slate-800 px-4 py-2 flex items-center justify-between text-xs text-slate-400">
             <div class="flex items-center gap-2">
@@ -1047,8 +1271,8 @@
         </div>
       </div>
 
-      <!-- 8 Product Quick Cards Strip -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-8 gap-3 max-w-7xl mx-auto mb-8 text-left">
+      <!-- 9 Product Quick Cards Strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-9 gap-3 max-w-7xl mx-auto mb-8 text-left">
         <!-- 1. OverlayPic Card -->
         <a href="#overlaypic" class="bento-card rounded-2xl p-3.5 sm:p-5 group transition-all">
           <div class="flex items-center justify-between gap-1 mb-3">
@@ -1144,6 +1368,18 @@
           <h3 class="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-amber-600 transition-colors">QuickPath</h3>
           <p class="text-[11px] sm:text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_quickpath">단축키(Ctrl+G)로 열기/저장 파일 대화상자를 작업 폴더로 0.1초 순간이동</p>
         </a>
+
+        <!-- 9. WorkspaceSnap Card -->
+        <a href="#workspacesnap" class="bento-card rounded-2xl p-3.5 sm:p-5 group transition-all">
+          <div class="flex items-center justify-between gap-1 mb-3">
+            <div class="w-8 h-8 sm:w-9 sm:h-9 shrink-0 rounded-xl overflow-hidden bg-blue-50 flex items-center justify-center p-1 border border-blue-200">
+              <img src="assets/WorkspaceSnap_150x150.png" alt="WorkspaceSnap" class="w-full h-full object-contain rounded-lg" />
+            </div>
+            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 flex items-center gap-1 shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span><span data-i18n="strip_tag_workspacesnap">FREE</span></span>
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-blue-600 transition-colors">WorkspaceSnap</h3>
+          <p class="text-[11px] sm:text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed" data-i18n="strip_workspacesnap">듀얼 모니터 2D 미니맵 &amp; 브라우저 멀티탭·탐색기 창 배치 0.1초 스냅 복원</p>
+        </a>
       </div>
 
     </div>
@@ -1155,7 +1391,7 @@
       
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-widest text-cyan-700 bg-cyan-50 border border-cyan-200" data-i18n="suite_badge">Product Lineup</span>
-        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 mt-3" data-i18n="suite_title">FlowSuite 8대 핵심 유틸리티 라인업</h2>
+        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 mt-3" data-i18n="suite_title">FlowSuite 9대 핵심 유틸리티 라인업</h2>
         <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed" data-i18n="suite_desc">각각의 도구는 독립적으로도 강력하며, 함께 사용할 때 상상 이상의 업무 시너지를 발휘합니다.</p>
       </div>
 
@@ -1278,11 +1514,11 @@
           </div>
           <div class="lg:col-span-6 flex flex-col gap-3">
             <!-- AutoFlow AI Copilot Live Captioned GIF Showcase -->
-            <div class="rounded-2xl overflow-hidden border border-cyan-200/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('autoflowDemoGif').src, 'AutoFlow RPA — AI Copilot Live Demo')">
+            <div class="guide-img-wrap rounded-2xl overflow-hidden border border-cyan-200/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('autoflowDemoGif').src, 'AutoFlow RPA — AI Copilot Live Demo')">
               <div class="relative bg-slate-950">
-                <img id="autoflowDemoGif" src="assets/261022_AutoFlow_AI_SCRIPT_Captioned.gif" alt="AutoFlow RPA AI Copilot Live Workflow Demo" class="w-full h-auto block" />
+                <img id="autoflowDemoGif" src="assets/261022_AutoFlow_AI_SCRIPT_Captioned.gif" alt="AutoFlow RPA AI Copilot Live Workflow Demo" class="w-full h-auto block" loading="lazy" />
               </div>
-              <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between gap-2 text-[11px] text-slate-300">
+              <div class="guide-caption-bar px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between gap-2 text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5 font-medium text-cyan-200"><i class="fa-solid fa-wand-magic-sparkles text-amber-400 shrink-0"></i> <span data-i18n="if_gif_cap_ai">AI 코파일럿에 원하는 작업을 입력하면 시나리오 순서도가 자동으로 생성·실행됩니다.</span></span>
                 <span class="text-cyan-400 font-semibold flex items-center gap-1 shrink-0"><i class="fa-solid fa-magnifying-glass-plus"></i> <span data-i18n="click_to_zoom">클릭하여 크게 보기</span></span>
               </div>
@@ -1342,11 +1578,11 @@
             </div>
           </div>
           <div class="lg:col-span-7 flex flex-col gap-2">
-            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('mouseflowGuideImg').src, 'MouseFlow AI Visual Quick Guide')">
-              <img id="mouseflowGuideImg" src="assets/MouseFlowAI_VisualGuide_KO.png?v=2" alt="MouseFlow AI Visual Quick Guide" class="w-full h-auto block" />
-              <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
+            <div class="guide-img-wrap rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('mouseflowGuideImg').src, 'MouseFlow AI Visual Quick Guide')">
+              <img id="mouseflowGuideImg" src="assets/MouseFlowAI_VisualGuide_KO.png?v=2" alt="MouseFlow AI Visual Quick Guide" class="w-full h-auto block" loading="lazy" />
+              <div class="guide-caption-bar px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles text-violet-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
-                <div class="flex items-center gap-2">
+                <div class="guide-caption-actions flex items-center gap-2">
                   <button type="button" onclick="event.stopPropagation(); toggleLanguage();" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-[10px] font-bold text-amber-300 flex items-center gap-1 transition-colors" title="한글 / 영어 가이드 전환">
                     <i class="fa-solid fa-language"></i> <span data-i18n="btn_switch_guide_lang">한/영 전환 (KO·EN)</span>
                   </button>
@@ -1393,11 +1629,11 @@
             </div>
           </div>
           <div class="lg:col-span-7 flex flex-col gap-2">
-            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('excelcompareGuideImg').src, 'ExcelCompare Visual Quick Guide')">
-              <img id="excelcompareGuideImg" src="assets/ExcelCompare_VisualGuide_KO.png?v=2" alt="ExcelCompare Visual Quick Guide" class="w-full h-auto block" />
-              <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
+            <div class="guide-img-wrap rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('excelcompareGuideImg').src, 'ExcelCompare Visual Quick Guide')">
+              <img id="excelcompareGuideImg" src="assets/ExcelCompare_VisualGuide_KO.png?v=2" alt="ExcelCompare Visual Quick Guide" class="w-full h-auto block" loading="lazy" />
+              <div class="guide-caption-bar px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-table-columns text-emerald-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
-                <div class="flex items-center gap-2">
+                <div class="guide-caption-actions flex items-center gap-2">
                   <button type="button" onclick="event.stopPropagation(); toggleLanguage();" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-[10px] font-bold text-amber-300 flex items-center gap-1 transition-colors" title="한글 / 영어 가이드 전환">
                     <i class="fa-solid fa-language"></i> <span data-i18n="btn_switch_guide_lang">한/영 전환 (KO·EN)</span>
                   </button>
@@ -1447,11 +1683,11 @@
             </div>
           </div>
           <div class="lg:col-span-7 flex flex-col gap-2">
-            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('queueclipGuideImg').src, 'QueueClip Visual Quick Guide')">
-              <img id="queueclipGuideImg" src="assets/QueueClip_VisualGuide_KO.png?v=2" alt="QueueClip Visual Quick Guide" class="w-full h-auto block" />
-              <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
+            <div class="guide-img-wrap rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('queueclipGuideImg').src, 'QueueClip Visual Quick Guide')">
+              <img id="queueclipGuideImg" src="assets/QueueClip_VisualGuide_KO.png?v=2" alt="QueueClip Visual Quick Guide" class="w-full h-auto block" loading="lazy" />
+              <div class="guide-caption-bar px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-layer-group text-sky-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
-                <div class="flex items-center gap-2">
+                <div class="guide-caption-actions flex items-center gap-2">
                   <button type="button" onclick="event.stopPropagation(); toggleLanguage();" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-[10px] font-bold text-amber-300 flex items-center gap-1 transition-colors" title="한글 / 영어 가이드 전환">
                     <i class="fa-solid fa-language"></i> <span data-i18n="btn_switch_guide_lang">한/영 전환 (KO·EN)</span>
                   </button>
@@ -1498,11 +1734,11 @@
             </div>
           </div>
           <div class="lg:col-span-7 flex flex-col gap-2">
-            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('filehubGuideImg').src, 'FileHub AI Visual Quick Guide')">
-              <img id="filehubGuideImg" src="assets/FileHubAI_VisualGuide_KO.png?v=2" alt="FileHub AI Visual Quick Guide" class="w-full h-auto block" />
-              <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
+            <div class="guide-img-wrap rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('filehubGuideImg').src, 'FileHub AI Visual Quick Guide')">
+              <img id="filehubGuideImg" src="assets/FileHubAI_VisualGuide_KO.png?v=2" alt="FileHub AI Visual Quick Guide" class="w-full h-auto block" loading="lazy" />
+              <div class="guide-caption-bar px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-folder-tree text-indigo-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
-                <div class="flex items-center gap-2">
+                <div class="guide-caption-actions flex items-center gap-2">
                   <button type="button" onclick="event.stopPropagation(); toggleLanguage();" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-[10px] font-bold text-amber-300 flex items-center gap-1 transition-colors" title="한글 / 영어 가이드 전환">
                     <i class="fa-solid fa-language"></i> <span data-i18n="btn_switch_guide_lang">한/영 전환 (KO·EN)</span>
                   </button>
@@ -1549,11 +1785,11 @@
             </div>
           </div>
           <div class="lg:col-span-7 flex flex-col gap-2">
-            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('radialdropGuideImg').src, 'RadialDrop Visual Quick Guide')">
-              <img id="radialdropGuideImg" src="assets/RadialDrop_VisualGuide_KO.png?v=2" alt="RadialDrop Visual Quick Guide" class="w-full h-auto block" />
-              <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
+            <div class="guide-img-wrap rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('radialdropGuideImg').src, 'RadialDrop Visual Quick Guide')">
+              <img id="radialdropGuideImg" src="assets/RadialDrop_VisualGuide_KO.png?v=2" alt="RadialDrop Visual Quick Guide" class="w-full h-auto block" loading="lazy" />
+              <div class="guide-caption-bar px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-compass-drafting text-blue-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
-                <div class="flex items-center gap-2">
+                <div class="guide-caption-actions flex items-center gap-2">
                   <button type="button" onclick="event.stopPropagation(); toggleLanguage();" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-[10px] font-bold text-amber-300 flex items-center gap-1 transition-colors" title="한글 / 영어 가이드 전환">
                     <i class="fa-solid fa-language"></i> <span data-i18n="btn_switch_guide_lang">한/영 전환 (KO·EN)</span>
                   </button>
@@ -1566,7 +1802,7 @@
       </div>
 
       <!-- ================= 8. QuickPath Section ================= -->
-      <div id="quickpath" class="bento-card rounded-3xl p-5 sm:p-8 lg:p-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden">
+      <div id="quickpath" class="bento-card rounded-3xl p-5 sm:p-8 lg:p-12 mb-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden">
         <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-amber-100/50 blur-3xl pointer-events-none"></div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
           <div class="lg:col-span-5">
@@ -1600,11 +1836,65 @@
             </div>
           </div>
           <div class="lg:col-span-7 flex flex-col gap-2">
-            <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('quickpathGuideImg').src, 'QuickPath Visual Quick Guide')">
-              <img id="quickpathGuideImg" src="assets/QuickPath_VisualGuide_KO.png?v=2" alt="QuickPath Visual Quick Guide" class="w-full h-auto block" />
-              <div class="px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
+            <div class="guide-img-wrap rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('quickpathGuideImg').src, 'QuickPath Visual Quick Guide')">
+              <img id="quickpathGuideImg" src="assets/QuickPath_VisualGuide_KO.png?v=2" alt="QuickPath Visual Quick Guide" class="w-full h-auto block" loading="lazy" />
+              <div class="guide-caption-bar px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
-                <div class="flex items-center gap-2">
+                <div class="guide-caption-actions flex items-center gap-2">
+                  <button type="button" onclick="event.stopPropagation(); toggleLanguage();" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-[10px] font-bold text-amber-300 flex items-center gap-1 transition-colors" title="한글 / 영어 가이드 전환">
+                    <i class="fa-solid fa-language"></i> <span data-i18n="btn_switch_guide_lang">한/영 전환 (KO·EN)</span>
+                  </button>
+                  <span class="text-cyan-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-magnifying-glass-plus"></i> <span data-i18n="click_to_zoom">클릭하여 크게 보기</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 9. WorkspaceSnap Section ================= -->
+      <div id="workspacesnap" class="bento-card rounded-3xl p-5 sm:p-8 lg:p-12 border-slate-200 bg-white shadow-xl shadow-slate-200/50 relative overflow-hidden">
+        <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-blue-100/50 blur-3xl pointer-events-none"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-5">
+            <div class="flex items-center flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-mono text-xs font-bold">2D MINIMAP &amp; WORKSPACE SNAP</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono text-[11px] font-bold">FREE EDITION</span>
+              <span class="text-xs text-slate-500 font-mono">v1.0.0 &bull; Windows 10/11</span>
+            </div>
+            <h3 class="text-2xl sm:text-4xl font-black text-slate-900 mb-4 flex items-center flex-wrap gap-2.5 sm:gap-3">
+              <img src="assets/WorkspaceSnap_150x150.png" alt="WorkspaceSnap Logo" class="w-11 h-11 rounded-xl border border-blue-200 shadow-md shadow-blue-500/10 object-contain" />
+              WorkspaceSnap
+              <span class="text-sm font-normal text-slate-500" data-i18n="workspacesnap_sub">(워크스페이스스냅)</span>
+            </h3>
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6" data-i18n="workspacesnap_desc">
+              <strong>"단축키 한 번으로 듀얼 모니터 창 배치·탐색기 폴더·브라우저 멀티탭을 0.1초 만에 복원"</strong><br />
+              매일 아침 반복하던 업무용 앱 실행, 다중 모니터(M1·M2) 창 분할 배치, 파일 탐색기 작업 폴더, 크롬·엣지 멀티탭 세팅을 스냅샷 하나(F9)로 통째로 저장하고 글로벌 단축키(Ctrl+Alt+1~4)로 즉시 소환합니다.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 mb-8 text-xs sm:text-sm text-slate-700">
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="ws_point_1">대화형 2D 듀얼 모니터 미니맵 (실시간 드래그·스냅·Z순서)</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="ws_point_2">브라우저 멀티탭 &amp; 탐색기 폴더 경로 1클릭 일괄 복원</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="ws_point_3">원클릭 스마트 정렬 (자동 정렬·바둑판·계단식·2/3/4분할)</span></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 font-bold"></i> <span data-i18n="ws_point_4">F9 즉시 스냅 저장 &amp; Ctrl+Alt+1~4 0.1초 레이아웃 전환</span></div>
+            </div>
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3">
+              <a href="https://apps.microsoft.com/detail/9N391BZZZVJ8" target="_blank" rel="noopener noreferrer" class="btn-shine w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20">
+                <i class="fa-brands fa-microsoft"></i> <span data-i18n="btn_ms_store">스토어에서 무료 받기 (권장)</span>
+              </a>
+              <button type="button" onclick="jumpToStageApp('workspacesnap')" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 border border-slate-700 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all">
+                <i class="fa-solid fa-desktop text-sky-400"></i> <span data-i18n="btn_try_on_stage">상단 가상 데스크톱에서 실제 UI 조작 ↑</span>
+              </button>
+              <a href="privacy-workspacesnap.html" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-colors">
+                <i class="fa-solid fa-shield-halved text-slate-500"></i> <span data-i18n="footer_privacy">개인정보처리방침</span>
+              </a>
+            </div>
+          </div>
+          <div class="lg:col-span-7 flex flex-col gap-2">
+            <div class="guide-img-wrap rounded-2xl overflow-hidden border border-slate-700/80 shadow-xl bg-slate-900 relative group cursor-zoom-in" onclick="openImageLightbox(document.getElementById('workspacesnapGuideImg').src, 'WorkspaceSnap Visual Quick Guide')">
+              <img id="workspacesnapGuideImg" src="assets/WorkspaceSnap_VisualGuide_KO.png?v=2" alt="WorkspaceSnap Visual Quick Guide" class="w-full h-auto block" loading="lazy" />
+              <div class="guide-caption-bar px-3.5 py-2 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-300">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-window-restore text-blue-400"></i> <span data-i18n="guide_badge_3step">한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)</span></span>
+                <div class="guide-caption-actions flex items-center gap-2">
                   <button type="button" onclick="event.stopPropagation(); toggleLanguage();" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-[10px] font-bold text-amber-300 flex items-center gap-1 transition-colors" title="한글 / 영어 가이드 전환">
                     <i class="fa-solid fa-language"></i> <span data-i18n="btn_switch_guide_lang">한/영 전환 (KO·EN)</span>
                   </button>
@@ -1630,7 +1920,7 @@
         FlowSuite의 유틸리티들은 당신의 데스크톱을 가장 완벽한 스마트 생산성 워크스테이션으로 탈바꿈시킵니다.
       </p>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
         <div class="bento-card rounded-2xl p-6 bg-white border border-slate-200 shadow-md">
           <div class="text-amber-600 font-mono font-black text-lg mb-2">01. Reference</div>
           <h4 class="font-bold text-slate-900 mb-2">OverlayPic</h4>
@@ -1670,6 +1960,11 @@
           <div class="text-amber-600 font-mono font-black text-lg mb-2">08. Teleport</div>
           <h4 class="font-bold text-slate-900 mb-2">QuickPath</h4>
           <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_8">파일 열기·저장 대화상자를 작업 중이던 탐색기 위치로 즉시 순간이동시킵니다.</p>
+        </div>
+        <div class="bento-card rounded-2xl p-6 bg-white border border-slate-200 shadow-md">
+          <div class="text-blue-600 font-mono font-black text-lg mb-2">09. Workspace</div>
+          <h4 class="font-bold text-slate-900 mb-2">WorkspaceSnap</h4>
+          <p class="text-xs text-slate-600 leading-relaxed" data-i18n="syn_9">듀얼 모니터 창 배치와 브라우저 멀티탭·탐색기 폴더를 단축키 한 번으로 0.1초 복원합니다.</p>
         </div>
       </div>
     </div>
@@ -1878,9 +2173,9 @@
   <script>
     const translations = {
       ko: {
-        meta_title: "FlowSuite — 윈도우 필수 8대 생산성 유틸리티 스위트 (무료 다운로드)",
+        meta_title: "FlowSuite — 윈도우 필수 9대 생산성 유틸리티 스위트 (무료 다운로드)",
         top_bar_badge: "FREE TO START",
-        top_bar_text: "기본 기능 무료 제공 · 업무 시간을 90% 줄여주는 윈도우 8대 필수 유틸리티 스위트",
+        top_bar_text: "기본 기능 무료 제공 · 업무 시간을 90% 줄여주는 윈도우 9대 필수 유틸리티 스위트",
         top_bar_link: "유틸리티 스위트 둘러보기",
         nav_blog: "공식 블로그",
         nav_suite_btn: "유틸리티 스위트 탐색",
@@ -1888,7 +2183,7 @@
         hero_pill: "기본 무료 제공 • 월 구독료 없는 평생 소장 • 회원가입 제로",
         hero_title_1: "매일 반복되는 윈도우 업무의 피로를 끝내다",
         hero_title_2: "FlowSuite 윈도우 필수 유틸리티 스위트",
-        hero_desc: "화면 위에 항상 떠 있는 투명 참조 핀(<strong>OverlayPic</strong>), 코딩 없이 선만 잇는 <strong>화면 자동화(AutoFlow RPA)</strong>, 마우스 우클릭 제스처 창 제어(<strong>MouseFlow AI</strong>), 10만 행 대용량 <strong>초고속 엑셀 비교(ExcelCompare)</strong>, 큐&amp;스택 순차 입력 <strong>스마트 클립보드(QueueClip)</strong>, AI 파일 정리(<strong>FileHub AI</strong>), 360° 방사형 HUD 드래그 앤 드롭(<strong>RadialDrop</strong>)부터 0.1초 파일 대화상자 순간이동(<strong>QuickPath</strong>)까지.<br class=\"hidden sm:inline\" />비싼 월 구독료 없이, <strong>데스크톱 작업 시간을 90% 줄여주는 검증된 윈도우 필수 유틸리티 8종</strong>을 <strong>부담 없이 무료로 시작</strong>하세요.",
+        hero_desc: "화면 위에 항상 떠 있는 투명 참조 핀(<strong>OverlayPic</strong>), 코딩 없이 선만 잇는 <strong>화면 자동화(AutoFlow RPA)</strong>, 마우스 우클릭 제스처 창 제어(<strong>MouseFlow AI</strong>), 10만 행 대용량 <strong>초고속 엑셀 비교(ExcelCompare)</strong>, 큐&amp;스택 순차 입력 <strong>스마트 클립보드(QueueClip)</strong>, AI 파일 정리(<strong>FileHub AI</strong>), 360° 방사형 HUD 드래그 앤 드롭(<strong>RadialDrop</strong>), 0.1초 파일 대화상자 순간이동(<strong>QuickPath</strong>)부터 듀얼 모니터 2D 미니맵 &amp; 멀티탭 창 배치 0.1초 스냅 복원(<strong>WorkspaceSnap</strong>)까지.<br class=\"hidden sm:inline\" />비싼 월 구독료 없이, <strong>데스크톱 작업 시간을 90% 줄여주는 검증된 윈도우 필수 유틸리티 9종</strong>을 <strong>부담 없이 무료로 시작</strong>하세요.",
         hero_store_cert: "공식 디지털 인증 · 100% 무료 다운로드",
         hero_cta_store: "Microsoft Store에서 무료 다운로드",
         hero_portable_tag: "포터블 무설치 (Portable .zip / .exe)",
@@ -1912,6 +2207,7 @@
         strip_tag_overlay: "FREE",
         strip_tag_radialdrop: "FREE",
         strip_tag_quickpath: "FREE",
+        strip_tag_workspacesnap: "FREE",
         strip_imageflow: "선만 연결하는 노코드 화면 매크로 & 반복 업무 자동화",
         strip_fileflow: "다운로드 폴더 지옥 탈출! 0.1초 감시 & AI 자동 분류",
         strip_filehub: "다운로드 폴더 지옥 탈출! 0.1초 감시 & 확장자·규칙 AI 자동 분류",
@@ -1922,8 +2218,9 @@
         strip_overlaypic: "시안·참고문서를 화면 최상단에 투명하게 띄워두고 작업",
         strip_radialdrop: "360° 방사형 휠 & 3슬롯 스마트 선반으로 초고속 파일 드래그 수납",
         strip_quickpath: "단축키(Ctrl+G)로 열기/저장 파일 대화상자를 작업 폴더로 0.1초 순간이동",
+        strip_workspacesnap: "듀얼 모니터 2D 미니맵 &amp; 브라우저 멀티탭·탐색기 창 배치 0.1초 스냅 복원",
         suite_badge: "Product Lineup",
-        suite_title: "FlowSuite 8대 핵심 유틸리티 라인업",
+        suite_title: "FlowSuite 9대 핵심 유틸리티 라인업",
         suite_desc: "핵심 기본 기능을 무료로 바로 이용할 수 있으며, 필요에 따라 합리적인 평생 소장 프로 에디션을 선택할 수 있습니다.",
         imageflow_sub: "(오토플로우 RPA)",
         imageflow_desc: "<strong>\"선만 연결하면 완성되는 노코드 화면 자동화\"</strong><br />복잡한 코딩(Script) 없이 화면 이미지를 마우스로 지정하고 선만 연결하면 알아서 동작하는 비주얼 순서도 기반 업무 자동화 도구입니다. ERP 자동 로그인, 엑셀/웹 반복 클릭, 화면 감지 클릭을 손쉽게 구현합니다.",
@@ -1993,6 +2290,12 @@
         qp_point_3: "웹 다운로드 파일명·확장자 100% 변형 없이 안전 보존",
         qp_point_4: "자주 찾는 작업 폴더 드래그 앤 드롭 즐겨찾기 관리",
         btn_explore_qp: "포터블 무설치 (GitHub)",
+        workspacesnap_sub: "(워크스페이스스냅)",
+        workspacesnap_desc: "<strong>\"단축키 한 번으로 듀얼 모니터 창 배치·탐색기 폴더·브라우저 멀티탭을 0.1초 만에 복원\"</strong><br />매일 아침 반복하던 업무용 앱 실행, 다중 모니터(M1·M2) 창 분할 배치, 파일 탐색기 작업 폴더, 크롬·엣지 멀티탭 세팅을 스냅샷 하나(F9)로 통째로 저장하고 글로벌 단축키(Ctrl+Alt+1~4)로 즉시 소환합니다.",
+        ws_point_1: "대화형 2D 듀얼 모니터 미니맵 (실시간 드래그·스냅·Z순서)",
+        ws_point_2: "브라우저 멀티탭 &amp; 탐색기 폴더 경로 1클릭 일괄 복원",
+        ws_point_3: "원클릭 스마트 정렬 (자동 정렬·바둑판·계단식·2/3/4분할)",
+        ws_point_4: "F9 즉시 스냅 저장 &amp; Ctrl+Alt+1~4 0.1초 레이아웃 전환",
         gesturego_sub: "(마우스플로우 AI)",
         gesturego_desc: "<strong>\"마우스 우클릭 드래그 하나로 윈도우 창과 단축키를 광속 제어\"</strong><br />마우스를 살짝 긋는 동작만으로 창 닫기, 최소화, 최대화, 가상 데스크톱 전환, 웹 브라우저 탭 이동 등 자주 쓰는 동작을 키보드에 손 올릴 필요 없이 즉각 실행합니다.",
         gg_point_1: "초경량 마우스 궤적 인식 & AI 제스처 엔진",
@@ -2024,6 +2327,7 @@
         syn_6: "완성된 결과물과 다운로드 파일들을 0.1초 만에 감시하여 최적 폴더로 자동 분류합니다.",
         syn_7: "드래그 중인 파일들을 360° 휠과 임시 선반에 빠르게 수납해 한 번에 옮깁니다.",
         syn_8: "파일 열기·저장 대화상자를 작업 중이던 탐색기 위치로 즉시 순간이동시킵니다.",
+        syn_9: "듀얼 모니터 창 배치와 브라우저 멀티탭·탐색기 폴더를 단축키 한 번으로 0.1초 복원합니다.",
         nav_feedback: "사용자 피드백",
         fb_badge: "COMMUNITY & FEEDBACK",
         fb_title: "로그인 없이 남기는 실시간 피드백 & 댓글",
@@ -2045,7 +2349,7 @@
         fb_submit_btn: "댓글 등록하기",
         guide_badge_3step: "한눈에 보는 3단계 비주얼 가이드 (STEP 1 &rarr; 2 &rarr; 3)",
         stage_live_badge: "실제 프로그램 1:1 UI 인터랙티브 데스크톱 체험관",
-        stage_live_sub: "아래 8개 앱 탭을 클릭해 설치 없이 실제 프로그램과 100% 동일한 UI를 웹에서 직접 조작해보세요!",
+        stage_live_sub: "아래 9개 앱 탭을 클릭해 설치 없이 실제 프로그램과 100% 동일한 UI를 웹에서 직접 조작해보세요!",
         btn_try_on_stage: "상단 가상 데스크톱에서 실제 UI 조작 ↑",
         click_to_zoom: "클릭하여 크게 보기",
         btn_switch_guide_lang: "영문 가이드 보기 (EN)",
@@ -2063,9 +2367,9 @@
         footer_eula: "이용약관 (EULA)"
       },
       en: {
-        meta_title: "FlowSuite — Essential 8 Windows Productivity Utilities (Free Download)",
+        meta_title: "FlowSuite — Essential 9 Windows Productivity Utilities (Free Download)",
         top_bar_badge: "FREE TO START",
-        top_bar_text: "Free Starter Edition · 8 Essential Windows Utilities to cut repetitive tasks by 90%",
+        top_bar_text: "Free Starter Edition · 9 Essential Windows Utilities to cut repetitive tasks by 90%",
         top_bar_link: "Explore Utility Suite",
         nav_blog: "Official Blog",
         nav_suite_btn: "Explore Suite",
@@ -2073,7 +2377,7 @@
         hero_pill: "Free Edition Included • Lifetime Ownership • Zero Sign-up",
         hero_title_1: "Supercharge Your Windows Workflow with",
         hero_title_2: "The Essential Windows Utility Suite",
-        hero_desc: "From always-on-top transparent reference pins (<strong>OverlayPic</strong>) and zero-code screen automation (<strong>AutoFlow RPA</strong>) to high-speed mouse gestures (<strong>MouseFlow AI</strong>), 100K-row Excel diffing (<strong>ExcelCompare</strong>), sequential queue clipboard (<strong>QueueClip</strong>), smart file dispatching (<strong>FileHub AI</strong>), 360° radial drag-and-drop HUD (<strong>RadialDrop</strong>), and 0.1s dialog teleporter (<strong>QuickPath</strong>).<br class=\"hidden sm:inline\" />No expensive subscriptions — <strong>8 proven Windows desktop utilities free to start</strong>.",
+        hero_desc: "From always-on-top transparent reference pins (<strong>OverlayPic</strong>) and zero-code screen automation (<strong>AutoFlow RPA</strong>) to high-speed mouse gestures (<strong>MouseFlow AI</strong>), 100K-row Excel diffing (<strong>ExcelCompare</strong>), sequential queue clipboard (<strong>QueueClip</strong>), smart file dispatching (<strong>FileHub AI</strong>), 360° radial drag-and-drop HUD (<strong>RadialDrop</strong>), 0.1s dialog teleporter (<strong>QuickPath</strong>), and 2D dual-monitor minimap &amp; multi-tab workspace snapper (<strong>WorkspaceSnap</strong>).<br class=\"hidden sm:inline\" />No expensive subscriptions — <strong>9 proven Windows desktop utilities free to start</strong>.",
         hero_store_cert: "Official Microsoft Certified · 100% Free Download",
         hero_cta_store: "Free Download from Microsoft Store",
         hero_portable_tag: "Portable Edition (.zip / .exe)",
@@ -2097,6 +2401,7 @@
         strip_tag_overlay: "FREE",
         strip_tag_radialdrop: "FREE",
         strip_tag_quickpath: "FREE",
+        strip_tag_workspacesnap: "FREE",
         strip_imageflow: "Zero-code visual screen RPA & repetitive task automation",
         strip_fileflow: "Clean download folders! 0.1s monitor & AI auto-sorting",
         strip_filehub: "Clean download folders! 0.1s monitor & AI auto-sorting",
@@ -2107,8 +2412,9 @@
         strip_overlaypic: "Keep mockups & reference docs pinned transparently on top",
         strip_radialdrop: "360° radial wheel & 3-slot floating shelf for instant file stashing",
         strip_quickpath: "Teleport file open/save dialogs to active explorer folders in 0.1s via Ctrl+G",
+        strip_workspacesnap: "2D dual-monitor minimap & 0.1s multi-tab/folder workspace layout restore",
         suite_badge: "Product Lineup",
-        suite_title: "FlowSuite 8 Core Utilities Lineup",
+        suite_title: "FlowSuite 9 Core Utilities Lineup",
         suite_desc: "Start free with essential core features, with optional lifetime Pro upgrade available.",
         imageflow_sub: "(AutoFlow RPA)",
         imageflow_desc: "<strong>\"Zero-Code Screen Automation by Connecting Lines\"</strong><br />A flowchart-based automation tool that captures screen images and connects nodes without writing a single line of script. Easily automate ERP logins, Excel/web clicking, and visual triggers.",
@@ -2178,6 +2484,12 @@
         qp_point_3: "100% preserves original browser download filenames and extensions",
         qp_point_4: "Drag-and-drop bookmark manager for frequent project folders",
         btn_explore_qp: "Portable / Standalone (GitHub)",
+        workspacesnap_sub: "(WorkspaceSnap)",
+        workspacesnap_desc: "<strong>\"Restore Dual-Monitor Layouts, Explorer Folders &amp; Browser Multi-Tabs in 0.1s\"</strong><br />Capture your entire multi-monitor window arrangement, active File Explorer folders, and Chrome/Edge multi-tab sessions in a single snapshot (F9) and restore them anytime via global hotkeys (Ctrl+Alt+1~4).",
+        ws_point_1: "Interactive 2D dual-monitor minimap (drag, snap &amp; Z-order)",
+        ws_point_2: "1-click restore for browser multi-tabs &amp; Explorer directories",
+        ws_point_3: "Smart visual presets (Auto-Arrange, Grid, Cascade, 2/3/4-Split)",
+        ws_point_4: "Instant F9 snapshot &amp; 0.1s hotkey layout switching (Ctrl+Alt+1~4)",
         gesturego_sub: "(MouseFlow AI)",
         gesturego_desc: "<strong>\"Lightning-Fast Window Control with Right-Click Mouse Gestures\"</strong><br />Close, minimize, maximize windows, switch virtual desktops, and trigger shortcuts with simple, fluid mouse swipes without lifting your hands to the keyboard.",
         gg_point_1: "Ultra-lightweight trajectory & AI gesture engine",
@@ -2209,6 +2521,7 @@
         syn_6: "Instantly detects generated outputs & downloads and auto-classifies into structured folders.",
         syn_7: "Stash dragging files into a 360° tactical wheel & shelf for batch multi-folder drops.",
         syn_8: "Teleport file open/save dialogs directly to your active folder without deep browsing.",
+        syn_9: "Restore dual-monitor window layouts, browser multi-tabs, and Explorer folders in 0.1s.",
         nav_feedback: "Feedback",
         fb_badge: "COMMUNITY & FEEDBACK",
         fb_title: "Instant Community Feedback & Comments",
@@ -2230,7 +2543,7 @@
         fb_submit_btn: "Post Comment",
         guide_badge_3step: "3-Step Visual Quick Guide (STEP 1 &rarr; 2 &rarr; 3)",
         stage_live_badge: "1:1 Authentic App UI Interactive Desktop Playground",
-        stage_live_sub: "Switch across the 8 apps below to test the exact 1:1 program UI right in your browser!",
+        stage_live_sub: "Switch across the 9 apps below to test the exact 1:1 program UI right in your browser!",
         btn_try_on_stage: "Try 1:1 App UI on Top Desktop Stage ↑",
         click_to_zoom: "Click to Zoom",
         btn_switch_guide_lang: "한글 가이드 보기 (KO)",
@@ -2287,7 +2600,8 @@
         queueclipGuideImg: ['assets/QueueClip_VisualGuide_KO.png?v=2', 'assets/QueueClip_VisualGuide_EN.png?v=2'],
         filehubGuideImg: ['assets/FileHubAI_VisualGuide_KO.png?v=2', 'assets/FileHubAI_VisualGuide_EN.png?v=2'],
         radialdropGuideImg: ['assets/RadialDrop_VisualGuide_KO.png?v=2', 'assets/RadialDrop_VisualGuide_EN.png?v=2'],
-        quickpathGuideImg: ['assets/QuickPath_VisualGuide_KO.png?v=2', 'assets/QuickPath_VisualGuide_EN.png?v=2']
+        quickpathGuideImg: ['assets/QuickPath_VisualGuide_KO.png?v=2', 'assets/QuickPath_VisualGuide_EN.png?v=2'],
+        workspacesnapGuideImg: ['assets/WorkspaceSnap_VisualGuide_KO.png?v=2', 'assets/WorkspaceSnap_VisualGuide_EN.png?v=2']
       };
       Object.keys(guideMap).forEach(id => {
         const el = document.getElementById(id);
@@ -2619,6 +2933,7 @@
       radialdrop: { name: 'RadialDrop', store: 'https://apps.microsoft.com/detail/9N420XP5HCQC' },
       queueclip: { name: 'QueueClip', store: 'https://apps.microsoft.com/detail/9PM5WS6W4VPS' },
       quickpath: { name: 'QuickPath', store: 'https://apps.microsoft.com/detail/9P2G9QTM1FV2' },
+      workspacesnap: { name: 'WorkspaceSnap', store: 'https://apps.microsoft.com/detail/9N391BZZZVJ8' },
       mouseflow: { name: 'MouseFlow AI', store: 'https://apps.microsoft.com/detail/9P108CX3SDZF' },
       excelcompare: { name: 'ExcelCompare', store: 'https://apps.microsoft.com/detail/9NM6VMC967PL' },
       filehub: { name: 'FileHub AI', store: 'https://apps.microsoft.com/detail/9PMJGRSJ6SJX' },
@@ -3097,10 +3412,309 @@
       if (c) c.textContent = stageOpClicks;
     }
 
+    // --- 9. WorkspaceSnap 1:1 Dual-Monitor 2D Minimap & Multi-Tab Editor Logic ---
+    let stageWsLive = true;
+    let stageWsCurProfile = 0;
+    let stageWsSelWin = 0;
+    const stageWsProfiles = [
+      {
+        slot: 1,
+        badgeColor: '#3B82F6',
+        name: '오전 업무모드',
+        hotkey: 'Ctrl+Alt+1',
+        summary: '앱 2개 · 폴더 1개 · 모니터 2대',
+        desc: '크롬 3탭 + VS Code + 프로젝트 폴더',
+        windows: [
+          { cat: 'WEB', color: '#0EA5E9', z: 1, title: 'Google Chrome (업무 포털)', mon: 1, x: 2, y: 4, w: 48, h: 92, posLabel: 'M1 · 좌 50%', tabs: ['Gmail 업무메일', 'Notion 주간보고', 'Jira 스프린트'] },
+          { cat: 'DEV', color: '#8B5CF6', z: 2, title: 'Visual Studio Code', mon: 1, x: 51, y: 4, w: 47, h: 92, posLabel: 'M1 · 우 50%', tabs: [] },
+          { cat: 'FOLDER', color: '#10B981', z: 3, title: 'D:\\Projects\\2026_기획안', mon: 2, x: 4, y: 6, w: 92, h: 88, posLabel: 'M2 · 전체 100%', tabs: ['01_시안보관함', '02_견적서'] }
+        ]
+      },
+      {
+        slot: 2,
+        badgeColor: '#8B5CF6',
+        name: '코딩·개발모드',
+        hotkey: 'Ctrl+Alt+2',
+        summary: '앱 2개 · 폴더 1개 · 모니터 2대',
+        desc: 'VS2022 + API 문서 + 빌드 출력 폴더',
+        windows: [
+          { cat: 'DEV', color: '#8B5CF6', z: 1, title: 'Visual Studio 2022 (WorkspaceSnap.sln)', mon: 1, x: 2, y: 4, w: 96, h: 92, posLabel: 'M1 · 전체 100%', tabs: [] },
+          { cat: 'WEB', color: '#0EA5E9', z: 2, title: 'Microsoft Edge (Dev Docs)', mon: 2, x: 2, y: 4, w: 48, h: 92, posLabel: 'M2 · 좌 50%', tabs: ['GitHub PR #42', 'MS Learn Win32 API'] },
+          { cat: 'FOLDER', color: '#10B981', z: 3, title: 'I:\\_MyProject\\Program\\Release', mon: 2, x: 51, y: 4, w: 47, h: 92, posLabel: 'M2 · 우 50%', tabs: ['bin\\Release'] }
+        ]
+      },
+      {
+        slot: 3,
+        badgeColor: '#10B981',
+        name: '자료정리·집중모드',
+        hotkey: 'Ctrl+Alt+3',
+        summary: '앱 1개 · 폴더 2개 · 모니터 1대',
+        desc: '다운로드 & 프로젝트 양면 탐색기 + 레퍼런스 웹',
+        windows: [
+          { cat: 'FOLDER', color: '#10B981', z: 1, title: 'C:\\Users\\YJC\\Downloads', mon: 1, x: 2, y: 4, w: 48, h: 92, posLabel: 'M1 · 좌 50%', tabs: ['Downloads', 'Desktop'] },
+          { cat: 'FOLDER', color: '#10B981', z: 2, title: 'D:\\Archive\\2026_분류완료', mon: 1, x: 51, y: 4, w: 47, h: 92, posLabel: 'M1 · 우 50%', tabs: [] },
+          { cat: 'WEB', color: '#0EA5E9', z: 3, title: 'Chrome (클라우드 드라이브)', mon: 2, x: 12, y: 12, w: 76, h: 76, posLabel: 'M2 · 중앙 창', tabs: ['Google Drive', 'OneDrive 백업'] }
+        ]
+      }
+    ];
+
+    function toastStageWs(msg) {
+      const hint = document.getElementById('stageWsSelectedHint');
+      const mini = document.getElementById('stageWsToastMini');
+      if (hint) hint.textContent = msg;
+      if (mini) mini.textContent = '● ' + msg.replace(/^[^\s]+\s*/, '');
+    }
+
+    function selectStageWsProfile(idx, runNow) {
+      stageWsCurProfile = idx;
+      stageWsSelWin = 0;
+      renderStageWs();
+      const p = stageWsProfiles[idx];
+      if (runNow && p) {
+        toastStageWs(`🚀 [${p.name}] (${p.hotkey}) 실행 완료! 모니터 M1·M2 창 배치와 멀티탭을 0.1초 만에 복원했습니다.`);
+      } else if (p) {
+        toastStageWs(`✏️ [${p.name}] 프로필 편집 중 — 미니맵 창 박스를 클릭하거나 스냅 프리셋을 눌러보세요.`);
+      }
+    }
+
+    function selectStageWsWin(wIdx) {
+      stageWsSelWin = wIdx;
+      renderStageWs();
+      const p = stageWsProfiles[stageWsCurProfile];
+      const w = p && p.windows[wIdx];
+      if (w) {
+        toastStageWs(`🎯 선택됨: [Z${w.z} · ${w.cat}] ${w.title} (${w.posLabel}) — 아래 스냅 버튼으로 위치를 조절하세요!`);
+      }
+    }
+
+    function applyStageWsPreset(preset) {
+      const p = stageWsProfiles[stageWsCurProfile];
+      if (!p || !p.windows.length) return;
+      const w = p.windows[stageWsSelWin] || p.windows[0];
+      if (preset === 'auto' || preset === 'grid') {
+        p.windows.forEach((win, i) => {
+          if (i === 0) { win.mon = 1; win.x = 2; win.y = 4; win.w = 48; win.h = 92; win.posLabel = 'M1 · 좌 50%'; }
+          else if (i === 1) { win.mon = 1; win.x = 51; win.y = 4; win.w = 47; win.h = 92; win.posLabel = 'M1 · 우 50%'; }
+          else { win.mon = 2; win.x = 3; win.y = 5; win.w = 94; win.h = 90; win.posLabel = 'M2 · 전체 100%'; }
+        });
+        toastStageWs('⊞ [스마트 자동 정렬] 모든 창을 모니터 M1·M2에 겹침 없이 최적 분할 배치했습니다!');
+      } else if (preset === 'cascade') {
+        p.windows.forEach((win, i) => {
+          win.mon = 1;
+          win.x = 4 + i * 12;
+          win.y = 6 + i * 12;
+          win.w = 64;
+          win.h = 66;
+          win.posLabel = `M1 · 계단식 #${i + 1}`;
+        });
+        toastStageWs('❐ [계단식 정렬] 모든 창을 M1 모니터에 계단식으로 깔끔하게 정렬했습니다!');
+      } else if (preset === 'left50') {
+        w.x = 2; w.y = 4; w.w = 48; w.h = 92; w.posLabel = `M${w.mon} · 좌 50%`;
+        toastStageWs(`◧ [${w.title}] 창을 M${w.mon} 좌측 50% 영역에 스냅했습니다!`);
+      } else if (preset === 'right50') {
+        w.x = 51; w.y = 4; w.w = 47; w.h = 92; w.posLabel = `M${w.mon} · 우 50%`;
+        toastStageWs(`◨ [${w.title}] 창을 M${w.mon} 우측 50% 영역에 스냅했습니다!`);
+      } else if (preset === 'top50') {
+        w.x = 3; w.y = 4; w.w = 94; w.h = 45; w.posLabel = `M${w.mon} · 상 50%`;
+        toastStageWs(`⬒ [${w.title}] 창을 M${w.mon} 상단 50% 영역에 스냅했습니다!`);
+      } else if (preset === 'bottom50') {
+        w.x = 3; w.y = 51; w.w = 94; w.h = 45; w.posLabel = `M${w.mon} · 하 50%`;
+        toastStageWs(`⬓ [${w.title}] 창을 M${w.mon} 하단 50% 영역에 스냅했습니다!`);
+      } else if (preset === 'split4') {
+        w.x = 2; w.y = 4; w.w = 48; w.h = 45; w.posLabel = `M${w.mon} · 4분할 좌상`;
+        toastStageWs(`⊞ [${w.title}] 창을 M${w.mon} 4분할(사분면) 영역에 스냅했습니다!`);
+      } else if (preset === 'split3') {
+        w.x = 2; w.y = 4; w.w = 32; w.h = 92; w.posLabel = `M${w.mon} · 3분할(33%)`;
+        toastStageWs(`||| [${w.title}] 창을 M${w.mon} 3분할(33% 폭) 영역에 스냅했습니다!`);
+      } else if (preset === 'undo' || preset === 'redo') {
+        w.x = 2; w.y = 4; w.w = 48; w.h = 92; w.posLabel = `M${w.mon} · 좌 50%`;
+        toastStageWs(`↶ [${w.title}] 창 배치를 이전 스냅 위치로 복원했습니다!`);
+      } else if (preset === 'full') {
+        w.x = 2; w.y = 4; w.w = 96; w.h = 92; w.posLabel = `M${w.mon} · 전체 100%`;
+        toastStageWs(`⛶ [${w.title}] 창을 M${w.mon} 전체화면(100%)으로 확대했습니다!`);
+      } else if (preset === 'swapMon') {
+        w.mon = w.mon === 1 ? 2 : 1;
+        w.posLabel = w.posLabel.replace(/^M[12]/, `M${w.mon}`);
+        toastStageWs(`⇄ [${w.title}] 창을 모니터 M${w.mon}(으)로 즉시 이동했습니다!`);
+      } else if (preset === 'zorder') {
+        w.z = (w.z % p.windows.length) + 1;
+        toastStageWs(`Z▾ [${w.title}] 창의 Z-순서(앞/뒤 레이어)를 Z${w.z}(으)로 변경했습니다!`);
+      }
+      renderStageWs();
+    }
+
+    function captureStageWsSnapshot() {
+      const slotNum = stageWsProfiles.length + 1;
+      if (slotNum > 5) {
+        toastStageWs('⛶ 현재 화면 스냅 완료! 활성 프로필의 듀얼 모니터 창 좌표와 멀티탭이 최신 상태로 업데이트되었습니다.');
+        return;
+      }
+      stageWsProfiles.push({
+        slot: slotNum,
+        badgeColor: '#0EA5E9',
+        name: `스냅샷 #${slotNum} (방금 저장)`,
+        hotkey: `Ctrl+Alt+${slotNum}`,
+        summary: '앱 2개 · 폴더 1개 · 모니터 2대',
+        desc: 'F9 단축키로 방금 캡처한 듀얼 모니터 워크스페이스',
+        windows: [
+          { cat: 'WEB', color: '#0EA5E9', z: 1, title: 'Chrome (FlowSuite 공식 페이지)', mon: 1, x: 2, y: 4, w: 55, h: 92, posLabel: 'M1 · 좌 55%', tabs: ['FlowSuite 홈', 'MS Store'] },
+          { cat: 'DEV', color: '#8B5CF6', z: 2, title: 'Windows Terminal (PowerShell)', mon: 1, x: 58, y: 4, w: 40, h: 92, posLabel: 'M1 · 우 40%', tabs: [] },
+          { cat: 'FOLDER', color: '#10B981', z: 3, title: 'I:\\_MyProject\\Program', mon: 2, x: 4, y: 6, w: 92, h: 88, posLabel: 'M2 · 전체 100%', tabs: ['WorkspaceSnap', 'Assets'] }
+        ]
+      });
+      stageWsCurProfile = stageWsProfiles.length - 1;
+      stageWsSelWin = 0;
+      renderStageWs();
+      toastStageWs(`📸 [F9 현재 화면 스냅 저장 완료] "스냅샷 #${slotNum}" 프로필이 생성되었습니다!`);
+    }
+
+    function moveStageWsProfile(dir) {
+      const target = stageWsCurProfile + dir;
+      if (target < 0 || target >= stageWsProfiles.length) return;
+      const tmp = stageWsProfiles[stageWsCurProfile];
+      stageWsProfiles[stageWsCurProfile] = stageWsProfiles[target];
+      stageWsProfiles[target] = tmp;
+      stageWsProfiles.forEach((p, i) => { p.slot = i + 1; p.hotkey = `Ctrl+Alt+${i + 1}`; });
+      stageWsCurProfile = target;
+      renderStageWs();
+      toastStageWs(`↕ 프로필 순서가 슬롯 #${target + 1}(으)로 이동되었습니다.`);
+    }
+
+    function toggleStageWsLive() {
+      stageWsLive = !stageWsLive;
+      const btn = document.getElementById('stageWsLiveBtn');
+      if (btn) {
+        btn.className = stageWsLive
+          ? 'px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold text-[10px] flex items-center gap-1'
+          : 'px-2 py-0.5 rounded bg-slate-800 border border-slate-600 text-slate-300 font-bold text-[10px] flex items-center gap-1';
+        btn.innerHTML = stageWsLive
+          ? '<span>🟢</span> <span>실시간 반영 (현재 화면 기준)</span>'
+          : '<span>⚪</span> <span>편집 전용 모드 (수동 저장)</span>';
+      }
+      toastStageWs(stageWsLive ? '🟢 실시간 반영 ON: 미니맵에서 창을 움직이면 실제 윈도우 창 위치도 즉시 이동합니다!' : '⚪ 편집 전용 모드: 미니맵에서만 좌표를 수정한 뒤 [저장]을 누릅니다.');
+    }
+
+    function addStageWsBrowserTab() {
+      const p = stageWsProfiles[stageWsCurProfile];
+      if (!p) return;
+      const webWin = p.windows.find(w => w.cat === 'WEB' || w.cat === 'FOLDER') || p.windows[0];
+      if (!webWin) return;
+      const nextIdx = (webWin.tabs ? webWin.tabs.length : 0) + 1;
+      webWin.tabs.push(`추가탭_${nextIdx}.url`);
+      renderStageWs();
+      toastStageWs(`📑 [${webWin.title}] 창에 새 멀티탭("추가탭_${nextIdx}.url")이 추가되었습니다!`);
+    }
+
+    function importStageWsBrowserTabs() {
+      const p = stageWsProfiles[stageWsCurProfile];
+      if (!p) return;
+      const webWin = p.windows.find(w => w.cat === 'WEB') || p.windows[0];
+      if (!webWin) return;
+      webWin.tabs = ['FlowSuite 공식홈', 'GitHub Issues', 'Microsoft Store 인증', 'Analytics 대시보드'];
+      renderStageWs();
+      toastStageWs('🌐 현재 열려 있는 브라우저의 활성 탭 4개를 0.1초 만에 자동으로 가져왔습니다!');
+    }
+
+    function renderStageWs() {
+      const pList = document.getElementById('stageWsProfileList');
+      const pCnt = document.getElementById('stageWsProfileCount');
+      const nameIn = document.getElementById('stageWsNameInput');
+      const descIn = document.getElementById('stageWsDescInput');
+      const mon1 = document.getElementById('stageWsMon1');
+      const mon2 = document.getElementById('stageWsMon2');
+      const winList = document.getElementById('stageWsWinList');
+      if (!pList || !mon1 || !mon2 || !winList) return;
+
+      if (pCnt) pCnt.textContent = stageWsProfiles.length;
+      const curP = stageWsProfiles[stageWsCurProfile] || stageWsProfiles[0];
+      if (nameIn && curP) nameIn.value = curP.name;
+      if (descIn && curP) descIn.value = curP.desc;
+
+      pList.innerHTML = stageWsProfiles.map((p, idx) => {
+        const active = idx === stageWsCurProfile;
+        return `
+          <div onclick="selectStageWsProfile(${idx}, false)" class="p-2 rounded-[8px] cursor-pointer transition-all border ${active ? 'bg-[#1C2336] border-[#3B82F6] shadow-md' : 'bg-[#171B26] hover:bg-[#1C2130] border-[#262D40]'}">
+            <div class="flex items-center justify-between gap-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="w-5 h-5 rounded-[5px] text-white font-mono text-[10px] font-extrabold flex items-center justify-center shrink-0" style="background:${p.badgeColor}">${p.slot}</span>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-[11.5px] font-bold text-white truncate">${p.name}</span>
+                    <span class="px-1.5 py-0.2 rounded bg-[#0F111A] border border-[#2E364F] text-[#38BDF8] font-mono text-[9px] font-bold shrink-0">${p.hotkey}</span>
+                  </div>
+                  <div class="text-[10px] text-[#94A3B8] truncate">${p.summary}</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 shrink-0">
+                <button type="button" onclick="event.stopPropagation(); selectStageWsProfile(${idx}, true)" class="px-2 py-1 rounded bg-[#10B981] hover:bg-[#059669] text-slate-950 font-extrabold text-[10px]">실행</button>
+                <button type="button" onclick="event.stopPropagation(); selectStageWsProfile(${idx}, false)" class="px-2 py-1 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] font-bold text-[10px]">편집</button>
+              </div>
+            </div>
+          </div>`;
+      }).join('');
+
+      const renderMonBoxes = (monIdx) => {
+        return curP.windows
+          .map((w, idx) => ({ w, idx }))
+          .filter(item => item.w.mon === monIdx)
+          .sort((a, b) => b.w.z - a.w.z)
+          .map(({ w, idx }) => {
+            const isSel = idx === stageWsSelWin;
+            const borderCol = isSel ? '#FACC15' : w.color;
+            return `
+              <div onclick="selectStageWsWin(${idx})" style="left:${w.x}%; top:${w.y}%; width:${w.w}%; height:${w.h}%; border-color:${borderCol}; background:${w.color}26;" class="absolute rounded-[5px] border-2 p-1.5 cursor-pointer transition-all duration-200 flex flex-col justify-between overflow-hidden hover:brightness-125 ${isSel ? 'ring-2 ring-amber-400/50 z-20' : 'z-10'}">
+                <div class="flex items-center justify-between gap-1 text-[9px] font-mono font-bold">
+                  <span class="px-1 rounded text-white" style="background:${w.color}">Z${w.z} · ${w.cat}</span>
+                  <div class="flex items-center gap-1">
+                    <span class="text-[#CBD5E1]">${w.w}%×${w.h}%</span>
+                    <span class="text-[#94A3B8] hover:text-rose-400">✕</span>
+                  </div>
+                </div>
+                <div class="text-[10px] font-bold text-white truncate leading-tight">${w.title}</div>
+                <div class="flex items-center justify-between text-[8.5px] text-[#94A3B8] font-mono">
+                  <span>${w.tabs && w.tabs.length ? `📑 ${w.tabs.length}탭` : w.posLabel}</span>
+                  <span class="w-2 h-2 rounded-xs bg-[#FACC15]" title="드래그 리사이즈 그립"></span>
+                </div>
+              </div>`;
+          }).join('');
+      };
+
+      mon1.innerHTML = renderMonBoxes(1);
+      mon2.innerHTML = renderMonBoxes(2);
+
+      winList.innerHTML = curP.windows.map((w, idx) => {
+        const isSel = idx === stageWsSelWin;
+        return `
+          <div onclick="selectStageWsWin(${idx})" class="p-2 rounded-[6px] border cursor-pointer transition-all ${isSel ? 'bg-[#1C2336] border-[#FACC15]/70' : 'bg-[#171B26] border-[#262D40]'}">
+            <div class="flex flex-wrap items-center justify-between gap-1.5 text-[11px]">
+              <div class="flex items-center gap-1.5 min-w-0">
+                <span class="text-emerald-400 font-bold text-xs">☑</span>
+                <span class="px-1.5 py-0.2 rounded text-[9.5px] font-mono font-bold text-white" style="background:${w.color}">${w.cat}</span>
+                <span onclick="event.stopPropagation(); selectStageWsWin(${idx}); applyStageWsPreset('zorder');" class="px-1.5 py-0.2 rounded bg-[#0F111A] border border-[#2E364F] text-amber-300 font-mono text-[9.5px] font-bold" title="클릭하여 Z-순서 변경">Z${w.z}</span>
+                <span class="font-bold text-white truncate">${w.title}</span>
+              </div>
+              <span class="px-1.5 py-0.2 rounded bg-[#0F111A] border border-[#2E364F] text-[#38BDF8] font-mono text-[9.5px] font-bold">${w.posLabel}</span>
+            </div>
+            ${w.tabs && w.tabs.length ? `
+              <div class="mt-1.5 pt-1 border-t border-[#22283A] flex flex-wrap items-center justify-between gap-1 text-[10px]">
+                <div class="flex flex-wrap items-center gap-1">
+                  <span class="text-[#94A3B8] font-mono">📑 이 창의 멀티탭:</span>
+                  ${w.tabs.map(t => `<span class="px-1.5 py-0.2 rounded bg-[#0F111A] border border-[#2E364F] text-[#CBD5E1] font-mono">${t}</span>`).join('')}
+                </div>
+                <div class="flex items-center gap-1">
+                  <button type="button" onclick="event.stopPropagation(); addStageWsBrowserTab()" class="px-1.5 py-0.2 rounded bg-[#0EA5E9]/20 hover:bg-[#0EA5E9]/30 border border-[#0EA5E9]/40 text-[#38BDF8] text-[9.5px] font-bold">+ 탭 추가</button>
+                  <button type="button" onclick="event.stopPropagation(); importStageWsBrowserTabs()" class="px-1.5 py-0.2 rounded bg-[#1E2436] hover:bg-[#2A324B] border border-[#2E364F] text-[#CBD5E1] text-[9.5px] font-bold">🌐 현재 브라우저 탭 가져오기</button>
+                </div>
+              </div>` : ''}
+          </div>`;
+      }).join('');
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       renderStageRdShelf();
       renderStageQc();
       renderStageFh();
+      renderStageWs();
     });
 
   </script>
