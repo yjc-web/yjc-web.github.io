@@ -66,7 +66,7 @@
             <h2>2. Microsoft Store Purchases &amp; License Verification</h2>
             <ul>
                 <li><strong>Microsoft Store &amp; In-App Purchases (CsvChart Pro):</strong> App downloads, Durable add-on purchases, billing, and entitlement verification are handled directly by Microsoft via official <code>Windows.Services.Store</code> APIs. FlowSuiteYJC never receives, processes, or stores your payment details, credit card numbers, or Microsoft account credentials.</li>
-                <li><strong>Offline Serial Key Activation (Optional):</strong> For enterprise or offline workstations using a standalone serial key (<code>CSVC-PRO1-...</code>), cryptographic signature verification runs entirely offline on your PC without contacting any external server.</li>
+                <li><strong>Standalone License Key Activation (Optional):</strong> Only if you manually enter an external standalone license key, an anonymized hardware identifier hash (HWID) and device name are sent solely to our license verification endpoint to enforce activation limits. Offline enterprise keys are verified locally.</li>
             </ul>
 
             <h2>3. No Third-Party Sharing, Ads, or Tracking</h2>
@@ -106,7 +106,7 @@
             <h2>2. 결제 및 라이선스 인증 정보</h2>
             <ul>
                 <li><strong>Microsoft Store 구매 및 인앱 결제 (CsvChart Pro):</strong> 앱 다운로드 및 인앱 추가 기능(영구 라이선스) 결제·권한 확인은 Microsoft Store 공식 API(<code>Windows.Services.Store</code>)를 통해 Microsoft가 직접 처리합니다. 개발자는 사용자의 신용카드 정보, 결제 수단 또는 계정 정보를 일절 수집하거나 전달받지 않습니다.</li>
-                <li><strong>오프라인 시리얼 키 인증 (선택):</strong> 폐쇄망·기업용 시리얼 키(<code>CSVC-PRO1-...</code>) 입력 시에도 외부 서버 통신 없이 PC 내부 암호화 서명 검증만으로 즉시 인증됩니다.</li>
+                <li><strong>독립 라이선스 키 인증 (선택):</strong> 스토어 외부에서 발급된 별도 라이선스 키를 직접 입력하여 인증하는 경우에 한해, 기기 중복 등록 방지 목적으로 익명화된 하드웨어 식별 해시값(HWID)과 기기명만이 인증 서버 검증에 사용됩니다. (폐쇄망 오프라인 키는 로컬에서 검증됩니다.)</li>
             </ul>
 
             <h2>3. 제3자 제공 · 광고 · 추적 없음</h2>
@@ -146,7 +146,7 @@
             <h2>2. 決済およびライセンス認証</h2>
             <ul>
                 <li><strong>Microsoft Store 決済:</strong> アプリ内課金（永久ライセンス）の決済および権利確認は Microsoft 公式 API（<code>Windows.Services.Store</code>）を通じて Microsoft が直接処理し、開発者が決済情報を受け取ることはありません。</li>
-                <li><strong>オフラインシリアルキー認証:</strong> 法人・オフライン環境向けシリアルキー認証も外部通信なしでローカル検証されます。</li>
+                <li><strong>スタンドアロンライセンスキー認証 (任意):</strong> 外部発行のライセンスキーを手動で入力した場合に限り、端末登録上限の確認目的で匿名化されたハードウェア識別ハッシュ（HWID）のみが認証検証に使用されます。</li>
             </ul>
 
             <h2>3. 第三者提供・広告・トラッキングなし</h2>
